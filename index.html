@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celine Lim | 专业房地产顾问 & 项目展示</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #8B4513;
+            --secondary-color: #DAA520;
+            --accent-color: #A0522D;
+            --light-color: #FAF0E6;
+            --dark-color: #333333;
+            --white-color: #FFFFFF;
+            --gray-color: #f5f5f5;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--white-color);
+        }
+        
+        /* 导航栏 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+        
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a.active {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        /* Hero部分 */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white-color);
+            padding: 0 20px;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+        }
+        
+        /* 关于部分 */
+        .about-section {
+            padding: 100px 20px;
+            background-color: var(--gray-color);
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .section-title p {
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* 项目部分 */
+        .projects-section {
+            padding: 100px 20px;
+            background-color: var(--white-color);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background-color: var(--white-color);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-category {
+            display: inline-block;
+            background-color: var(--light-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .project-location {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .project-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .project-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-tag {
+            background-color: #f0f8ff;
+            color: #1e90ff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .project-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+            gap: 8px;
+        }
+        
+        .project-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            gap: 12px;
+        }
+        
+        .learn-more-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            text-align: center;
+            gap: 8px;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .learn-more-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            transform: translateY(-3px);
+        }
+        
+        /* 项目详情模态框 */
+        .project-detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background-color: var(--white-color);
+            max-width: 900px;
+            margin: 50px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.5s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 25px 30px;
+            position: relative;
+        }
+        
+        .modal-header h2 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .modal-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: var(--white-color);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 30px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .project-detail-content {
+            line-height: 1.7;
+        }
+        
+        .detail-section {
+            margin-bottom: 30px;
+        }
+        
+        .detail-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 10px;
+        }
+        
+        .detail-section h4 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .detail-section p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .highlight-box {
+            background-color: var(--light-color);
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .highlight-box h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .highlight-list {
+            list-style-type: none;
+        }
+        
+        .highlight-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .highlight-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .price-tag {
+            background-color: #ffebee;
+            color: #d32f2f;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .benefit-item {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #e9ecef;
+        }
+        
+        .benefit-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        .benefit-text {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .play-types {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .play-type {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #4caf50;
+        }
+        
+        .play-type-number {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 5px;
+        }
+        
+        .whatsapp-link-box {
+            background-color: #25D366;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .whatsapp-link-box h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .whatsapp-link {
+            display: inline-block;
+            background-color: white;
+            color: #25D366;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 10px;
+            transition: var(--transition);
+        }
+        
+        .whatsapp-link:hover {
+            background-color: #128C7E;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+        
+        /* 视频样式 - 新增 */
+        .video-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .video-item {
+            text-align: center;
+        }
+        
+        .project-video {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            background-color: #000;
+            display: block;
+        }
+        
+        .video-item p {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* 服务部分 */
+        .services-section {
+            padding: 100px 20px;
+            background-color: var(--gray-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--white-color);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+        
+        .service-icon i {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .service-description {
+            color: #666;
+        }
+        
+        /* 联系部分 */
+        .contact-section {
+            padding: 100px 20px;
+            background-color: var(--white-color);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-card {
+            background-color: var(--light-color);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .contact-details p {
+            color: #666;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary-color);
+            color: var(--white-color);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-color);
+        }
+        
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--white-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-nav {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white-color);
+                box-shadow: var(--shadow);
+                padding: 20px;
+                display: none;
+                z-index: 999;
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav-links {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .mobile-nav-links a {
+                text-decoration: none;
+                color: var(--dark-color);
+                font-weight: 600;
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            .mobile-nav-links a.active {
+                color: var(--primary-color);
+            }
+            
+            .modal-content {
+                margin: 20px auto;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-video {
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-body {
+                padding: 20px;
+                max-height: 80vh;
+            }
+            
+            .image-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .project-video {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <i class="fas fa-home"></i>
+                <span>Celine Lim</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="#home" class="active">首页</a>
+                <a href="#about">关于我</a>
+                <a href="#projects">精选项目</a>
+                <a href="#services">服务</a>
+                <a href="#contact">联系</a>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-links">
+                <a href="#home" class="active">首页</a>
+                <a href="#about">关于我</a>
+                <a href="#projects">精选项目</a>
+                <a href="#services">服务</a>
+                <a href="#contact">联系</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero部分 -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>专业房地产顾问</h1>
+            <p>在柔佛新山地区拥有15年以上销售经验，为您提供专业的房地产咨询与服务</p>
+            <a href="#projects" class="cta-button">查看精选项目</a>
+        </div>
+    </section>
+    
+    <!-- 关于部分 -->
+    <section class="about-section" id="about">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>关于 Celine Lim</h2>
+                <p>专业房地产顾问，专注于柔佛新山地区的房地产销售与投资咨询</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- 图片占位符 - 替换为您的照片 -->
+                    <div style="width:100%;height:500px;background:linear-gradient(45deg, #f8f5f0, #e8e1d5);display:flex;flex-direction:column;justify-content:center;align-items:center;color:#8B4513;text-align:center;">
+                        <i class="fas fa-user-tie" style="font-size:5rem;margin-bottom:20px;"></i>
+                        <h3 style="font-size:1.5rem;">Celine Lim</h3>
+                        <p><img src="图片_20260115163910_1_1.jpg" style="width:100%;height:auto;max-height:400px;object-fit:cover;"></p>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3>15年专业房地产经验</h3>
+                    <p>您好，我是Celine Lim，一名在柔佛新山地区拥有超过15年经验的资深房地产顾问。我专注于柔佛新山地区的住宅、商业和工业房地产销售与投资咨询。</p>
+                    <p>凭借对本地市场的深刻理解和广泛的行业网络，我致力于为客户提供最专业的房地产解决方案。我始终坚信，房地产不仅是交易，更是实现梦想和创造价值的过程。</p>
+                    <p>我熟悉柔佛新山各个地区的房地产市场动态、发展趋势和投资潜力，能够为客户提供精准的市场分析和专业的投资建议。</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">年经验</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">完成交易</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">满意客户</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 项目部分 -->
+    <section class="projects-section" id="projects">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>精选房地产项目</h2>
+                <p>探索柔佛新山地区的最新和精选房地产项目</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- 项目1: KSL JEWEL -->
+                <div class="project-card" data-category="apartment">
+                    <div class="project-image">
+                        <img src="JEWEL KSL/JW9.jpeg" alt="KSL JEWEL公寓">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">豪华公寓</span>
+                        <h3 class="project-title">KSL JEWEL</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Permas Jaya, 新山</span>
+                        </div>
+                        <p class="project-description">位于Permas Jaya的豪华公寓项目，现代化设计，配备高端设施，投资与自住皆宜。</p>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">豪华设施</span>
+                            <span class="feature-tag">成熟社区</span>
+                            <span class="feature-tag">永久地契</span>
+                            <span class="feature-tag">投资潜力高</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelpermasJW" target="_blank" class="project-link">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp咨询
+                            </a>
+                            <button class="learn-more-btn" data-project="ksl-jewel">
+                                <i class="fas fa-info-circle"></i>
+                                了解更多
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目2: SUNWAY MAJESTIC -->
+                <div class="project-card" data-category="soho">
+                    <div class="project-image">
+                        <img src="SUNWAY MAJESTIC/SWM001.jpeg" alt="SUNWAY MAJESTIC SOHO公寓">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">SOHO公寓</span>
+                        <h3 class="project-title">SUNWAY MAJESTIC</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>新山市中心</span>
+                        </div>
+                        <p class="project-description">创新SOHO公寓设计，结合居住与办公功能，适合现代专业人士和投资者。</p>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">SOHO设计</span>
+                            <span class="feature-tag">商住两用</span>
+                            <span class="feature-tag">智能家居</span>
+                            <span class="feature-tag">高租金回报</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelSWM" target="_blank" class="project-link">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp咨询
+                            </a>
+                            <button class="learn-more-btn" data-project="sunway-majestic">
+                                <i class="fas fa-info-circle"></i>
+                                了解更多
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 项目3: SUNWAY LAKEHILLS -->
+                <div class="project-card" data-category="penthouse">
+                    <div class="project-image">
+                        <img src="SUNWAY LAKEHILLS/SLH1.jpeg" alt="SUNWAY LAKEHILLS湖景阁楼公寓">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">湖景阁楼公寓</span>
+                        <h3 class="project-title">SUNWAY LAKEHILLS</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Taman Molek, 新山</span>
+                        </div>
+                        <p class="project-description">豪华湖景阁楼公寓，拥有壮丽湖景和现代化设计，提供高品质生活体验。</p>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">湖景景观</span>
+                            <span class="feature-tag">阁楼设计</span>
+                            <span class="feature-tag">豪华设施</span>
+                            <span class="feature-tag">休闲生活</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelSLH" target="_blank" class="project-link">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp咨询
+                            </a>
+                            <button class="learn-more-btn" data-project="sunway-lakehills">
+                                <i class="fas fa-info-circle"></i>
+                                了解更多
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- KSL JEWEL 详情模态框 -->
+    <div class="project-detail-modal" id="ksl-jewel-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>KSL JEWEL - Permas Jaya 豪华公寓</h2>
+                <p class="modal-subtitle">新山Permas Jaya地区最值得投资的房产项目</p>
+                <button class="close-modal" data-modal="ksl-jewel-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 很多人都说新山 Permas Jaya 很塞车🚘</strong></p>
+                        <p><strong>但真正做功课的人都会说: "这里很稳"‼️</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选 Permas Jaya？</h3>
+                        <div class="highlight-box">
+                            <ul class="highlight-list">
+                                <li><strong>房价比 Austin 更稳、涨幅更健康</strong></li>
+                                <li><strong>成熟社区</strong>，商店、餐饮、银行、超市一应俱全</li>
+                                <li><strong>靠近海边</strong>，环境舒适、治安口碑好</li>
+                                <li><strong>主要道路通畅</strong>，通往 CIQ / 各大商圈都方便</li>
+                                <li><strong>RM40万以内</strong>，能选的优质项目不多，而 Permas Jaya 是其中表现最稳的区域</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🏡 项目亮点</h3>
+                        <p><strong>每月供期从 RM1,100 – RM1,850</strong></p>
+                        <div class="highlight-box">
+                            <ul class="highlight-list">
+                                <li><strong>新推出单位</strong>，现代设计</li>
+                                <li><strong>适合首购族、年轻夫妻、小家庭</strong></li>
+                                <li><strong>投资者也爱</strong>：租金稳定、空置率低</li>
+                                <li><strong>周边就业机会高</strong>，租客来源多（工厂区、商圈、马新通勤族）</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🎯 最适合谁？</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">👨💼</div>
+                                <div class="benefit-text">马新通勤族 — 生活机能满分</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">👨👩👧</div>
+                                <div class="benefit-text">小家庭 — 安静舒适、学校多、配套完善</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💼</div>
+                                <div class="benefit-text">投资者 — 区域稳、租金回酬扎实</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏠</div>
+                                <div class="benefit-text">首购族 — 房价压力小、生活质量高</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🏡 投资价值</h3>
+                        <p><strong>RM400k 以内，新山最好卖的单位之一</strong></p>
+                        <p>不想冒险、不想踩雷，Permas Jaya 是真正适合自住 & 投资的黄金区域。</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📱 立即预约咨询</h3>
+                        <div class="whatsapp-link-box">
+                            <h4>那么好康，还等什么？</h4>
+                            <p>立即点击预约咨询：</p>
+                            <a href="https://wa.me/60167707878?text=pmcelpermasJW" target="_blank" class="whatsapp-link">
+                                <i class="fab fa-whatsapp"></i> WhatsApp 预约看房
+                            </a>
+                            <p style="margin-top: 15px; font-size: 0.9em;">
+                                或复制链接：<br>
+                                https://wa.me/60167707878?text=pmcelpermasJW
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📸 项目示意图</h3>
+                        <div class="image-gallery">
+                            <img src="JEWEL KSL/JW3.jpeg" alt="KSL JEWEL外观" class="gallery-image">
+                            <img src="JEWEL KSL/JW2.jpeg" alt="公寓客厅" class="gallery-image">
+                            <img src="JEWEL KSL/JW4.jpeg" alt="卧室设计" class="gallery-image">
+                            <img src="JEWEL KSL/JW5.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="JEWEL KSL/JW6.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="JEWEL KSL/JW7.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="JEWEL KSL/JW8.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="JEWEL KSL/JW10.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="JEWEL KSL/JW1.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="JEWEL KSL/JW11.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="JEWEL KSL/JW12.jpeg" alt="社区设施" class="gallery-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUNWAY MAJESTIC 详情模态框 -->
+    <div class="project-detail-modal" id="sunway-majestic-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SUNWAY MAJESTIC - SOHO 公寓</h2>
+                <p class="modal-subtitle">新山靠近RTS最值得居住的环境 | 知名发展商Sunway项目</p>
+                <button class="close-modal" data-modal="sunway-majestic-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <h3>🚀🚀 项目亮点</h3>
+                        <p><strong>#新山靠经RTS最值得居住的环境</strong></p>
+                        <p><strong>#知名发展商Sunway项目🚀🚀</strong></p>
+                        
+                        <div class="price-tag">
+                            每月供期从 RM1,700 - RM2,300 🤩
+                        </div>
+                        
+                        <p><strong>pm我，绝对不会后悔🤩</strong></p>
+                        <p><strong>有兴趣了解，马上联系：</strong></p>
+                        <p><strong>https://wa.me/60167707878?text=pmcelSWM</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📣 别滑！我们公寓楼下就有 👇</h3>
+                        <div class="highlight-box">
+                            <ul class="highlight-list">
+                                <li><strong>🏢 Shopping Mall</strong> — 早餐、晚餐、买日用品，全走路搞定</li>
+                                <li><strong>🚶 3km 到 CIQ</strong> — 新马通勤分分钟，省下你大把时间</li>
+                                <li><strong>💰 2房，RM400k 起</strong> — 性价比爆表‼️</li>
+                                <li><strong>✅ 合法 AirBnB</strong> — 收租民宿轻松无压力</li>
+                                <li><strong>🎁 送冷气 + Move In Bonus</strong> - 剩下一大笔钱💰</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>✨ 一套房子，三种玩法：</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">1️⃣ 当家住</div>
+                                <p>生活便利到爆</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">2️⃣ 当办公室 / 工作室</div>
+                                <p>通勤零成本</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">3️⃣ 做合法民宿</div>
+                                <p>一边生活一边赚钱</p>
+                            </div>
+                        </div>
+                        <p><strong>投资弹性大、可玩性高，这就是我们 Sunway公寓的魅力 ✨</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 地点与配套</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📍</div>
+                                <div class="benefit-text">新山市中心（成熟商圈，周边生活配套齐全）</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">价格：RM4XXK 左右，轻松上车</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏫</div>
+                                <div class="benefit-text">学校：环绕 2km 内有十间中学和小学（包括：宽柔二小）</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏥</div>
+                                <div class="benefit-text">医院：5km 内有四间医院（包括：1km到 KPJ Johor Specialist）</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>✨ 亮点特色：</h3>
+                        <div class="highlight-box">
+                            <ul class="highlight-list">
+                                <li>✅ 永久地契 / 产权灵活</li>
+                                <li>✅ 可申请商业用途，轻松开展生意</li>
+                                <li>✅ 高租金回报，投资保值</li>
+                                <li>✅ 周边银行、商场、咖啡馆、餐饮一应俱全</li>
+                                <li>✅ 交通便利，主要干道直达</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💡 想象一下——</h3>
+                        <p>早上在家楼下的咖啡馆喝杯拿铁，</p>
+                        <p>中午走几步就能进办公室开会，</p>
+                        <p>晚上回家，转个身就是温暖的家。</p>
+                        <p><strong>一套公寓，搞定生活 + 工作 + 投资三重需求</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <p><strong>⚠️ 重点是：价位、优惠、户型都很抢手，晚一步就被别人签走了！</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📲 赶快找我：</h3>
+                        <p><strong>Celine 016-7707878</strong></p>
+                        <p>或</p>
+                        <p><strong>点击以下链接🔗</strong></p>
+                        <p>https://wa.me/60167707878?text=pmcelSWM</p>
+                        <p>https://wa.me/60167707878?text=pmcelSWM</p>
+                        <p>https://wa.me/60167707878?text=pmcelSWM</p>
+                    </div>
+                    
+                    <div class="whatsapp-link-box">
+                        <h4>立即咨询 Sunway Majestic 详情</h4>
+                        <a href="https://wa.me/60167707878?text=pmcelSWM" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp 立即咨询
+                        </a>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📸 项目示意图</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY MAJESTIC/SWM01.jpeg" alt="SUNWAY MAJESTIC外观" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM01.1.jpeg" alt="SOHO办公空间" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM1.jpeg" alt="现代厨房" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM2.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM3.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM4.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM5.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM6.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM7.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM8.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM9.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM10.jpeg" alt="社区设施" class="gallery-image">
+                        </div>
+                    </div>
+                    
+                    <!-- 视频部分 - 修复后的正确代码 -->
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY MAJESTIC/SWMVIDEO1.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY MAJESTIC/SWMVIDEO2.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 2</p>
+                            </div>
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY MAJESTIC/SWMVIDEO3.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUNWAY LAKEHILLS 详情模态框 -->
+    <div class="project-detail-modal" id="sunway-lakehills-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SUNWAY LAKEHILLS - 湖景阁楼公寓</h2>
+                <p class="modal-subtitle">富人区的平价梦想屋 | Taman Molek豪华社区</p>
+                <button class="close-modal" data-modal="sunway-lakehills-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <h3>💡 项目介绍</h3>
+                        <p><strong>#湖景隔楼公寓，</strong></p>
+                        <p><strong>#价格从RM510k起 就能在豪华成熟区 #Taman_Molek 拥有属于你的小窝 🏡</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🚗 选择的重要性</h3>
+                        <p><strong>如果是你，</strong></p>
+                        <p><strong>你会选择住在天天塞车的地段，</strong></p>
+                        <p><strong>还是塞完车回到一个安静又舒服的家？</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🏢 社区优势</h3>
+                        <div class="highlight-box">
+                            <h4>社区非常低密度</h4>
+                            <p>3栋楼一共1200户，</p>
+                            <p>还有多达6重保安系统，</p>
+                            <p>安静、安全、私密感满满！</p>
+                            <p><strong>每天回家都是一种享受 🧘‍♀️</strong></p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💳 Taman Molek 生活便利</h3>
+                        <p>这里聚集了 16间银行，</p>
+                        <p>是新山最集中的金融区！</p>
+                        <p>办事、汇款、见客户都超方便～</p>
+                        <p>加上 Aeon Tebrau、IKEA、Toppen</p>
+                        <p>都在10公里范围内，生活机能满分💯</p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🏠 户型选择多样</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">2房</div>
+                                <div class="benefit-text">适合单身或情侣</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">3房</div>
+                                <div class="benefit-text">适合小家庭</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">4房</div>
+                                <div class="benefit-text">适合大家庭</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">Sky Bungalow</div>
+                                <div class="benefit-text">奢华空中别墅</div>
+                            </div>
+                        </div>
+                        <p><strong>不管你是单身、情侣、还是一家大小，都能找到属于自己的空间。</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>😍 LOFT 复式单位</h3>
+                        <div class="highlight-box">
+                            <p>我自己最心动的是这款 LOFT 复式单位 😍</p>
+                            <p>挑高4.8米的大空间，一进门就超有气势，</p>
+                            <p>楼上楼下动静分离，大落地窗洒进阳光，</p>
+                            <p>不管工作还是休息都特别疗愈☀️</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🏡 投资与生活</h3>
+                        <p>婚前自住、婚后出租，</p>
+                        <p>这不仅是一间家，更是你稳稳的底气。</p>
+                        <p><strong>🏡 房子不只是空间，</strong></p>
+                        <p><strong>它是你生活的起点，也是生活的方式。</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>👀 预约看房</h3>
+                        <p><strong>想亲眼看看什么叫「富人区的平价梦想屋」？</strong></p>
+                        <p><strong>💬 记得私信我，让我带你去看看！</strong></p>
+                        <p>https://wa.me/60167707878?text=pmcelSLH</p>
+                        <p>https://wa.me/60167707878?text=pmcelSLH</p>
+                        <p>https://wa.me/60167707878?text=pmcelSLH</p>
+                    </div>
+                    
+                    <div class="whatsapp-link-box">
+                        <h4>立即预约看房</h4>
+                        <a href="https://wa.me/60167707878?text=pmcelSLH" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp 预约看房
+                        </a>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📸 项目示意图</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY LAKEHILLS/SLH2.jpeg" alt="湖景景观" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH3.jpeg" alt="LOFT复式设计" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH4.jpeg" alt="豪华客厅" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH5.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH6.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH7.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH8.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH9.jpeg" alt="社区设施" class="gallery-image">
+                        </div>
+                    </div>
+
+                     <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO1.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO2.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签 
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO3.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO4.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO5.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签               
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 服务部分 -->
+    <section class="services-section" id="services">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>专业服务</h2>
+                <p>提供全方位的房地产服务，满足您的各种需求</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service-title">住宅房地产</h3>
+                    <p class="service-description">公寓、排屋、独立式洋房、豪华别墅买卖与租赁，新房项目推荐与选购咨询。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-title">商业房地产</h3>
+                    <p class="service-description">商铺、办公室、工厂买卖与租赁，商业地产投资回报分析，购物中心咨询。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">投资咨询</h3>
+                    <p class="service-description">房地产投资组合规划，市场趋势分析与预测，税务与法律咨询推荐。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="service-title">物业评估</h3>
+                    <p class="service-description">专业房产估价服务，市场分析报告，投资潜力评估，风险评估。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="service-title">谈判服务</h3>
+                    <p class="service-description">专业谈判服务，确保您获得最佳交易条件，最大化投资回报。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="service-title">法律支持</h3>
+                    <p class="service-description">房地产交易法律咨询，合同审核，产权转移协助，法律风险防范。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 联系部分 -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-title">
+                <h2>联系我</h2>
+                <p>如果您有任何房地产相关问题，请随时与我联系</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>电话</h4>
+                                <p>016-7707878</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>邮箱</h4>
+                                <p>celinelimcv@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>服务区域</h4>
+                                <p>柔佛新山及周边地区</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>工作时间</h4>
+                                <p>周一至周五: 9:00 AM - 6:00 PM<br>周六: 10:00 AM - 3:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/profile.php?id=100095650114677" target="_blank" class="social-link">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.wasap.my/60167707878/" target="_blank" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="您的邮箱" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="您的电话">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>选择您感兴趣的服务</option>
+                                <option value="residential">住宅房地产</option>
+                                <option value="commercial">商业房地产</option>
+                                <option value="investment">投资咨询</option>
+                                <option value="valuation">物业评估</option>
+                                <option value="ksl-jewel">KSL JEWEL 项目</option>
+                                <option value="sunway-majestic">SUNWAY MAJESTIC 项目</option>
+                                <option value="sunway-lakehills">SUNWAY LAKEHILLS 项目</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="您的留言" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">发送信息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Celine Lim</div>
+            <p style="max-width:700px;margin:0 auto 30px;opacity:0.9;">专业房地产顾问，拥有15年以上柔佛新山地区销售经验，为您提供专业的房地产解决方案。</p>
+            
+            <div class="footer-links">
+                <a href="#home">首页</a>
+                <a href="#about">关于我</a>
+                <a href="#projects">精选项目</a>
+                <a href="#services">服务</a>
+                <a href="#contact">联系</a>
+            </div>
+            
+            <div class="social-links" style="justify-content:center;margin-bottom:30px;">
+                <a href="https://www.facebook.com/profile.php?id=100095650114677" target="_blank" class="social-link">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.wasap.my/60167707878/" target="_blank" class="social-link">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 Celine Lim - 专业房地产顾问. 保留所有权利. | 电话: 016-7707878 | 邮箱: celinelimcv@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // 移动端菜单切换
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.toggle('active');
+        });
+        
+        // 点击移动端菜单链接后关闭菜单
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+            });
+        });
+        
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            }
+            
+            // 更新导航链接状态
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // 项目详情模态框功能
+        const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+        const closeModalBtns = document.querySelectorAll('.close-modal');
+        const modals = document.querySelectorAll('.project-detail-modal');
+        
+        // 打开模态框
+        learnMoreBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const project = this.getAttribute('data-project');
+                const modal = document.getElementById(`${project}-modal`);
+                
+                if (modal) {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                }
+            });
+        });
+        
+        // 关闭模态框
+        closeModalBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                
+                if (modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // 恢复背景滚动
+                }
+            });
+        });
+        
+        // 点击模态框背景关闭
+        modals.forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // ESC键关闭模态框
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // 更新导航链接状态
+                    document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 联系表单提交
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('感谢您的咨询！我将尽快与您联系。');
+            this.reset();
+        });
+        
+        // WhatsApp链接点击跟踪（可选）
+        document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
+            link.addEventListener('click', function() {
+                const projectName = this.textContent.includes('KSL') ? 'KSL JEWEL' : 
+                                   this.textContent.includes('MAJESTIC') ? 'SUNWAY MAJESTIC' : 
+                                   'SUNWAY LAKEHILLS';
+                console.log(`用户点击了${projectName}的WhatsApp咨询链接`);
+            });
+        });
+    </script>
+</body>
+</html>
