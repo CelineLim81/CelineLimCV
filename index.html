@@ -3,36 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celine Lim | 专业房地产顾问 & 项目展示</title>
+    <meta name="description" content="Celine Lim - 柔佛新山专业房地产顾问，15年以上经验，提供住宅、商业房地产销售与投资咨询。">
+    <meta name="keywords" content="柔佛新山房地产, 房地产顾问, 马来西亚房地产, 投资咨询, 住宅公寓, 商业地产">
+    <title>Celine Lim | 柔佛新山专业房地产顾问 & 投资咨询</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #8B4513;
-            --secondary-color: #DAA520;
-            --accent-color: #A0522D;
-            --light-color: #FAF0E6;
+            --primary-color: #E65100; /* 深橘色 */
+            --secondary-color: #FF9800; /* 橙色 */
+            --accent-color: #FFB74D; /* 浅橙色 */
+            --light-color: #FFF3E0; /* 浅橘色背景 */
             --dark-color: #333333;
             --white-color: #FFFFFF;
-            --gray-color: #f5f5f5;
-            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
+            --gray-color: #FAFAFA;
+            --text-color: #333333;
+            --shadow: 0 8px 30px rgba(230, 81, 0, 0.08);
+            --shadow-hover: 0 15px 40px rgba(230, 81, 0, 0.12);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --border-radius: 12px;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
         }
         
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
         
         body {
-            line-height: 1.6;
-            color: var(--dark-color);
+            font-family: 'Montserrat', 'Microsoft YaHei', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
             background-color: var(--white-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
         }
         
         /* 导航栏 */
@@ -41,65 +58,150 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: var(--shadow);
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             z-index: 1000;
             padding: 15px 0;
             transition: var(--transition);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
         }
         
         .navbar-container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 0 30px;
         }
         
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
         }
         
-        .logo i {
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white-color);
+            font-size: 1.2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+        
+        .logo-text span {
             color: var(--secondary-color);
         }
         
         .nav-links {
             display: flex;
-            gap: 30px;
+            gap: 35px;
+            align-items: center;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--dark-color);
-            font-weight: 600;
-            transition: var(--transition);
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
             position: relative;
+            padding: 5px 0;
+            transition: var(--transition);
         }
         
-        .nav-links a:hover {
-            color: var(--primary-color);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
         }
         
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover,
         .nav-links a.active {
             color: var(--primary-color);
         }
         
-        .nav-links a.active::after {
+        .nav-contact-btn {
+            background: linear-gradient(135deg, var(--secondary-color), #FF8F00);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.25);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .nav-contact-btn::before {
             content: '';
             position: absolute;
-            bottom: -5px;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
-            background-color: var(--secondary-color);
+            height: 100%;
+            background: linear-gradient(135deg, #FF8F00, #FF6F00);
+            z-index: -1;
+            transition: transform 0.5s ease;
+            transform: translateX(-100%);
+        }
+
+        .nav-contact-btn:hover::before {
+            transform: translateX(0);
+        }
+
+        .nav-contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 152, 0, 0.4);
+        }
+
+        .nav-contact-btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+        }
+
+        .nav-contact-btn i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-contact-btn:hover i {
+            transform: translateX(3px);
         }
         
         .mobile-menu-btn {
@@ -109,115 +211,271 @@
             font-size: 1.5rem;
             color: var(--primary-color);
             cursor: pointer;
+            z-index: 1001;
         }
         
         /* Hero部分 */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(230, 81, 0, 0.85) 0%, rgba(255, 152, 0, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: var(--white-color);
-            padding: 0 20px;
-            margin-top: 70px;
+            padding: 120px 30px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 60%, rgba(255, 255, 255, 0.1) 100%);
         }
         
         .hero-content {
-            max-width: 800px;
+            max-width: 850px;
+            position: relative;
+            z-index: 1;
+            animation: fadeUp 1s ease-out;
+        }
+        
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
+            font-size: 3.8rem;
+            margin-bottom: 25px;
             font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
         
         .cta-button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            padding: 15px 35px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--white-color);
+            color: var(--primary-color);
+            padding: 16px 38px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: var(--transition);
-            border: 2px solid var(--secondary-color);
+            border: 2px solid var(--white-color);
+            min-width: 180px;
         }
         
         .cta-button:hover {
             background-color: transparent;
-            color: var(--secondary-color);
+            color: var(--white-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
         }
         
-        /* 关于部分 */
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--white-color);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button.secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--white-color);
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white-color);
+            display: block;
+            line-height: 1;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            letter-spacing: 1px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 关于部分 - 优化背景 */
         .about-section {
-            padding: 100px 20px;
-            background-color: var(--gray-color);
+            padding: 120px 30px;
+            background: linear-gradient(135deg, #FFF3E0 0%, #FFECB3 100%);
+            position: relative;
         }
         
         .section-container {
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
         }
         
-        .section-title {
+        .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
+            position: relative;
         }
         
-        .section-title h2 {
-            font-size: 2.5rem;
+        /* 统一所有部分的副标题样式 */
+        .section-subtitle {
             color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             margin-bottom: 15px;
+            display: block;
+            position: relative;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: rgba(230, 81, 0, 0.1);
+            display: inline-block;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
         
-        .section-title h2::after {
+        .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 100px;
             height: 3px;
             background-color: var(--secondary-color);
         }
         
-        .section-title p {
-            color: #666;
+        .section-description {
+            color: #5D4037;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 30px auto 0;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 500;
         }
         
         .about-content {
             display: flex;
-            gap: 50px;
+            gap: 60px;
             align-items: center;
         }
         
         .about-image {
             flex: 1;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
+            position: relative;
         }
         
-        .about-image img {
+        .about-image-main {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .about-image-main img {
             width: 100%;
-            height: auto;
+            height: 500px;
+            object-fit: cover;
             display: block;
+            transition: transform 1s ease;
+        }
+        
+        .about-image-main:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-image-badge {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 250px;
+            text-align: center;
+        }
+        
+        .badge-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white-color);
+            line-height: 1;
+        }
+        
+        .badge-text {
+            font-size: 0.9rem;
+            color: var(--white-color);
+            font-weight: 600;
+            margin-top: 5px;
         }
         
         .about-text {
@@ -225,156 +483,304 @@
         }
         
         .about-text h3 {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
         }
         
         .about-text p {
-            margin-bottom: 20px;
-            color: #555;
+            margin-bottom: 25px;
+            color: #5D4037;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            font-weight: 500;
         }
         
-        .stats {
+        .about-highlights {
+            margin-top: 40px;
+        }
+        
+        .highlight-item {
             display: flex;
-            gap: 30px;
-            margin-top: 30px;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
         }
         
-        .stat-item {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            display: block;
-        }
-        
-        .stat-label {
+        .highlight-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(230, 81, 0, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--primary-color);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .highlight-content h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
             font-weight: 600;
         }
         
-        /* 项目部分 */
-        .projects-section {
-            padding: 100px 20px;
+        .highlight-content p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: #5D4037;
+            font-weight: 500;
+        }
+        
+        .credentials {
+            margin-top: 50px;
             background-color: var(--white-color);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--accent-color);
+        }
+        
+        .credentials h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+        
+        .credential-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(255, 183, 77, 0.1);
+            border-radius: 8px;
+        }
+        
+        .credential-item i {
+            color: var(--primary-color);
+        }
+        
+        .credential-item span {
+            color: #5D4037;
+            font-weight: 500;
+        }
+        
+        /* 项目部分 - 优化背景 */
+        .projects-section {
+            padding: 120px 30px;
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 50%, #FFE0B2 100%);
+        }
+        
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--white-color);
         }
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 35px;
         }
         
         .project-card {
-            border-radius: 15px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
             background-color: var(--white-color);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid var(--accent-color);
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--secondary-color);
+        }
+        
+        .project-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
         }
         
         .project-image {
-            height: 250px;
+            height: 270px;
             overflow: hidden;
+            position: relative;
+        }
+        
+        .project-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.5) 100%);
         }
         
         .project-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition);
+            transition: transform 1s ease;
         }
         
         .project-card:hover .project-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
         
         .project-content {
-            padding: 25px;
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .project-category {
             display: inline-block;
-            background-color: var(--light-color);
+            background-color: rgba(230, 81, 0, 0.1);
             color: var(--primary-color);
             padding: 5px 15px;
-            border-radius: 50px;
-            font-size: 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
             margin-bottom: 15px;
         }
         
         .project-title {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            line-height: 1.3;
         }
         
         .project-location {
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
         }
         
         .project-description {
-            color: #666;
+            color: #5D4037;
             margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            font-weight: 500;
         }
         
         .project-features {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .feature-tag {
-            background-color: #f0f8ff;
-            color: #1e90ff;
-            padding: 5px 12px;
+            background-color: rgba(255, 183, 77, 0.2);
+            color: var(--primary-color);
+            padding: 6px 14px;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 500;
+            border: 1px solid rgba(255, 183, 77, 0.3);
+        }
+        
+        .project-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            background: rgba(255, 152, 0, 0.1);
+            padding: 10px 15px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        
+        .project-price span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #5D4037;
         }
         
         .project-actions {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
+            margin-top: auto;
         }
         
         .project-link {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--secondary-color);
+            background-color: var(--primary-color);
             color: var(--white-color);
             text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 50px;
+            padding: 14px 25px;
+            border-radius: 8px;
             font-weight: 600;
             transition: var(--transition);
             width: 100%;
             text-align: center;
-            gap: 8px;
+            gap: 10px;
         }
         
         .project-link:hover {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             transform: translateY(-3px);
-            gap: 12px;
         }
         
         .learn-more-btn {
@@ -384,13 +790,13 @@
             background-color: transparent;
             color: var(--primary-color);
             text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 50px;
+            padding: 14px 25px;
+            border-radius: 8px;
             font-weight: 600;
             transition: var(--transition);
             width: 100%;
             text-align: center;
-            gap: 8px;
+            gap: 10px;
             border: 2px solid var(--primary-color);
         }
         
@@ -400,6 +806,763 @@
             transform: translateY(-3px);
         }
         
+        /* 投资策略部分 - 增强标题显著性 */
+        .investment-section {
+            padding: 120px 30px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #FF8F00 100%);
+            color: var(--white-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .investment-section .section-subtitle {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white-color);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            letter-spacing: 2px;
+            padding: 10px 25px;
+        }
+        
+        .investment-section .section-title {
+            color: var(--white-color);
+        }
+        
+        .investment-section .section-title::after {
+            background-color: var(--white-color);
+        }
+        
+        .investment-section .section-description {
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .investment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .investment-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .investment-card:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: var(--white-color);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .investment-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white-color);
+            font-size: 1.8rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .investment-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--white-color);
+        }
+        
+        .investment-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* 服务部分 */
+        .services-section {
+            padding: 120px 30px;
+            background-color: var(--light-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+        }
+        
+        .service-card {
+            background-color: var(--white-color);
+            border-radius: var(--border-radius);
+            padding: 45px 35px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--accent-color);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--secondary-color);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(230, 81, 0, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--primary-color);
+            font-size: 2rem;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-icon {
+            background-color: rgba(230, 81, 0, 0.2);
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 18px;
+        }
+        
+        .service-description {
+            color: #5D4037;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-weight: 500;
+            flex-grow: 1;
+        }
+        
+        .service-features {
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .service-features li {
+            margin-bottom: 8px;
+            color: #5D4037;
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 20px;
+            font-weight: 500;
+        }
+        
+        .service-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        /* 联系部分 - 优化背景 */
+        .contact-section {
+            padding: 120px 30px;
+            background: linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-card {
+            background: var(--white-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(230, 81, 0, 0.08);
+            border: 2px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(230, 81, 0, 0.12);
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(230, 81, 0, 0.02), transparent 30%);
+            pointer-events: none;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .contact-header h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .contact-header p {
+            color: #5D4037;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .contact-header-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary-color), #FF8F00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px rgba(255, 152, 0, 0.3);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #FFF3E0;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .contact-item:hover {
+            background: var(--white-color);
+            transform: translateX(5px);
+            border-left-color: var(--secondary-color);
+            box-shadow: 0 8px 20px rgba(230, 81, 0, 0.08);
+        }
+
+        .contact-item.whatsapp-item {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(37, 211, 102, 0.05));
+            border-left-color: #25D366;
+        }
+
+        .contact-item.whatsapp-item:hover {
+            background: linear-gradient(135deg, rgba(37, 211, 102, 0.15), rgba(37, 211, 102, 0.08));
+        }
+
+        .contact-item.phone-item {
+            background: linear-gradient(135deg, rgba(230, 81, 0, 0.1), rgba(230, 81, 0, 0.05));
+            border-left-color: var(--primary-color);
+        }
+
+        .contact-item.phone-item:hover {
+            background: linear-gradient(135deg, rgba(230, 81, 0, 0.15), rgba(230, 81, 0, 0.08));
+        }
+
+        .contact-item.email-item {
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.1), rgba(255, 152, 0, 0.05));
+            border-left-color: var(--secondary-color);
+        }
+
+        .contact-item.email-item:hover {
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.15), rgba(255, 152, 0, 0.08));
+        }
+
+        .contact-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--white-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-color);
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-item.whatsapp-item .contact-icon {
+            background: #25D366;
+            color: white;
+            border-color: #25D366;
+        }
+
+        .contact-item.phone-item .contact-icon {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .contact-item.email-item .contact-icon {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .contact-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .contact-details p {
+            color: #5D4037;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .contact-details .phone-number {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        .contact-details .email-address {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .whatsapp-action {
+            margin-top: 15px;
+        }
+
+        .whatsapp-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-action-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .contact-hours {
+            margin-top: 40px;
+            background: linear-gradient(135deg, var(--primary-color), #FF8F00);
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--secondary-color);
+        }
+
+        .contact-hours::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+            border-radius: 50%;
+            transform: translate(30px, -30px);
+        }
+
+        .contact-hours h4 {
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-hours h4 i {
+            color: #FFECB3;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .social-links-contact {
+            display: flex;
+            gap: 15px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .social-link-contact {
+            width: 50px;
+            height: 50px;
+            background: var(--white-color);
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 2px solid var(--accent-color);
+        }
+
+        .social-link-contact:hover {
+            transform: translateY(-5px) rotate(5deg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link-contact.facebook:hover {
+            background: #1877F2;
+            color: white;
+            border-color: #1877F2;
+        }
+
+        .social-link-contact.whatsapp:hover {
+            background: #25D366;
+            color: white;
+            border-color: #25D366;
+        }
+
+        .social-link-contact.linkedin:hover {
+            background: #0077B5;
+            color: white;
+            border-color: #0077B5;
+        }
+
+        .social-link-contact.instagram:hover {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* 联系表单优化 */
+        .contact-form {
+            flex: 1;
+            background: var(--white-color);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(230, 81, 0, 0.08);
+            border: 2px solid var(--accent-color);
+        }
+
+        .form-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .form-header h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .form-header p {
+            color: #5D4037;
+            font-weight: 500;
+        }
+
+        .form-header-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), #FF8F00);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 8px 20px rgba(230, 81, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid #FFE0B2;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #FFF8E1;
+            color: #5D4037;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            background: var(--white-color);
+            box-shadow: 0 0 0 4px rgba(255, 152, 0, 0.1);
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23E65100' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 20px center;
+            padding-right: 50px;
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .submit-btn-contact {
+            background: linear-gradient(135deg, var(--primary-color), #FF8F00);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--primary-color);
+        }
+
+        .submit-btn-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary-color), #FF6F00);
+            z-index: 0;
+            transition: transform 0.5s ease;
+            transform: translateX(-100%);
+        }
+
+        .submit-btn-contact span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .submit-btn-contact i {
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn-contact:hover::before {
+            transform: translateX(0);
+        }
+
+        .submit-btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(230, 81, 0, 0.2);
+            border-color: var(--secondary-color);
+        }
+
+        .submit-btn-contact:hover i {
+            transform: translateX(5px);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 80px 30px 40px;
+            position: relative;
+        }
+        
+        .footer-content {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        
+        .footer-top {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-col h3 {
+            color: var(--white-color);
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-col p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-col .social-links {
+            margin-top: 20px;
+        }
+        
+        .newsletter-form {
+            margin-top: 20px;
+        }
+        
+        .newsletter-input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white-color);
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
         /* 项目详情模态框 */
         .project-detail-modal {
             display: none;
@@ -422,6 +1585,7 @@
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             animation: modalFadeIn 0.5s ease;
+            border: 3px solid var(--accent-color);
         }
         
         @keyframes modalFadeIn {
@@ -430,7 +1594,7 @@
         }
         
         .modal-header {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: var(--white-color);
             padding: 25px 30px;
             position: relative;
@@ -485,22 +1649,24 @@
         }
         
         .detail-section h4 {
-            color: var(--accent-color);
+            color: var(--primary-color);
             margin-bottom: 10px;
             font-size: 1.2rem;
         }
         
         .detail-section p {
             margin-bottom: 15px;
-            color: #555;
+            color: #5D4037;
+            font-weight: 500;
         }
         
         .highlight-box {
-            background-color: var(--light-color);
+            background-color: #FFF3E0;
             border-left: 5px solid var(--secondary-color);
             padding: 20px;
             margin: 20px 0;
             border-radius: 0 10px 10px 0;
+            border: 1px solid var(--accent-color);
         }
         
         .highlight-box h4 {
@@ -517,6 +1683,8 @@
             margin-bottom: 10px;
             padding-left: 25px;
             position: relative;
+            color: #5D4037;
+            font-weight: 500;
         }
         
         .highlight-list li:before {
@@ -528,13 +1696,14 @@
         }
         
         .price-tag {
-            background-color: #ffebee;
-            color: #d32f2f;
+            background-color: #FFECB3;
+            color: var(--primary-color);
             padding: 8px 15px;
             border-radius: 20px;
             font-weight: bold;
             display: inline-block;
             margin: 10px 0;
+            border: 2px solid var(--accent-color);
         }
         
         .benefits-grid {
@@ -545,11 +1714,11 @@
         }
         
         .benefit-item {
-            background-color: #f8f9fa;
+            background-color: #FFF8E1;
             padding: 15px;
             border-radius: 10px;
             text-align: center;
-            border: 1px solid #e9ecef;
+            border: 2px solid var(--accent-color);
         }
         
         .benefit-icon {
@@ -571,7 +1740,7 @@
         }
         
         .play-type {
-            background-color: #e8f5e9;
+            background-color: #E8F5E9;
             padding: 15px;
             border-radius: 10px;
             border-left: 5px solid #4caf50;
@@ -590,6 +1759,7 @@
             border-radius: 10px;
             text-align: center;
             margin: 30px 0;
+            border: 2px solid #128C7E;
         }
         
         .whatsapp-link-box h4 {
@@ -607,6 +1777,7 @@
             font-weight: 600;
             margin-top: 10px;
             transition: var(--transition);
+            border: 2px solid white;
         }
         
         .whatsapp-link:hover {
@@ -628,17 +1799,19 @@
             object-fit: cover;
             border-radius: 10px;
             transition: var(--transition);
+            border: 2px solid var(--accent-color);
         }
         
         .gallery-image:hover {
             transform: scale(1.05);
+            border-color: var(--secondary-color);
         }
         
-        /* 视频样式 - 新增 */
+        /* 视频样式 */
         .video-section {
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #eee;
+            border-top: 2px solid var(--accent-color);
         }
         
         .videos-grid {
@@ -658,239 +1831,109 @@
             border-radius: 10px;
             background-color: #000;
             display: block;
+            border: 2px solid var(--accent-color);
         }
         
         .video-item p {
             margin-top: 8px;
             font-size: 0.9rem;
-            color: #666;
+            color: #5D4037;
+            font-weight: 500;
         }
-        
-        /* 服务部分 */
-        .services-section {
-            padding: 100px 20px;
-            background-color: var(--gray-color);
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: var(--white-color);
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background-color: var(--light-color);
+
+        /* 浮动联系按钮（移动端） */
+        .floating-contact-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
-        }
-        
-        .service-icon i {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-        }
-        
-        .service-title {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        
-        .service-description {
-            color: #666;
-        }
-        
-        /* 联系部分 */
-        .contact-section {
-            padding: 100px 20px;
-            background-color: var(--white-color);
-        }
-        
-        .contact-container {
-            display: flex;
-            gap: 50px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .contact-info {
-            flex: 1;
-        }
-        
-        .contact-card {
-            background-color: var(--light-color);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--white-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-        
-        .contact-details h4 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-        }
-        
-        .contact-details p {
-            color: #666;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .social-link {
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            z-index: 999;
             text-decoration: none;
+            transition: all 0.3s ease;
+            display: none;
+            border: 2px solid white;
+        }
+
+        .floating-contact-btn:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        /* 移动端菜单 */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 300px;
+            height: 100%;
+            background-color: var(--white-color);
+            box-shadow: var(--shadow-hover);
+            padding: 100px 30px 40px;
             transition: var(--transition);
+            z-index: 999;
+            overflow-y: auto;
+            border-right: 3px solid var(--accent-color);
         }
         
-        .social-link:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-5px);
+        .mobile-nav.active {
+            left: 0;
         }
         
-        .contact-form {
-            flex: 1;
+        .mobile-nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
         
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-        }
-        
-        textarea.form-control {
-            height: 150px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background-color: var(--secondary-color);
-            color: var(--white-color);
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 1rem;
+        .mobile-nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
             font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background-color: var(--primary-color);
-        }
-        
-        /* 页脚 */
-        footer {
-            background-color: var(--primary-color);
-            color: var(--white-color);
-            padding: 60px 20px 30px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: var(--white-color);
-            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            border-bottom: 2px solid #FFE0B2;
             transition: var(--transition);
         }
         
-        .footer-links a:hover {
+        .mobile-nav-links a:hover,
+        .mobile-nav-links a.active {
             color: var(--secondary-color);
+            padding-left: 10px;
+            border-bottom-color: var(--secondary-color);
         }
         
-        .copyright {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.7);
+        .mobile-close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
         }
         
         /* 响应式设计 */
-        @media (max-width: 992px) {
-            .about-content, .contact-container {
-                flex-direction: column;
+        @media (max-width: 1200px) {
+            .navbar-container,
+            .section-container {
+                padding: 0 20px;
             }
-            
-            .hero h1 {
-                font-size: 2.8rem;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container {
+                flex-direction: column;
             }
             
             .nav-links {
@@ -901,173 +1944,264 @@
                 display: block;
             }
             
-            .mobile-nav {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white-color);
-                box-shadow: var(--shadow);
-                padding: 20px;
-                display: none;
-                z-index: 999;
+            .hero h1 {
+                font-size: 3rem;
             }
             
-            .mobile-nav.active {
-                display: block;
+            .projects-grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             }
-            
-            .mobile-nav-links {
+
+            .floating-contact-btn {
                 display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .mobile-nav-links a {
-                text-decoration: none;
-                color: var(--dark-color);
-                font-weight: 600;
-                padding: 10px 0;
-                border-bottom: 1px solid #eee;
-            }
-            
-            .mobile-nav-links a.active {
-                color: var(--primary-color);
-            }
-            
-            .modal-content {
-                margin: 20px auto;
-            }
-            
-            .benefits-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .videos-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .project-video {
-                height: 180px;
             }
         }
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
                 font-size: 1.1rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
+            .section-title {
+                font-size: 2.2rem;
             }
             
-            .stats {
+            .cta-buttons {
                 flex-direction: column;
-                gap: 20px;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
             }
             
             .projects-grid {
                 grid-template-columns: 1fr;
             }
             
-            .modal-body {
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-card,
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .contact-item {
                 padding: 20px;
-                max-height: 80vh;
             }
             
-            .image-gallery {
-                grid-template-columns: repeat(2, 1fr);
+            .investment-grid {
+                grid-template-columns: 1fr;
             }
             
-            .project-video {
-                height: 160px;
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 100px 20px 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-section,
+            .projects-section,
+            .services-section,
+            .contact-section,
+            .investment-section {
+                padding: 80px 20px;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+            
+            .hero-stat-number {
+                font-size: 2.2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.9rem;
+                padding: 6px 15px;
             }
         }
     </style>
 </head>
 <body>
     <!-- 导航栏 -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="navbar-container">
-            <a href="#" class="logo">
-                <i class="fas fa-home"></i>
-                <span>Celine Lim</span>
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="logo-text">Celine <span>Lim</span></div>
             </a>
             
             <div class="nav-links">
                 <a href="#home" class="active">首页</a>
                 <a href="#about">关于我</a>
                 <a href="#projects">精选项目</a>
-                <a href="#services">服务</a>
-                <a href="#contact">联系</a>
+                <a href="#investment">投资策略</a>
+                <a href="#services">专业服务</a>
+                <a href="#contact" class="nav-contact-btn">
+                    <i class="fas fa-phone-alt"></i>
+                    立即咨询
+                </a>
             </div>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
-        
-        <!-- 移动端菜单 -->
-        <div class="mobile-nav" id="mobileNav">
-            <div class="mobile-nav-links">
-                <a href="#home" class="active">首页</a>
-                <a href="#about">关于我</a>
-                <a href="#projects">精选项目</a>
-                <a href="#services">服务</a>
-                <a href="#contact">联系</a>
-            </div>
-        </div>
     </nav>
+    
+    <!-- 移动端菜单 -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-close-btn" id="mobileCloseBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-nav-links">
+            <a href="#home" class="active">首页</a>
+            <a href="#about">关于我</a>
+            <a href="#projects">精选项目</a>
+            <a href="#investment">投资策略</a>
+            <a href="#services">专业服务</a>
+            <a href="#contact">立即咨询</a>
+        </div>
+    </div>
     
     <!-- Hero部分 -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>专业房地产顾问</h1>
-            <p>在柔佛新山地区拥有15年以上销售经验，为您提供专业的房地产咨询与服务</p>
-            <a href="#projects" class="cta-button">查看精选项目</a>
+            <span class="hero-badge">柔佛新山房地产专家</span>
+            <h1>专业房地产顾问<br>Celine Lim</h1>
+            <p>拥有超过15年的柔佛新山地区房地产经验，提供全方位的房地产销售、投资咨询和市场分析服务。专注于为客户创造最大价值，实现投资与居住的双重目标。</p>
+            
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button">
+                    <i class="fas fa-building"></i>
+                    查看精选项目
+                </a>
+                <a href="#contact" class="cta-button secondary">
+                    <i class="fas fa-phone-alt"></i>
+                    免费咨询预约
+                </a>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">15+</span>
+                    <span class="hero-stat-label">年专业经验</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">500+</span>
+                    <span class="hero-stat-label">成功交易</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">1000+</span>
+                    <span class="hero-stat-label">满意客户</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">98%</span>
+                    <span class="hero-stat-label">客户满意度</span>
+                </div>
+            </div>
         </div>
     </section>
     
-    <!-- 关于部分 -->
+    <!-- 关于部分 - 优化背景 -->
     <section class="about-section" id="about">
         <div class="section-container">
-            <div class="section-title">
-                <h2>关于 Celine Lim</h2>
-                <p>专业房地产顾问，专注于柔佛新山地区的房地产销售与投资咨询</p>
+            <div class="section-header">
+                <!-- 副标题在上方 -->
+                <span class="section-subtitle">专业背景</span>
+                <!-- 主标题在下方 -->
+                <h2 class="section-title">关于 Celine Lim</h2>
+                <p class="section-description">作为一名深耕柔佛新山地区超过15年的房地产专家，我专注于为客户提供最专业的房地产解决方案，帮助投资者和个人家庭实现他们的房产梦想。</p>
             </div>
             
             <div class="about-content">
                 <div class="about-image">
-                    <!-- 图片占位符 - 替换为您的照片 -->
-                    <div style="width:100%;height:500px;background:linear-gradient(45deg, #f8f5f0, #e8e1d5);display:flex;flex-direction:column;justify-content:center;align-items:center;color:#8B4513;text-align:center;">
-                        <i class="fas fa-user-tie" style="font-size:5rem;margin-bottom:20px;"></i>
-                        <h3 style="font-size:1.5rem;">Celine Lim</h3>
-                        <p><img src="图片_20260115163910_1_1.jpg" style="width:100%;height:auto;max-height:400px;object-fit:cover;"></p>
+                    <div class="about-image-main">
+                        <img src="图片_20260115163910_1_1.jpg" alt="Celine Lim 专业房地产顾问">
+                    </div>
+                    <div class="about-image-badge">
+                        <div class="badge-number">15+</div>
+                        <div class="badge-text">年房地产经验</div>
                     </div>
                 </div>
                 
                 <div class="about-text">
-                    <h3>15年专业房地产经验</h3>
-                    <p>您好，我是Celine Lim，一名在柔佛新山地区拥有超过15年经验的资深房地产顾问。我专注于柔佛新山地区的住宅、商业和工业房地产销售与投资咨询。</p>
-                    <p>凭借对本地市场的深刻理解和广泛的行业网络，我致力于为客户提供最专业的房地产解决方案。我始终坚信，房地产不仅是交易，更是实现梦想和创造价值的过程。</p>
-                    <p>我熟悉柔佛新山各个地区的房地产市场动态、发展趋势和投资潜力，能够为客户提供精准的市场分析和专业的投资建议。</p>
+                    <h3>柔佛新山房地产市场的专业洞察</h3>
+                    <p>凭借对柔佛新山房地产市场的深刻理解和丰富的实践经验，我能够为客户提供精准的市场分析、投资策略和个性化解决方案。从住宅公寓到商业地产，从首次购房到投资组合优化，我致力于为客户创造最大价值。</p>
+                    <p>我的服务理念是：真诚、专业、尽责。我深知房地产交易对每个家庭和投资者的重要性，因此我会为每一位客户提供全方位的支持，从前期咨询、市场分析、房产筛选到交易谈判和后续服务。</p>
                     
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">年经验</span>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>市场分析与预测</h4>
+                                <p>基于15年经验的市场洞察和数据分析能力</p>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">完成交易</span>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>专业谈判技巧</h4>
+                                <p>为客户争取最佳交易条件和最大利益</p>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">1000+</span>
-                            <span class="stat-label">满意客户</span>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="highlight-content">
+                                <h4>广泛行业网络</h4>
+                                <p>与开发商、银行、律师的紧密合作关系</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="credentials">
+                        <h4>专业资质与认证</h4>
+                        <div class="credential-list">
+                            <div class="credential-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>马来西亚房地产中介执照</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>房地产投资分析师认证</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>专业谈判技巧认证</span>
+                            </div>
+                            <div class="credential-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>市场估值专家资格</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1075,112 +2209,132 @@
         </div>
     </section>
     
-    <!-- 项目部分 -->
+    <!-- 项目部分 - 优化背景 -->
     <section class="projects-section" id="projects">
         <div class="section-container">
-            <div class="section-title">
-                <h2>精选房地产项目</h2>
-                <p>探索柔佛新山地区的最新和精选房地产项目</p>
+            <div class="section-header">
+                <!-- 副标题在上方 -->
+                <span class="section-subtitle">精选推荐</span>
+                <!-- 主标题在下方 -->
+                <h2 class="section-title">优质房地产项目</h2>
+                <p class="section-description">精心筛选的柔佛新山地区优质房地产项目，满足不同投资者的需求和预算。</p>
+            </div>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">全部项目</button>
+                <button class="filter-btn" data-filter="apartment">豪华公寓</button>
+                <button class="filter-btn" data-filter="soho">SOHO公寓</button>
+                <button class="filter-btn" data-filter="penthouse">阁楼公寓</button>
+                <button class="filter-btn" data-filter="investment">投资型</button>
             </div>
             
             <div class="projects-grid">
                 <!-- 项目1: KSL JEWEL -->
-                <div class="project-card" data-category="apartment">
+                <div class="project-card" data-category="apartment investment">
+                    <div class="project-badge">热销中</div>
                     <div class="project-image">
-                        <img src="JEWEL KSL/JW9.jpeg" alt="KSL JEWEL公寓">
+                        <img src="JEWEL KSL/JW9.jpeg" alt="KSL JEWEL豪华公寓">
                     </div>
                     <div class="project-content">
-                        <span class="project-category">豪华公寓</span>
-                        <h3 class="project-title">KSL JEWEL</h3>
+                        <span class="project-category">豪华公寓 · 永久地契</span>
+                        <h3 class="project-title">KSL JEWEL - Permas Jaya</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Permas Jaya, 新山</span>
+                            <span>Permas Jaya, 新山成熟社区</span>
                         </div>
-                        <p class="project-description">位于Permas Jaya的豪华公寓项目，现代化设计，配备高端设施，投资与自住皆宜。</p>
+                        <p class="project-description">位于Permas Jaya核心地段的豪华公寓项目，现代化设计结合完善社区配套，投资自住两相宜，是新山地区最具潜力的房地产项目之一。</p>
                         
                         <div class="project-features">
-                            <span class="feature-tag">豪华设施</span>
                             <span class="feature-tag">成熟社区</span>
                             <span class="feature-tag">永久地契</span>
-                            <span class="feature-tag">投资潜力高</span>
+                            <span class="feature-tag">高租金回报</span>
+                            <span class="feature-tag">生活便利</span>
                         </div>
+                        
+                        <div class="project-price">RM 380,000 <span>起</span></div>
                         
                         <div class="project-actions">
                             <a href="https://wa.me/60167707878?text=pmcelpermasJW" target="_blank" class="project-link">
                                 <i class="fab fa-whatsapp"></i>
-                                WhatsApp咨询
+                                WhatsApp 即时咨询
                             </a>
                             <button class="learn-more-btn" data-project="ksl-jewel">
                                 <i class="fas fa-info-circle"></i>
-                                了解更多
+                                查看项目详情
                             </button>
                         </div>
                     </div>
                 </div>
                 
                 <!-- 项目2: SUNWAY MAJESTIC -->
-                <div class="project-card" data-category="soho">
+                <div class="project-card" data-category="soho investment">
+                    <div class="project-badge">商住两用</div>
                     <div class="project-image">
                         <img src="SUNWAY MAJESTIC/SWM001.jpeg" alt="SUNWAY MAJESTIC SOHO公寓">
                     </div>
                     <div class="project-content">
-                        <span class="project-category">SOHO公寓</span>
+                        <span class="project-category">SOHO公寓 · 永久地契</span>
                         <h3 class="project-title">SUNWAY MAJESTIC</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>新山市中心</span>
+                            <span>新山市中心 · RTS步行距离</span>
                         </div>
-                        <p class="project-description">创新SOHO公寓设计，结合居住与办公功能，适合现代专业人士和投资者。</p>
+                        <p class="project-description">创新SOHO设计，完美结合居住与办公功能。位于新山市中心，步行可达RTS站，适合现代专业人士和投资者，提供卓越的投资回报潜力。</p>
                         
                         <div class="project-features">
-                            <span class="feature-tag">SOHO设计</span>
+                            <span class="feature-tag">市中心地段</span>
                             <span class="feature-tag">商住两用</span>
-                            <span class="feature-tag">智能家居</span>
-                            <span class="feature-tag">高租金回报</span>
+                            <span class="feature-tag">合法AirBnB</span>
+                            <span class="feature-tag">高增值潜力</span>
                         </div>
+                        
+                        <div class="project-price">RM 420,000 <span>起</span></div>
                         
                         <div class="project-actions">
                             <a href="https://wa.me/60167707878?text=pmcelSWM" target="_blank" class="project-link">
                                 <i class="fab fa-whatsapp"></i>
-                                WhatsApp咨询
+                                WhatsApp 即时咨询
                             </a>
                             <button class="learn-more-btn" data-project="sunway-majestic">
                                 <i class="fas fa-info-circle"></i>
-                                了解更多
+                                查看项目详情
                             </button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 项目3: SUNWAY LAKEHILLS -->
-                <div class="project-card" data-category="penthouse">
+                <!-- 项目3: SUNWAY LAKEHILLS - 图片已更新 -->
+                <div class="project-card" data-category="penthouse luxury">
+                    <div class="project-badge">湖景豪宅</div>
                     <div class="project-image">
-                        <img src="SUNWAY LAKEHILLS/SLH1.jpeg" alt="SUNWAY LAKEHILLS湖景阁楼公寓">
+                        <img src="SUNWAY LAKEHILLS/SLH01.jpeg" alt="SUNWAY LAKEHILLS湖景阁楼公寓">
                     </div>
                     <div class="project-content">
-                        <span class="project-category">湖景阁楼公寓</span>
+                        <span class="project-category">湖景阁楼 · 豪华公寓</span>
                         <h3 class="project-title">SUNWAY LAKEHILLS</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Taman Molek, 新山</span>
+                            <span>Taman Molek · 富人区</span>
                         </div>
-                        <p class="project-description">豪华湖景阁楼公寓，拥有壮丽湖景和现代化设计，提供高品质生活体验。</p>
+                        <p class="project-description">豪华湖景阁楼公寓，拥有壮丽湖景和现代化设计，提供高品质生活体验。位于Taman Molek富人区，低密度社区，私密性极佳。</p>
                         
                         <div class="project-features">
                             <span class="feature-tag">湖景景观</span>
                             <span class="feature-tag">阁楼设计</span>
+                            <span class="feature-tag">低密度社区</span>
                             <span class="feature-tag">豪华设施</span>
-                            <span class="feature-tag">休闲生活</span>
                         </div>
+                        
+                        <div class="project-price">RM 510,000 <span>起</span></div>
                         
                         <div class="project-actions">
                             <a href="https://wa.me/60167707878?text=pmcelSLH" target="_blank" class="project-link">
                                 <i class="fab fa-whatsapp"></i>
-                                WhatsApp咨询
+                                WhatsApp 即时咨询
                             </a>
                             <button class="learn-more-btn" data-project="sunway-lakehills">
                                 <i class="fas fa-info-circle"></i>
-                                了解更多
+                                查看项目详情
                             </button>
                         </div>
                     </div>
@@ -1188,6 +2342,401 @@
             </div>
         </div>
     </section>
+    
+    <!-- 投资策略部分 -->
+    <section class="investment-section" id="investment">
+        <div class="section-container">
+            <div class="section-header">
+                <!-- 副标题在上方 -->
+                <span class="section-subtitle">专业策略</span>
+                <!-- 主标题在下方 -->
+                <h2 class="section-title">房地产投资策略</h2>
+                <p class="section-description">基于15年市场经验的专业投资分析，帮助客户制定个性化的房地产投资策略</p>
+            </div>
+            
+            <div class="investment-grid">
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="investment-title">市场分析与定位</h3>
+                    <p class="investment-description">深入分析柔佛新山各区域市场趋势、价格走势和投资潜力，精准定位最佳投资时机和地段选择。</p>
+                </div>
+                
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="investment-title">投资组合优化</h3>
+                    <p class="investment-description">根据客户风险承受能力和投资目标，构建多元化的房地产投资组合，平衡收益与风险。</p>
+                </div>
+                
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="investment-title">现金流管理</h3>
+                    <p class="investment-description">专业的租金收益分析和现金流预测，确保投资房产能够提供稳定的被动收入和良好的现金回报率。</p>
+                </div>
+                
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="investment-title">资产增值策略</h3>
+                    <p class="investment-description">通过物业升级、改造和适时出售等策略，最大化房地产资产的长期增值潜力。</p>
+                </div>
+                
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="investment-title">风险控制与对冲</h3>
+                    <p class="investment-description">建立完善的风险控制机制，包括市场风险、利率风险和流动性风险管理，保护投资安全。</p>
+                </div>
+                
+                <div class="investment-card">
+                    <div class="investment-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="investment-title">税务优化规划</h3>
+                    <p class="investment-description">专业的税务筹划建议，合理利用房地产投资的税务优惠政策，最大化税后收益。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 服务部分 -->
+    <section class="services-section" id="services">
+        <div class="section-container">
+            <div class="section-header">
+                <!-- 副标题在上方 -->
+                <span class="section-subtitle">全面服务</span>
+                <!-- 主标题在下方 -->
+                <h2 class="section-title">专业房地产服务</h2>
+                <p class="section-description">提供从咨询到交易的全方位房地产服务，满足客户的各种需求</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="service-title">住宅房地产</h3>
+                    <p class="service-description">公寓、排屋、独立式洋房、豪华别墅等各类住宅房产的买卖、租赁和投资咨询。</p>
+                    <ul class="service-features">
+                        <li>首次购房者指导</li>
+                        <li>升级换房策略</li>
+                        <li>家庭住宅选择</li>
+                        <li>退休养老房产</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="service-title">商业房地产</h3>
+                    <p class="service-description">商铺、办公室、工厂、仓库等商业地产的投资分析、买卖和租赁服务。</p>
+                    <ul class="service-features">
+                        <li>商铺投资分析</li>
+                        <li>办公室租赁咨询</li>
+                        <li>工业地产投资</li>
+                        <li>商业地产估值</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">房地产投资咨询</h3>
+                    <p class="service-description">专业的房地产投资策略制定、市场分析和投资回报预测服务。</p>
+                    <ul class="service-features">
+                        <li>投资组合规划</li>
+                        <li>市场趋势分析</li>
+                        <li>投资风险评估</li>
+                        <li>投资回报分析</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="service-title">物业评估与分析</h3>
+                    <p class="service-description">专业的房产估价服务，包括市场价值评估、租金收益分析和投资潜力评估。</p>
+                    <ul class="service-features">
+                        <li>房产市场估值</li>
+                        <li>租金收益分析</li>
+                        <li>投资潜力评估</li>
+                        <li>风险评估报告</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="service-title">专业谈判服务</h3>
+                    <p class="service-description">代表客户进行专业谈判，争取最佳交易条件，最大化客户利益。</p>
+                    <ul class="service-features">
+                        <li>价格谈判策略</li>
+                        <li>交易条件优化</li>
+                        <li>合同条款审核</li>
+                        <li>风险规避谈判</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h3 class="service-title">法律与交易支持</h3>
+                    <p class="service-description">房地产交易法律咨询、合同审核、产权转移和交易流程管理。</p>
+                    <ul class="service-features">
+                        <li>法律咨询推荐</li>
+                        <li>合同审核服务</li>
+                        <li>交易流程管理</li>
+                        <li>产权转移协助</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 联系部分 - 优化背景 -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <!-- 副标题在上方 -->
+                <span class="section-subtitle">专业咨询</span>
+                <!-- 主标题在下方 -->
+                <h2 class="section-title">立即联系我</h2>
+                <p class="section-description">提供免费初步咨询，为您的房地产需求提供专业解决方案</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-header">
+                            <div class="contact-header-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3>多种联系方式</h3>
+                            <p>选择最方便的方式与我联系</p>
+                        </div>
+                        
+                        <div class="contact-item phone-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>电话咨询</h4>
+                                <p>直接通话，即时解答</p>
+                                <div class="phone-number">016-7707878</div>
+                                <p style="margin-top: 8px; color: #5D4037; font-size: 0.9rem;">周一至周六：9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item whatsapp-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>WhatsApp 咨询</h4>
+                                <p>即时通讯，发送图片/视频</p>
+                                <div class="phone-number">016-7707878</div>
+                                <div class="whatsapp-action">
+                                    <a href="https://wa.me/60167707878?text=您好，我想咨询房地产相关信息" target="_blank" class="whatsapp-action-btn">
+                                        <i class="fab fa-whatsapp"></i>
+                                        发送 WhatsApp 消息
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item email-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>电子邮件</h4>
+                                <p>详细咨询，附件支持</p>
+                                <div class="email-address">celinelimcv@gmail.com</div>
+                                <p style="margin-top: 8px; color: #5D4037; font-size: 0.9rem;">专业咨询邮件将在24小时内回复</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-hours">
+                            <h4><i class="fas fa-clock"></i> 工作时间</h4>
+                            <ul class="hours-list">
+                                <li>
+                                    <span>周一至周五</span>
+                                    <span>9:00 AM - 6:00 PM</span>
+                                </li>
+                                <li>
+                                    <span>周六</span>
+                                    <span>10:00 AM - 3:00 PM</span>
+                                </li>
+                                <li>
+                                    <span>周日及公共假期</span>
+                                    <span>预约制</span>
+                                </li>
+                                <li style="font-style: italic; opacity: 0.9;">
+                                    <span>紧急咨询</span>
+                                    <span>24小时 WhatsApp</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="social-links-contact">
+                            <a href="https://www.facebook.com/profile.php?id=100095650114677" target="_blank" class="social-link-contact facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.wasap.my/60167707878/" target="_blank" class="social-link-contact whatsapp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link-contact linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link-contact instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <div class="form-header">
+                        <div class="form-header-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>免费咨询预约</h3>
+                        <p>填写表格，我将尽快安排咨询时间</p>
+                    </div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label">您的姓名 *</label>
+                            <input type="text" class="form-control" placeholder="请输入您的全名" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">电子邮件 *</label>
+                            <input type="email" class="form-control" placeholder="example@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">联系电话 *</label>
+                            <input type="tel" class="form-control" placeholder="请输入您的手机号码" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">咨询类型 *</label>
+                            <select class="form-control" required>
+                                <option value="" disabled selected>请选择您感兴趣的服务</option>
+                                <option value="residential">住宅房地产咨询</option>
+                                <option value="commercial">商业房地产咨询</option>
+                                <option value="investment">房地产投资咨询</option>
+                                <option value="valuation">房产估值服务</option>
+                                <option value="ksl-jewel">KSL JEWEL 项目咨询</option>
+                                <option value="sunway-majestic">SUNWAY MAJESTIC 项目咨询</option>
+                                <option value="sunway-lakehills">SUNWAY LAKEHILLS 项目咨询</option>
+                                <option value="other">其他咨询服务</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">预算范围</label>
+                            <select class="form-control">
+                                <option value="" selected>请选择您的预算范围</option>
+                                <option value="below-300k">RM 300,000 以下</option>
+                                <option value="300k-500k">RM 300,000 - 500,000</option>
+                                <option value="500k-800k">RM 500,000 - 800,000</option>
+                                <option value="800k-1.2m">RM 800,000 - 1,200,000</option>
+                                <option value="above-1.2m">RM 1,200,000 以上</option>
+                                <option value="not-sure">尚未确定</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">您的需求详情 *</label>
+                            <textarea class="form-control" placeholder="请详细描述您的需求，例如：购房目的、地段偏好、户型要求、时间安排等" required rows="5"></textarea>
+                        </div>
+                        <div class="form-group" style="margin-top: 30px;">
+                            <button type="submit" class="submit-btn-contact">
+                                <span>提交咨询申请</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                            <p style="text-align: center; margin-top: 15px; color: #5D4037; font-size: 0.9rem; font-weight: 500;">
+                                <i class="fas fa-lock"></i> 您的信息将被严格保密
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h3>Celine Lim</h3>
+                    <p>柔佛新山专业房地产顾问，拥有超过15年本地市场经验，致力于为客户提供最专业的房地产咨询和服务。</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100095650114677" target="_blank" class="social-link-contact facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.wasap.my/60167707878/" target="_blank" class="social-link-contact whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>快速链接</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> 首页</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> 关于我</a></li>
+                        <li><a href="#projects"><i class="fas fa-chevron-right"></i> 精选项目</a></li>
+                        <li><a href="#investment"><i class="fas fa-chevron-right"></i> 投资策略</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> 专业服务</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> 联系咨询</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>热门项目</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="project-link-modal" data-project="ksl-jewel"><i class="fas fa-building"></i> KSL JEWEL</a></li>
+                        <li><a href="#" class="project-link-modal" data-project="sunway-majestic"><i class="fas fa-building"></i> SUNWAY MAJESTIC</a></li>
+                        <li><a href="#" class="project-link-modal" data-project="sunway-lakehills"><i class="fas fa-building"></i> SUNWAY LAKEHILLS</a></li>
+                        <li><a href="#contact"><i class="fas fa-search"></i> 其他项目咨询</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>订阅资讯</h3>
+                    <p>订阅获取柔佛新山房地产市场最新动态、投资机会和优惠信息。</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="请输入您的电子邮箱">
+                        <button type="submit" class="submit-btn-contact" style="width: 100%; padding: 14px;">
+                            <span>订阅资讯</span>
+                            <i class="fas fa-envelope"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 Celine Lim - 柔佛新山专业房地产顾问. 保留所有权利.</p>
+                <p style="margin-top: 10px;">电话: 016-7707878 | 邮箱: celinelimcv@gmail.com | 服务区域: 柔佛新山及周边地区</p>
+                <p style="margin-top: 15px; font-size: 0.8rem; color: rgba(255,255,255,0.7);">本网站内容仅供参考，具体信息以实际交易为准。房地产投资存在风险，请在投资前寻求专业建议。</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 浮动联系按钮（移动端） -->
+    <a href="https://wa.me/60167707878?text=您好，我想咨询房地产相关信息" target="_blank" class="floating-contact-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     
     <!-- KSL JEWEL 详情模态框 -->
     <div class="project-detail-modal" id="ksl-jewel-modal">
@@ -1464,7 +3013,7 @@
         </div>
     </div>
     
-    <!-- SUNWAY LAKEHILLS 详情模态框 -->
+    <!-- SUNWAY LAKEHILLS 详情模态框 - 图片已更新 -->
     <div class="project-detail-modal" id="sunway-lakehills-modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1567,6 +3116,7 @@
                     <div class="detail-section">
                         <h3>📸 项目示意图</h3>
                         <div class="image-gallery">
+                            <img src="SUNWAY LAKEHILLS/SLH01.jpeg" alt="SUNWAY LAKEHILLS主图" class="gallery-image">
                             <img src="SUNWAY LAKEHILLS/SLH2.jpeg" alt="湖景景观" class="gallery-image">
                             <img src="SUNWAY LAKEHILLS/SLH3.jpeg" alt="LOFT复式设计" class="gallery-image">
                             <img src="SUNWAY LAKEHILLS/SLH4.jpeg" alt="豪华客厅" class="gallery-image">
@@ -1623,224 +3173,38 @@
             </div>
         </div>
     </div>
-    
-    <!-- 服务部分 -->
-    <section class="services-section" id="services">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>专业服务</h2>
-                <p>提供全方位的房地产服务，满足您的各种需求</p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3 class="service-title">住宅房地产</h3>
-                    <p class="service-description">公寓、排屋、独立式洋房、豪华别墅买卖与租赁，新房项目推荐与选购咨询。</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h3 class="service-title">商业房地产</h3>
-                    <p class="service-description">商铺、办公室、工厂买卖与租赁，商业地产投资回报分析，购物中心咨询。</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="service-title">投资咨询</h3>
-                    <p class="service-description">房地产投资组合规划，市场趋势分析与预测，税务与法律咨询推荐。</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-search-dollar"></i>
-                    </div>
-                    <h3 class="service-title">物业评估</h3>
-                    <p class="service-description">专业房产估价服务，市场分析报告，投资潜力评估，风险评估。</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="service-title">谈判服务</h3>
-                    <p class="service-description">专业谈判服务，确保您获得最佳交易条件，最大化投资回报。</p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3 class="service-title">法律支持</h3>
-                    <p class="service-description">房地产交易法律咨询，合同审核，产权转移协助，法律风险防范。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 联系部分 -->
-    <section class="contact-section" id="contact">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>联系我</h2>
-                <p>如果您有任何房地产相关问题，请随时与我联系</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>电话</h4>
-                                <p>016-7707878</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>邮箱</h4>
-                                <p>celinelimcv@gmail.com</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>服务区域</h4>
-                                <p>柔佛新山及周边地区</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>工作时间</h4>
-                                <p>周一至周五: 9:00 AM - 6:00 PM<br>周六: 10:00 AM - 3:00 PM</p>
-                            </div>
-                        </div>
-                        
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/profile.php?id=100095650114677" target="_blank" class="social-link">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="https://www.wasap.my/60167707878/" target="_blank" class="social-link">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                            <a href="#" class="social-link">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" class="social-link">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="您的姓名" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="您的邮箱" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="您的电话">
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" required>
-                                <option value="" disabled selected>选择您感兴趣的服务</option>
-                                <option value="residential">住宅房地产</option>
-                                <option value="commercial">商业房地产</option>
-                                <option value="investment">投资咨询</option>
-                                <option value="valuation">物业评估</option>
-                                <option value="ksl-jewel">KSL JEWEL 项目</option>
-                                <option value="sunway-majestic">SUNWAY MAJESTIC 项目</option>
-                                <option value="sunway-lakehills">SUNWAY LAKEHILLS 项目</option>
-                                <option value="other">其他</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="您的留言" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">发送信息</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- 页脚 -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Celine Lim</div>
-            <p style="max-width:700px;margin:0 auto 30px;opacity:0.9;">专业房地产顾问，拥有15年以上柔佛新山地区销售经验，为您提供专业的房地产解决方案。</p>
-            
-            <div class="footer-links">
-                <a href="#home">首页</a>
-                <a href="#about">关于我</a>
-                <a href="#projects">精选项目</a>
-                <a href="#services">服务</a>
-                <a href="#contact">联系</a>
-            </div>
-            
-            <div class="social-links" style="justify-content:center;margin-bottom:30px;">
-                <a href="https://www.facebook.com/profile.php?id=100095650114677" target="_blank" class="social-link">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.wasap.my/60167707878/" target="_blank" class="social-link">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-            
-            <div class="copyright">
-                <p>© 2023 Celine Lim - 专业房地产顾问. 保留所有权利. | 电话: 016-7707878 | 邮箱: celinelimcv@gmail.com</p>
-            </div>
-        </div>
-    </footer>
-    
+
     <script>
-        // 移动端菜单切换
+        // 移动端菜单功能
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileCloseBtn = document.getElementById('mobileCloseBtn');
         const mobileNav = document.getElementById('mobileNav');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
         
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileNav.classList.toggle('active');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
         
-        // 点击移动端菜单链接后关闭菜单
+        mobileCloseBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
         mobileNavLinks.forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
+                document.body.style.overflow = 'auto';
             });
         });
         
         // 导航栏滚动效果
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                navbar.style.padding = '10px 0';
-                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navbar.classList.add('scrolled');
             } else {
-                navbar.style.padding = '15px 0';
-                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                navbar.classList.remove('scrolled');
             }
             
             // 更新导航链接状态
@@ -1849,9 +3213,9 @@
             
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
+                const sectionTop = section.offsetTop - 100;
                 const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 200) {
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
                     current = section.getAttribute('id');
                 }
             });
@@ -1864,25 +3228,56 @@
             });
         });
         
-        // 项目详情模态框功能
-        const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+        // 项目筛选功能
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 更新按钮状态
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                
+                // 筛选项目
+                projectCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+                    if (filterValue === 'all' || categories.includes(filterValue)) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // 项目模态框功能
+        const learnMoreBtns = document.querySelectorAll('.learn-more-btn, .project-link-modal');
         const closeModalBtns = document.querySelectorAll('.close-modal');
         const modals = document.querySelectorAll('.project-detail-modal');
         
-        // 打开模态框
         learnMoreBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
                 const project = this.getAttribute('data-project');
                 const modal = document.getElementById(`${project}-modal`);
                 
                 if (modal) {
                     modal.style.display = 'block';
-                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                    document.body.style.overflow = 'hidden';
                 }
             });
         });
         
-        // 关闭模态框
         closeModalBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const modalId = this.getAttribute('data-modal');
@@ -1890,12 +3285,11 @@
                 
                 if (modal) {
                     modal.style.display = 'none';
-                    document.body.style.overflow = 'auto'; // 恢复背景滚动
+                    document.body.style.overflow = 'auto';
                 }
             });
         });
         
-        // 点击模态框背景关闭
         modals.forEach(modal => {
             modal.addEventListener('click', function(e) {
                 if (e.target === this) {
@@ -1905,7 +3299,6 @@
             });
         });
         
-        // ESC键关闭模态框
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 modals.forEach(modal => {
@@ -1920,13 +3313,14 @@
         // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+                if (this.getAttribute('href') === '#') return;
                 
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
+                
                 if (targetElement) {
+                    e.preventDefault();
+                    
                     // 更新导航链接状态
                     document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
                         link.classList.remove('active');
@@ -1944,17 +3338,137 @@
         // 联系表单提交
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('感谢您的咨询！我将尽快与您联系。');
-            this.reset();
+            
+            // 收集表单数据
+            const formData = {
+                name: this.querySelector('input[type="text"]').value,
+                email: this.querySelector('input[type="email"]').value,
+                phone: this.querySelector('input[type="tel"]').value,
+                service: this.querySelector('select').value,
+                budget: this.querySelectorAll('select')[1]?.value,
+                message: this.querySelector('textarea').value
+            };
+            
+            // 验证表单
+            if (!formData.name || !formData.email || !formData.phone || !formData.service || !formData.message) {
+                alert('请填写所有必填字段');
+                return;
+            }
+            
+            // 显示提交成功消息
+            const successMessage = `
+                <div style="text-align: center; padding: 30px;">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary-color), #FF8F00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                        <i class="fas fa-check" style="color: white; font-size: 2rem;"></i>
+                    </div>
+                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">咨询申请已提交！</h3>
+                    <p style="color: #5D4037; line-height: 1.6; font-weight: 500;">
+                        感谢您的咨询，我已收到您的申请。<br>
+                        我将在24小时内通过您提供的联系方式与您联系，安排咨询时间。
+                    </p>
+                    <p style="margin-top: 20px; color: var(--secondary-color); font-weight: 600;">
+                        <i class="fas fa-phone-alt"></i> 如需紧急咨询，请直接拨打：016-7707878
+                    </p>
+                </div>
+            `;
+            
+            // 创建模态框显示成功消息
+            const modal = document.createElement('div');
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.8);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 2000;
+                padding: 20px;
+            `;
+            
+            const modalContent = document.createElement('div');
+            modalContent.style.cssText = `
+                background: white;
+                border-radius: 20px;
+                padding: 40px;
+                max-width: 500px;
+                width: 100%;
+                position: relative;
+                animation: fadeIn 0.3s ease;
+                border: 3px solid var(--accent-color);
+            `;
+            
+            modalContent.innerHTML = successMessage;
+            
+            const closeBtn = document.createElement('button');
+            closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+            closeBtn.style.cssText = `
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                font-size: 1.2rem;
+                color: var(--primary-color);
+                cursor: pointer;
+                transition: color 0.3s;
+            `;
+            closeBtn.onmouseover = () => closeBtn.style.color = 'var(--secondary-color)';
+            closeBtn.onmouseout = () => closeBtn.style.color = 'var(--primary-color)';
+            closeBtn.onclick = () => {
+                document.body.removeChild(modal);
+                document.getElementById('contactForm').reset();
+            };
+            
+            modalContent.appendChild(closeBtn);
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+            
+            // 点击模态框背景关闭
+            modal.onclick = (e) => {
+                if (e.target === modal) {
+                    document.body.removeChild(modal);
+                    document.getElementById('contactForm').reset();
+                }
+            };
         });
         
-        // WhatsApp链接点击跟踪（可选）
-        document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
-            link.addEventListener('click', function() {
-                const projectName = this.textContent.includes('KSL') ? 'KSL JEWEL' : 
-                                   this.textContent.includes('MAJESTIC') ? 'SUNWAY MAJESTIC' : 
-                                   'SUNWAY LAKEHILLS';
-                console.log(`用户点击了${projectName}的WhatsApp咨询链接`);
+        // 为联系项目添加点击动画
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const type = this.classList.contains('phone-item') ? 'phone' :
+                            this.classList.contains('whatsapp-item') ? 'whatsapp' : 'email';
+                
+                if (type === 'phone') {
+                    // 在移动设备上直接拨打电话
+                    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                        window.location.href = 'tel:0167707878';
+                    }
+                }
+            });
+        });
+        
+        // 页面加载动画
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+            
+            // 预加载关键图片
+            const preloadImages = [
+                'JEWEL KSL/JW9.jpeg',
+                'SUNWAY MAJESTIC/SWM001.jpeg',
+                'SUNWAY LAKEHILLS/SLH01.jpeg'
+            ];
+            
+            preloadImages.forEach(src => {
+                const img = new Image();
+                img.src = src;
             });
         });
     </script>
