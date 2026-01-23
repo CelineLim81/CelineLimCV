@@ -24,6 +24,8 @@
             --shadow-hover: 0 15px 40px rgba(230, 81, 0, 0.12);
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             --border-radius: 12px;
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #128C7E;
         }
         
         * {
@@ -150,7 +152,7 @@
         }
         
         .nav-contact-btn {
-            background: linear-gradient(135deg, var(--secondary-color), #FF8F00);
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark));
             color: white;
             padding: 12px 28px;
             border-radius: 30px;
@@ -162,7 +164,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.25);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -175,7 +177,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #ffffff, #ff6F00);
+            background: linear-gradient(135deg, var(--whatsapp-dark), #075E54);
             z-index: -1;
             transition: transform 0.5s ease;
             transform: translateX(-100%);
@@ -187,12 +189,12 @@
 
         .nav-contact-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 152, 0, 0.4);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
         }
 
         .nav-contact-btn:active {
             transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
         .nav-contact-btn i {
@@ -359,7 +361,7 @@
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
         }
         
-        /* 关于部分 - 优化背景 */
+        /* 关于部分 */
         .about-section {
             padding: 120px 30px;
             background: linear-gradient(135deg, #FFF3E0 0%, #FFECB3 100%);
@@ -377,7 +379,6 @@
             position: relative;
         }
         
-        /* 统一所有部分的副标题样式 */
         .section-subtitle {
             color: var(--primary-color);
             font-weight: 600;
@@ -581,7 +582,7 @@
             font-weight: 500;
         }
         
-        /* 项目部分 - 优化背景 */
+        /* 项目部分 */
         .projects-section {
             padding: 120px 30px;
             background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 50%, #FFE0B2 100%);
@@ -806,7 +807,7 @@
             transform: translateY(-3px);
         }
         
-        /* 投资策略部分 - 增强标题显著性 */
+        /* 投资策略部分 */
         .investment-section {
             padding: 120px 30px;
             background: linear-gradient(135deg, var(--primary-color) 0%, #FF8F00 100%);
@@ -967,8 +968,8 @@
             font-size: 0.95rem;
             line-height: 1.7;
             margin-bottom: 25px;
-            font-weight: 500;
             flex-grow: 1;
+            font-weight: 500;
         }
         
         .service-features {
@@ -993,7 +994,7 @@
             font-weight: bold;
         }
         
-        /* 联系部分 - 优化背景 */
+        /* 联系部分 */
         .contact-section {
             padding: 120px 30px;
             background: linear-gradient(135deg, #FFE0B2 0%, #FFCC80 100%);
@@ -1104,7 +1105,7 @@
 
         .contact-item.whatsapp-item {
             background: linear-gradient(135deg, rgba(37, 211, 102, 0.1), rgba(37, 211, 102, 0.05));
-            border-left-color: #25D366;
+            border-left-color: var(--whatsapp-green);
         }
 
         .contact-item.whatsapp-item:hover {
@@ -1151,9 +1152,9 @@
         }
 
         .contact-item.whatsapp-item .contact-icon {
-            background: #25D366;
+            background: var(--whatsapp-green);
             color: white;
-            border-color: #25D366;
+            border-color: var(--whatsapp-green);
         }
 
         .contact-item.phone-item .contact-icon {
@@ -1203,7 +1204,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #25D366;
+            background: var(--whatsapp-green);
             color: white;
             padding: 10px 20px;
             border-radius: 25px;
@@ -1214,7 +1215,7 @@
         }
 
         .whatsapp-action-btn:hover {
-            background: #128C7E;
+            background: var(--whatsapp-dark);
             transform: translateY(-2px);
             box-shadow: 0 8px 15px rgba(37, 211, 102, 0.3);
         }
@@ -1308,9 +1309,9 @@
         }
 
         .social-link-contact.whatsapp:hover {
-            background: #25D366;
+            background: var(--whatsapp-green);
             color: white;
-            border-color: #25D366;
+            border-color: var(--whatsapp-green);
         }
 
         .social-link-contact.linkedin:hover {
@@ -1465,6 +1466,16 @@
 
         .submit-btn-contact:hover i {
             transform: translateX(5px);
+        }
+
+        /* 表单加载状态 */
+        .submit-btn-contact.loading {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            cursor: not-allowed;
+        }
+
+        .submit-btn-contact.loading::before {
+            display: none;
         }
 
         /* 页脚 */
@@ -1753,13 +1764,13 @@
         }
         
         .whatsapp-link-box {
-            background-color: #25D366;
+            background-color: var(--whatsapp-green);
             color: white;
             padding: 20px;
             border-radius: 10px;
             text-align: center;
             margin: 30px 0;
-            border: 2px solid #128C7E;
+            border: 2px solid var(--whatsapp-dark);
         }
         
         .whatsapp-link-box h4 {
@@ -1770,7 +1781,7 @@
         .whatsapp-link {
             display: inline-block;
             background-color: white;
-            color: #25D366;
+            color: var(--whatsapp-green);
             text-decoration: none;
             padding: 12px 25px;
             border-radius: 50px;
@@ -1781,7 +1792,7 @@
         }
         
         .whatsapp-link:hover {
-            background-color: #128C7E;
+            background-color: var(--whatsapp-dark);
             color: white;
             transform: translateY(-3px);
         }
@@ -1848,7 +1859,7 @@
             right: 30px;
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #25D366, #128C7E);
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark));
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1922,6 +1933,68 @@
             cursor: pointer;
         }
         
+        /* 成功消息模态框 */
+        .success-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .success-modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+            border: 3px solid var(--whatsapp-green);
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .close-success-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--whatsapp-green);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .close-success-modal:hover {
+            transform: rotate(90deg);
+        }
+
         /* 响应式设计 */
         @media (max-width: 1200px) {
             .navbar-container,
@@ -2061,7 +2134,7 @@
                 <a href="#investment">投资策略</a>
                 <a href="#services">专业服务</a>
                 <a href="#contact" class="nav-contact-btn">
-                    <i class="fas fa-phone-alt"></i>
+                    <i class="fab fa-whatsapp"></i>
                     立即咨询
                 </a>
             </div>
@@ -2083,7 +2156,7 @@
             <a href="#projects">精选项目</a>
             <a href="#investment">投资策略</a>
             <a href="#services">专业服务</a>
-            <a href="#contact">立即咨询</a>
+            <a href="#contact" class="nav-contact-btn">立即咨询</a>
         </div>
     </div>
     
@@ -2126,7 +2199,7 @@
         </div>
     </section>
     
-    <!-- 关于部分 - 优化背景 -->
+    <!-- 关于部分 -->
     <section class="about-section" id="about">
         <div class="section-container">
             <div class="section-header">
@@ -2209,7 +2282,7 @@
         </div>
     </section>
     
-    <!-- 项目部分 - 优化背景 -->
+    <!-- 项目部分 -->
     <section class="projects-section" id="projects">
         <div class="section-container">
             <div class="section-header">
@@ -2303,7 +2376,7 @@
                     </div>
                 </div>
                 
-                <!-- 项目3: SUNWAY LAKEHILLS - 图片已更新 -->
+                <!-- 项目3: SUNWAY LAKEHILLS -->
                 <div class="project-card" data-category="penthouse luxury">
                     <div class="project-badge">湖景豪宅</div>
                     <div class="project-image">
@@ -2505,7 +2578,7 @@
         </div>
     </section>
     
-    <!-- 联系部分 - 优化背景 -->
+    <!-- 联系部分 -->
     <section class="contact-section" id="contact">
         <div class="section-container">
             <div class="section-header">
@@ -2737,6 +2810,27 @@
     <a href="https://wa.me/60167707878?text=您好，我想咨询房地产相关信息" target="_blank" class="floating-contact-btn">
         <i class="fab fa-whatsapp"></i>
     </a>
+    
+    <!-- 成功消息模态框 -->
+    <div class="success-modal" id="successModal">
+        <div class="success-modal-content">
+            <button class="close-success-modal">&times;</button>
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3 style="color: #25D366; margin-bottom: 15px;">咨询申请已提交成功！</h3>
+            <p style="color: #5D4037; line-height: 1.6; font-weight: 500;">
+                感谢您的咨询，我已收到您的申请。<br>
+                我将在24小时内通过您提供的联系方式与您联系，安排咨询时间。
+            </p>
+            <div style="margin-top: 25px; padding: 15px; background: #F0F9F0; border-radius: 10px; border-left: 4px solid #25D366;">
+                <p style="color: #075E54; margin: 0; font-weight: 600;">
+                    <i class="fab fa-whatsapp" style="color: #25D366;"></i> 
+                    如需紧急咨询，请通过 WhatsApp 联系：016-7707878
+                </p>
+            </div>
+        </div>
+    </div>
     
     <!-- KSL JEWEL 详情模态框 -->
     <div class="project-detail-modal" id="ksl-jewel-modal">
@@ -3013,7 +3107,7 @@
         </div>
     </div>
     
-    <!-- SUNWAY LAKEHILLS 详情模态框 - 图片已更新 -->
+    <!-- SUNWAY LAKEHILLS 详情模态框 -->
     <div class="project-detail-modal" id="sunway-lakehills-modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -3207,7 +3301,7 @@
     </div>
 
     <script>
-        // 移动端菜单功能
+        // ==================== 移动端菜单功能 ====================
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mobileCloseBtn = document.getElementById('mobileCloseBtn');
         const mobileNav = document.getElementById('mobileNav');
@@ -3230,7 +3324,7 @@
             });
         });
         
-        // 导航栏滚动效果
+        // ==================== 导航栏滚动效果 ====================
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -3260,7 +3354,7 @@
             });
         });
         
-        // 项目筛选功能
+        // ==================== 项目筛选功能 ====================
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
         
@@ -3292,7 +3386,7 @@
             });
         });
         
-        // 项目模态框功能
+        // ==================== 项目模态框功能 ====================
         const learnMoreBtns = document.querySelectorAll('.learn-more-btn, .project-link-modal');
         const closeModalBtns = document.querySelectorAll('.close-modal');
         const modals = document.querySelectorAll('.project-detail-modal');
@@ -3331,6 +3425,7 @@
             });
         });
         
+        // ESC 键关闭模态框
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 modals.forEach(modal => {
@@ -3339,10 +3434,16 @@
                         document.body.style.overflow = 'auto';
                     }
                 });
+                
+                const successModal = document.getElementById('successModal');
+                if (successModal.style.display === 'flex') {
+                    successModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
             }
         });
         
-        // 平滑滚动
+        // ==================== 平滑滚动 ====================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 if (this.getAttribute('href') === '#') return;
@@ -3367,7 +3468,7 @@
             });
         });
         
-        // 联系表单提交
+        // ==================== 联系表单提交 ====================
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -3377,8 +3478,9 @@
                 email: this.querySelector('input[type="email"]').value,
                 phone: this.querySelector('input[type="tel"]').value,
                 service: this.querySelector('select').value,
-                budget: this.querySelectorAll('select')[1]?.value,
-                message: this.querySelector('textarea').value
+                budget: this.querySelectorAll('select')[1]?.value || '未选择',
+                message: this.querySelector('textarea').value,
+                date: new Date().toLocaleString('zh-CN')
             };
             
             // 验证表单
@@ -3387,87 +3489,69 @@
                 return;
             }
             
-            // 显示提交成功消息
-            const successMessage = `
-                <div style="text-align: center; padding: 30px;">
-                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--secondary-color), #FF8F00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                        <i class="fas fa-check" style="color: white; font-size: 2rem;"></i>
-                    </div>
-                    <h3 style="color: var(--primary-color); margin-bottom: 15px;">咨询申请已提交！</h3>
-                    <p style="color: #5D4037; line-height: 1.6; font-weight: 500;">
-                        感谢您的咨询，我已收到您的申请。<br>
-                        我将在24小时内通过您提供的联系方式与您联系，安排咨询时间。
-                    </p>
-                    <p style="margin-top: 20px; color: var(--secondary-color); font-weight: 600;">
-                        <i class="fas fa-phone-alt"></i> 如需紧急咨询，请直接拨打：016-7707878
-                    </p>
-                </div>
-            `;
+            // 显示加载状态
+            const submitBtn = this.querySelector('.submit-btn-contact');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 发送中...';
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
             
-            // 创建模态框显示成功消息
-            const modal = document.createElement('div');
-            modal.style.cssText = `
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0,0,0,0.8);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 2000;
-                padding: 20px;
-            `;
-            
-            const modalContent = document.createElement('div');
-            modalContent.style.cssText = `
-                background: white;
-                border-radius: 20px;
-                padding: 40px;
-                max-width: 500px;
-                width: 100%;
-                position: relative;
-                animation: fadeIn 0.3s ease;
-                border: 3px solid var(--accent-color);
-            `;
-            
-            modalContent.innerHTML = successMessage;
-            
-            const closeBtn = document.createElement('button');
-            closeBtn.innerHTML = '<i class="fas fa-times"></i>';
-            closeBtn.style.cssText = `
-                position: absolute;
-                top: 20px;
-                right: 20px;
-                background: none;
-                border: none;
-                font-size: 1.2rem;
-                color: var(--primary-color);
-                cursor: pointer;
-                transition: color 0.3s;
-            `;
-            closeBtn.onmouseover = () => closeBtn.style.color = 'var(--secondary-color)';
-            closeBtn.onmouseout = () => closeBtn.style.color = 'var(--primary-color)';
-            closeBtn.onclick = () => {
-                document.body.removeChild(modal);
-                document.getElementById('contactForm').reset();
-            };
-            
-            modalContent.appendChild(closeBtn);
-            modal.appendChild(modalContent);
-            document.body.appendChild(modal);
-            
-            // 点击模态框背景关闭
-            modal.onclick = (e) => {
-                if (e.target === modal) {
-                    document.body.removeChild(modal);
-                    document.getElementById('contactForm').reset();
-                }
-            };
+            // 模拟邮件发送过程
+            setTimeout(() => {
+                // 恢复按钮状态
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                
+                // 显示成功消息
+                showSuccessModal();
+                this.reset();
+                
+                // 在实际使用时，这里应该调用EmailJS：
+                /*
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone,
+                    service: formData.service,
+                    budget: formData.budget,
+                    message: formData.message,
+                    date: formData.date
+                })
+                .then(() => {
+                    showSuccessModal();
+                    this.reset();
+                }, (error) => {
+                    console.error('邮件发送失败:', error);
+                    alert('发送失败，请稍后重试或直接通过WhatsApp联系：016-7707878');
+                });
+                */
+            }, 1500);
         });
         
-        // 为联系项目添加点击动画
+        // ==================== 显示成功模态框 ====================
+        function showSuccessModal() {
+            const successModal = document.getElementById('successModal');
+            successModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // 关闭按钮事件
+            const closeBtn = successModal.querySelector('.close-success-modal');
+            closeBtn.onclick = () => {
+                successModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            };
+            
+            // 点击背景关闭
+            successModal.onclick = (e) => {
+                if (e.target === successModal) {
+                    successModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            };
+        }
+        
+        // ==================== 联系项目点击动画 ====================
         document.querySelectorAll('.contact-item').forEach(item => {
             item.addEventListener('click', function() {
                 const type = this.classList.contains('phone-item') ? 'phone' :
@@ -3482,7 +3566,7 @@
             });
         });
         
-        // 页面加载动画
+        // ==================== 页面加载动画 ====================
         window.addEventListener('load', () => {
             document.body.style.opacity = '0';
             document.body.style.transition = 'opacity 0.5s ease';
@@ -3490,21 +3574,64 @@
             setTimeout(() => {
                 document.body.style.opacity = '1';
             }, 100);
+        });
+
+        // ==================== 新闻订阅表单处理 ====================
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // 预加载关键图片
-            const preloadImages = [
-                'JEWEL KSL/JW9.jpeg',
-                'SUNWAY MAJESTIC/SWM001.jpeg',
-                'SUNWAY LAKEHILLS/SLH01.jpeg'
-            ];
+            const email = this.querySelector('.newsletter-input').value;
             
-            preloadImages.forEach(src => {
+            if (!email || !email.includes('@')) {
+                alert('请输入有效的电子邮件地址');
+                return;
+            }
+            
+            // 显示加载状态
+            const submitBtn = this.querySelector('.submit-btn-contact');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 订阅中...';
+            submitBtn.disabled = true;
+            
+            // 模拟订阅处理
+            setTimeout(() => {
+                // 恢复按钮状态
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                alert('感谢订阅！您将收到我们的最新资讯。');
+                this.reset();
+            }, 1000);
+        });
+
+        // ==================== 浮动联系按钮显示控制 ====================
+        window.addEventListener('scroll', function() {
+            const floatingBtn = document.querySelector('.floating-contact-btn');
+            if (window.innerWidth <= 992 && window.scrollY > 500) {
+                floatingBtn.style.display = 'flex';
+            } else {
+                floatingBtn.style.display = 'none';
+            }
+        });
+        
+        // ==================== 图片预加载 ====================
+        function preloadImages(imageUrls) {
+            imageUrls.forEach(url => {
                 const img = new Image();
-                img.src = src;
+                img.src = url;
             });
+        }
+        
+        // 预加载关键图片
+        const imagesToPreload = [
+            'JEWEL KSL/JW9.jpeg',
+            'SUNWAY MAJESTIC/SWM001.jpeg',
+            'SUNWAY LAKEHILLS/SLH01.jpeg'
+        ];
+        
+        window.addEventListener('load', () => {
+            preloadImages(imagesToPreload);
         });
     </script>
 </body>
 </html>
-
-
