@@ -10,6 +10,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // 初始化EmailJS
+        (function() {
+            emailjs.init('1L27YnVqB2v0mOTiP'); // 你的Public Key
+        })();
+    </script>
+    
     <style>
         :root {
             --primary-color: #E65100; /* 深橘色 */
@@ -1166,6 +1176,7 @@
             width: 55px;
             height: 55px;
             background: var(--white-color);
+            color: var(--primary-color);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -2723,19 +2734,19 @@
                     <form id="contactForm">
                         <div class="form-group">
                             <label class="form-label">您的姓名 *</label>
-                            <input type="text" class="form-control" placeholder="请输入您的全名" required>
+                            <input type="text" class="form-control" placeholder="请输入您的全名" required id="name">
                         </div>
                         <div class="form-group">
                             <label class="form-label">电子邮件 *</label>
-                            <input type="email" class="form-control" placeholder="example@email.com" required>
+                            <input type="email" class="form-control" placeholder="example@email.com" required id="email">
                         </div>
                         <div class="form-group">
                             <label class="form-label">联系电话 *</label>
-                            <input type="tel" class="form-control" placeholder="请输入您的手机号码" required>
+                            <input type="tel" class="form-control" placeholder="请输入您的手机号码" required id="phone">
                         </div>
                         <div class="form-group">
                             <label class="form-label">咨询类型 *</label>
-                            <select class="form-control" required>
+                            <select class="form-control" required id="service">
                                 <option value="" disabled selected>请选择您感兴趣的服务</option>
                                 <option value="residential">住宅房地产咨询</option>
                                 <option value="commercial">商业房地产咨询</option>
@@ -2749,7 +2760,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">预算范围</label>
-                            <select class="form-control">
+                            <select class="form-control" id="budget">
                                 <option value="" selected>请选择您的预算范围</option>
                                 <option value="below-300k">RM 300,000 以下</option>
                                 <option value="300k-500k">RM 300,000 - 500,000</option>
@@ -2761,7 +2772,7 @@
                         </div>
                         <div class="form-group">
                             <label class="form-label">您的需求详情 *</label>
-                            <textarea class="form-control" placeholder="请详细描述您的需求，例如：购房目的、地段偏好、户型要求、时间安排等" required rows="5"></textarea>
+                            <textarea class="form-control" placeholder="请详细描述您的需求，例如：购房目的、地段偏好、户型要求、时间安排等" required rows="5" id="message"></textarea>
                         </div>
                         <div class="form-group" style="margin-top: 30px;">
                             <button type="submit" class="submit-btn-contact">
@@ -3506,12 +3517,12 @@
             
             // 收集表单数据
             const formData = {
-                name: this.querySelector('input[type="text"]').value,
-                email: this.querySelector('input[type="email"]').value,
-                phone: this.querySelector('input[type="tel"]').value,
-                service: this.querySelector('select').value,
-                budget: this.querySelectorAll('select')[1]?.value || '未选择',
-                message: this.querySelector('textarea').value,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                budget: document.getElementById('budget').value || '未选择',
+                message: document.getElementById('message').value,
                 date: new Date().toLocaleString('zh-CN')
             };
             
@@ -3528,8 +3539,17 @@
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
             
-            // 模拟邮件发送过程
-            setTimeout(() => {
+            // 使用 EmailJS 发送邮件 - 更新了你的 Service ID 和 Template ID
+            emailjs.send('service_celinelim81', 'template_37ridpm', {
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                service: formData.service,
+                budget: formData.budget,
+                message: formData.message,
+                date: formData.date
+            })
+            .then(() => {
                 // 恢复按钮状态
                 submitBtn.innerHTML = originalText;
                 submitBtn.classList.remove('loading');
@@ -3539,26 +3559,16 @@
                 showSuccessModal();
                 this.reset();
                 
-                // 在实际使用时，这里应该调用EmailJS：
-                /*
-                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-                    name: formData.name,
-                    email: formData.email,
-                    phone: formData.phone,
-                    service: formData.service,
-                    budget: formData.budget,
-                    message: formData.message,
-                    date: formData.date
-                })
-                .then(() => {
-                    showSuccessModal();
-                    this.reset();
-                }, (error) => {
-                    console.error('邮件发送失败:', error);
-                    alert('发送失败，请稍后重试或直接通过WhatsApp联系：016-7707878');
-                });
-                */
-            }, 1500);
+                console.log('邮件发送成功！');
+            }, (error) => {
+                // 恢复按钮状态
+                submitBtn.innerHTML = originalText;
+                submitBtn.classList.remove('loading');
+                submitBtn.disabled = false;
+                
+                console.error('邮件发送失败:', error);
+                alert('发送失败，请稍后重试或直接通过WhatsApp联系：016-7707878\n错误代码：' + error.status + ' ' + error.text);
+            });
         });
         
         // ==================== 显示成功模态框 ====================
@@ -3667,4 +3677,3 @@
     </script>
 </body>
 </html>
-
