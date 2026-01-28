@@ -626,8 +626,8 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
         }
         
         .project-card {
@@ -663,7 +663,7 @@
         }
         
         .project-image {
-            height: 270px;
+            height: 250px;
             overflow: hidden;
             position: relative;
         }
@@ -690,7 +690,7 @@
         }
         
         .project-content {
-            padding: 30px;
+            padding: 25px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -704,13 +704,13 @@
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
         .project-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary-color);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             line-height: 1.3;
         }
         
@@ -721,30 +721,85 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.9rem;
         }
         
         .project-description {
             color: #5D4037;
-            margin-bottom: 20px;
-            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
             line-height: 1.6;
             flex-grow: 1;
             font-weight: 500;
         }
         
+        /* 户型详情卡片 */
+        .unit-details {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #FFF3E0;
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .unit-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .spec-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .spec-label {
+            font-size: 0.8rem;
+            color: #795548;
+            margin-bottom: 3px;
+            font-weight: 500;
+        }
+        
+        .spec-value {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .monthly-payment {
+            text-align: center;
+            padding: 8px;
+            background-color: #FFECB3;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        .payment-label {
+            font-size: 0.8rem;
+            color: #795548;
+            margin-bottom: 3px;
+        }
+        
+        .payment-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #FF5722;
+        }
+        
         .project-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 25px;
+            gap: 8px;
+            margin-bottom: 20px;
         }
         
         .feature-tag {
             background-color: rgba(255, 183, 77, 0.2);
             color: var(--primary-color);
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 500;
             border: 1px solid rgba(255, 183, 77, 0.3);
         }
@@ -753,7 +808,7 @@
             font-size: 1.3rem;
             font-weight: 700;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             background: rgba(255, 152, 0, 0.1);
             padding: 10px 15px;
             border-radius: 8px;
@@ -769,7 +824,7 @@
         .project-actions {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             margin-top: auto;
         }
         
@@ -781,17 +836,18 @@
             background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-dark));
             color: white;
             text-decoration: none;
-            padding: 14px 25px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-weight: 600;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             width: 100%;
             text-align: center;
-            gap: 10px;
+            gap: 8px;
             border: 2px solid var(--whatsapp-green);
             position: relative;
             overflow: hidden;
             z-index: 1;
+            font-size: 0.9rem;
         }
         
         .whatsapp-project-btn::before {
@@ -818,7 +874,7 @@
         }
         
         .whatsapp-project-btn i {
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: transform 0.3s ease;
         }
         
@@ -833,14 +889,15 @@
             background-color: transparent;
             color: var(--primary-color);
             text-decoration: none;
-            padding: 14px 25px;
+            padding: 12px 20px;
             border-radius: 8px;
             font-weight: 600;
             transition: var(--transition);
             width: 100%;
             text-align: center;
-            gap: 10px;
+            gap: 8px;
             border: 2px solid var(--primary-color);
+            font-size: 0.9rem;
         }
         
         .learn-more-btn:hover {
@@ -2038,6 +2095,32 @@
             transform: rotate(90deg);
         }
 
+        /* WhatsApp链接框列表样式 */
+        .whatsapp-link-box ul {
+            text-align: center;
+            list-style-position: inside;
+            padding: 0;
+            margin: 15px auto;
+            max-width: 100%;
+            color: white;
+        }
+        
+        .whatsapp-link-box ul li {
+            display: block;
+            margin: 8px 0;
+            text-align: left;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .whatsapp-link-box ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
         /* 响应式设计 */
         @media (max-width: 1200px) {
             .navbar-container,
@@ -2246,9 +2329,7 @@
     <section class="about-section" id="about">
         <div class="section-container">
             <div class="section-header">
-                <!-- 副标题在上方 -->
                 <span class="section-subtitle">专业背景</span>
-                <!-- 主标题在下方 -->
                 <h2 class="section-title">关于 Celine Lim</h2>
                 <p class="section-description">作为一名深耕柔佛新山地区超过15年的房地产专家，我专注于为客户提供最专业的房地产解决方案，帮助投资者和个人家庭实现他们的房产梦想。</p>
             </div>
@@ -2329,52 +2410,69 @@
     <section class="projects-section" id="projects">
         <div class="section-container">
             <div class="section-header">
-                <!-- 副标题在上方 -->
                 <span class="section-subtitle">精选推荐</span>
-                <!-- 主标题在下方 -->
                 <h2 class="section-title">优质房地产项目</h2>
                 <p class="section-description">精心筛选的柔佛新山地区优质房地产项目，满足不同投资者的需求和预算。</p>
             </div>
             
             <div class="projects-filter">
                 <button class="filter-btn active" data-filter="all">全部项目</button>
-                <button class="filter-btn" data-filter="apartment">豪华公寓</button>
-                <button class="filter-btn" data-filter="soho">SOHO公寓</button>
-                <button class="filter-btn" data-filter="penthouse">阁楼公寓</button>
+                <button class="filter-btn" data-filter="ksl-jewel">KSL JEWEL</button>
+                <button class="filter-btn" data-filter="sunway-majestic">SUNWAY MAJESTIC</button>
+                <button class="filter-btn" data-filter="sunway-lakehills">SUNWAY LAKEHILLS</button>
                 <button class="filter-btn" data-filter="investment">投资型</button>
             </div>
             
             <div class="projects-grid">
-                <!-- 项目1: KSL JEWEL -->
-                <div class="project-card" data-category="apartment investment">
-                    <div class="project-badge">热销中</div>
+                <!-- KSL JEWEL Studio -->
+                <div class="project-card" data-category="ksl-jewel apartment investment">
+                    <div class="project-badge">首购优选</div>
                     <div class="project-image">
-                        <img src="JEWEL KSL/JW9.jpeg" alt="KSL JEWEL豪华公寓">
+                        <img src="JEWEL KSL/JW9.jpeg" alt="KSL JEWEL Studio">
                     </div>
                     <div class="project-content">
-                        <span class="project-category">豪华公寓 · 永久地契</span>
-                        <h3 class="project-title">KSL JEWEL - Permas Jaya</h3>
+                        <span class="project-category">KSL JEWEL · Studio</span>
+                        <h3 class="project-title">KSL JEWEL</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Permas Jaya, 新山成熟社区</span>
+                            <span>Permas Jaya, 新山</span>
                         </div>
-                        <p class="project-description">位于Permas Jaya核心地段的豪华公寓项目，现代化设计结合完善社区配套，投资自住两相宜，是新山地区最具潜力的房地产项目之一。</p>
+                        <p class="project-description">精致Studio户型，适合单身人士、年轻情侣或投资者的入门选择。永久地契，成熟社区，生活便利。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">Studio</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">506 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 260k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 1,100+</div>
+                            </div>
+                        </div>
                         
                         <div class="project-features">
-                            <span class="feature-tag">成熟社区</span>
                             <span class="feature-tag">永久地契</span>
-                            <span class="feature-tag">高租金回报</span>
-                            <span class="feature-tag">生活便利</span>
+                            <span class="feature-tag">成熟社区</span>
+                            <span class="feature-tag">首购优惠</span>
+                            <span class="feature-tag">投资潜力</span>
                         </div>
                         
-                        <div class="project-price">RM 380,000 <span>起</span></div>
-                        
                         <div class="project-actions">
-                            <a href="https://wa.me/60167707878?text=pmcelpermasJW" target="_blank" class="whatsapp-project-btn">
+                            <a href="https://wa.me/60167707878?text=pmcelpermasJW_Studio" target="_blank" class="whatsapp-project-btn">
                                 <i class="fab fa-whatsapp"></i>
-                                WhatsApp 即时咨询
+                                咨询Studio详情
                             </a>
-                            <button class="learn-more-btn" data-project="ksl-jewel">
+                            <button class="learn-more-btn" data-project="ksl-jewel-studio">
                                 <i class="fas fa-info-circle"></i>
                                 查看项目详情
                             </button>
@@ -2382,36 +2480,223 @@
                     </div>
                 </div>
                 
-                <!-- 项目2: SUNWAY MAJESTIC -->
-                <div class="project-card" data-category="soho investment">
-                    <div class="project-badge">商住两用</div>
+                <!-- KSL JEWEL 1+1房 -->
+                <div class="project-card" data-category="ksl-jewel apartment investment">
+                    <div class="project-badge">热销中</div>
                     <div class="project-image">
-                        <img src="SUNWAY MAJESTIC/SWM001.jpeg" alt="SUNWAY MAJESTIC SOHO公寓">
+                        <img src="JEWEL KSL/JW3.jpeg" alt="KSL JEWEL 1+1房">
                     </div>
                     <div class="project-content">
-                        <span class="project-category">SOHO公寓 · 永久地契</span>
+                        <span class="project-category">KSL JEWEL · 1+1房</span>
+                        <h3 class="project-title">KSL JEWEL</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Permas Jaya, 新山</span>
+                        </div>
+                        <p class="project-description">1+1房设计，灵活空间规划，适合小家庭或需要工作室的投资者。永久地契，高租金回报率。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">1+1房 1厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">646 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 380k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 1,500+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">永久地契</span>
+                            <span class="feature-tag">灵活空间</span>
+                            <span class="feature-tag">高租金回报</span>
+                            <span class="feature-tag">生活便利</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelpermasJW_1+1" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询1+1房详情
+                            </a>
+                            <button class="learn-more-btn" data-project="ksl-jewel-1plus1">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- KSL JEWEL 2房 -->
+                <div class="project-card" data-category="ksl-jewel apartment investment">
+                    <div class="project-badge">家庭优选</div>
+                    <div class="project-image">
+                        <img src="JEWEL KSL/JW2.jpeg" alt="KSL JEWEL 2房">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">KSL JEWEL · 2房</span>
+                        <h3 class="project-title">KSL JEWEL</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Permas Jaya, 新山</span>
+                        </div>
+                        <p class="project-description">2房2厕设计，适合小家庭或需要更多空间的投资者。宽敞舒适，社区配套设施完善。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">2房 2厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">753 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 450k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 1,700+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">永久地契</span>
+                            <span class="feature-tag">家庭户型</span>
+                            <span class="feature-tag">宽敞舒适</span>
+                            <span class="feature-tag">配套完善</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelpermasJW_2房" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询2房详情
+                            </a>
+                            <button class="learn-more-btn" data-project="ksl-jewel-2room">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- KSL JEWEL 3房 -->
+                <div class="project-card" data-category="ksl-jewel apartment investment">
+                    <div class="project-badge">豪华享受</div>
+                    <div class="project-image">
+                        <img src="JEWEL KSL/JW4.jpeg" alt="KSL JEWEL 3房">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">KSL JEWEL · 3房</span>
+                        <h3 class="project-title">KSL JEWEL</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Permas Jaya, 新山</span>
+                        </div>
+                        <p class="project-description">3房2厕豪华户型，适合大家庭或追求高品质生活的投资者。空间宽敞，私密性佳。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">3房 2厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">850 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 510k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 1,900+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">永久地契</span>
+                            <span class="feature-tag">豪华户型</span>
+                            <span class="feature-tag">大家庭适用</span>
+                            <span class="feature-tag">私密性佳</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelpermasJW_3房" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询3房详情
+                            </a>
+                            <button class="learn-more-btn" data-project="ksl-jewel-3room">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SUNWAY MAJESTIC 1房 -->
+                <div class="project-card" data-category="sunway-majestic soho investment">
+                    <div class="project-badge">SOHO设计</div>
+                    <div class="project-image">
+                        <img src="SUNWAY MAJESTIC/SWM001.jpeg" alt="SUNWAY MAJESTIC 1Rooms">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">SUNWAY MAJESTIC · 1房</span>
                         <h3 class="project-title">SUNWAY MAJESTIC</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>新山市中心 · RTS步行距离</span>
                         </div>
-                        <p class="project-description">创新SOHO设计，完美结合居住与办公功能。位于新山市中心，步行可达RTS站，适合现代专业人士和投资者，提供卓越的投资回报潜力。</p>
+                        <p class="project-description">1房1厕SOHO设计，适合单身专业人士或投资者。市中心地段，合法AirBnB，投资回报高。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">1房 1厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">467 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 390k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 1,700+</div>
+                            </div>
+                        </div>
                         
                         <div class="project-features">
                             <span class="feature-tag">市中心地段</span>
-                            <span class="feature-tag">商住两用</span>
+                            <span class="feature-tag">SOHO设计</span>
                             <span class="feature-tag">合法AirBnB</span>
-                            <span class="feature-tag">高增值潜力</span>
+                            <span class="feature-tag">高投资回报</span>
                         </div>
                         
-                        <div class="project-price">RM 420,000 <span>起</span></div>
-                        
                         <div class="project-actions">
-                            <a href="https://wa.me/60167707878?text=pmcelSWM" target="_blank" class="whatsapp-project-btn">
+                            <a href="https://wa.me/60167707878?text=pmcelSWM_1rooms" target="_blank" class="whatsapp-project-btn">
                                 <i class="fab fa-whatsapp"></i>
-                                WhatsApp 即时咨询
+                                咨询1房详情
                             </a>
-                            <button class="learn-more-btn" data-project="sunway-majestic">
+                            <button class="learn-more-btn" data-project="sunway-majestic-1rooms">
                                 <i class="fas fa-info-circle"></i>
                                 查看项目详情
                             </button>
@@ -2419,36 +2704,335 @@
                     </div>
                 </div>
                 
-                <!-- 项目3: SUNWAY LAKEHILLS -->
-                <div class="project-card" data-category="penthouse luxury">
-                    <div class="project-badge">湖景豪宅</div>
+                <!-- SUNWAY MAJESTIC 2房 -->
+                <div class="project-card" data-category="sunway-majestic soho investment">
+                    <div class="project-badge">商住两用</div>
                     <div class="project-image">
-                        <img src="SUNWAY LAKEHILLS/SLH01.jpeg" alt="SUNWAY LAKEHILLS湖景阁楼公寓">
+                        <img src="SUNWAY MAJESTIC/SWM1.jpeg" alt="SUNWAY MAJESTIC 2房">
                     </div>
                     <div class="project-content">
-                        <span class="project-category">湖景阁楼 · 豪华公寓</span>
+                        <span class="project-category">SUNWAY MAJESTIC · 2房</span>
+                        <h3 class="project-title">SUNWAY MAJESTIC</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>新山市中心 · RTS步行距离</span>
+                        </div>
+                        <p class="project-description">2房1厕SOHO设计，适合小家庭或小型办公室。商住两用，灵活空间规划，投资自住两相宜。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">2房 1厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">596 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 470k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 2,100+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">商住两用</span>
+                            <span class="feature-tag">灵活空间</span>
+                            <span class="feature-tag">永久地契</span>
+                            <span class="feature-tag">市中心地段</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelSWM_2房" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询2房详情
+                            </a>
+                            <button class="learn-more-btn" data-project="sunway-majestic-2room">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SUNWAY MAJESTIC 3房 -->
+                <div class="project-card" data-category="sunway-majestic soho investment">
+                    <div class="project-badge">豪华SOHO</div>
+                    <div class="project-image">
+                        <img src="SUNWAY MAJESTIC/SWM2.jpeg" alt="SUNWAY MAJESTIC 3房">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">SUNWAY MAJESTIC · 3房</span>
+                        <h3 class="project-title">SUNWAY MAJESTIC</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>新山市中心 · RTS步行距离</span>
+                        </div>
+                        <p class="project-description">3房2厕豪华SOHO设计，适合大家庭或需要较大办公空间的投资者。空间宽敞，功能齐全。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">3房 2厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">681 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 530k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 2,300+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">豪华SOHO</span>
+                            <span class="feature-tag">大家庭适用</span>
+                            <span class="feature-tag">办公空间</span>
+                            <span class="feature-tag">投资增值</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelSWM_3房" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询3房详情
+                            </a>
+                            <button class="learn-more-btn" data-project="sunway-majestic-3room">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SUNWAY LAKEHILLS 2房 -->
+                <div class="project-card" data-category="sunway-lakehills penthouse luxury">
+                    <div class="project-badge">湖景公寓</div>
+                    <div class="project-image">
+                        <img src="SUNWAY LAKEHILLS/SLH01.jpeg" alt="SUNWAY LAKEHILLS 2房">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">SUNWAY LAKEHILLS · 2房</span>
                         <h3 class="project-title">SUNWAY LAKEHILLS</h3>
                         <div class="project-location">
                             <i class="fas fa-map-marker-alt"></i>
                             <span>Taman Molek · 富人区</span>
                         </div>
-                        <p class="project-description">豪华湖景阁楼公寓，拥有壮丽湖景和现代化设计，提供高品质生活体验。位于Taman Molek富人区，低密度社区，私密性极佳。</p>
+                        <p class="project-description">2房2厕湖景公寓，低密度社区，私密性佳。适合追求高品质生活的年轻专业人士或情侣。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">2房 2厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">694 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 490k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 2,200+</div>
+                            </div>
+                        </div>
                         
                         <div class="project-features">
                             <span class="feature-tag">湖景景观</span>
-                            <span class="feature-tag">阁楼设计</span>
                             <span class="feature-tag">低密度社区</span>
+                            <span class="feature-tag">富人区</span>
                             <span class="feature-tag">豪华设施</span>
                         </div>
                         
-                        <div class="project-price">RM 510,000 <span>起</span></div>
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelSLH_2房" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询2房详情
+                            </a>
+                            <button class="learn-more-btn" data-project="sunway-lakehills-2room">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SUNWAY LAKEHILLS 3房 -->
+                <div class="project-card" data-category="sunway-lakehills penthouse luxury">
+                    <div class="project-badge">家庭豪宅</div>
+                    <div class="project-image">
+                        <img src="SUNWAY LAKEHILLS/SLH2.jpeg" alt="SUNWAY LAKEHILLS 3房">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">SUNWAY LAKEHILLS · 3房</span>
+                        <h3 class="project-title">SUNWAY LAKEHILLS</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Taman Molek · 富人区</span>
+                        </div>
+                        <p class="project-description">3房2厕豪华户型，宽敞空间设计，适合追求高品质生活的小家庭。湖景景观，社区设施完善。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">3房 2厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">892 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 610k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 2,800+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">湖景景观</span>
+                            <span class="feature-tag">豪华户型</span>
+                            <span class="feature-tag">小家庭优选</span>
+                            <span class="feature-tag">完善设施</span>
+                        </div>
                         
                         <div class="project-actions">
-                            <a href="https://wa.me/60167707878?text=pmcelSLH" target="_blank" class="whatsapp-project-btn">
+                            <a href="https://wa.me/60167707878?text=pmcelSLH_3房" target="_blank" class="whatsapp-project-btn">
                                 <i class="fab fa-whatsapp"></i>
-                                WhatsApp 即时咨询
+                                咨询3房详情
                             </a>
-                            <button class="learn-more-btn" data-project="sunway-lakehills">
+                            <button class="learn-more-btn" data-project="sunway-lakehills-3room">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SUNWAY LAKEHILLS 4房 -->
+                <div class="project-card" data-category="sunway-lakehills penthouse luxury">
+                    <div class="project-badge">奢华享受</div>
+                    <div class="project-image">
+                        <img src="SUNWAY LAKEHILLS/SLH3.jpeg" alt="SUNWAY LAKEHILLS 4房">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">SUNWAY LAKEHILLS · 4房</span>
+                        <h3 class="project-title">SUNWAY LAKEHILLS</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Taman Molek · 富人区</span>
+                        </div>
+                        <p class="project-description">4房2厕奢华户型，超大空间设计，适合大家庭或追求顶级生活品质的投资者。富人区核心地段。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">4房 2厕</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">1,182 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 790k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 3,500+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">奢华户型</span>
+                            <span class="feature-tag">大家庭适用</span>
+                            <span class="feature-tag">富人区核心</span>
+                            <span class="feature-tag">顶级品质</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelSLH_4房" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询4房详情
+                            </a>
+                            <button class="learn-more-btn" data-project="sunway-lakehills-4room">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SUNWAY LAKEHILLS LOFT -->
+                <div class="project-card" data-category="sunway-lakehills penthouse luxury">
+                    <div class="project-badge">复式设计</div>
+                    <div class="project-image">
+                        <img src="SUNWAY LAKEHILLS/SLH4.jpeg" alt="SUNWAY LAKEHILLS LOFT">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">SUNWAY LAKEHILLS · LOFT</span>
+                        <h3 class="project-title">SUNWAY LAKEHILLS</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Taman Molek · 富人区</span>
+                        </div>
+                        <p class="project-description">2房1厕复式LOFT设计，挑高4.8米，空间感十足。动静分离设计，适合追求独特生活体验的买家。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">户型</span>
+                                    <span class="spec-value">2房 1厕 (Loft)</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积</span>
+                                    <span class="spec-value">708 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格</span>
+                                    <span class="spec-value">RM 500k+</span>
+                                </div>
+                            </div>
+                            <div class="monthly-payment">
+                                <div class="payment-label">每月供期</div>
+                                <div class="payment-value">RM 2,300+</div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">复式LOFT</span>
+                            <span class="feature-tag">挑高设计</span>
+                            <span class="feature-tag">动静分离</span>
+                            <span class="feature-tag">独特体验</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelSLH_LOFT" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询LOFT详情
+                            </a>
+                            <button class="learn-more-btn" data-project="sunway-lakehills-loft">
                                 <i class="fas fa-info-circle"></i>
                                 查看项目详情
                             </button>
@@ -2463,9 +3047,7 @@
     <section class="investment-section" id="investment">
         <div class="section-container">
             <div class="section-header">
-                <!-- 副标题在上方 -->
                 <span class="section-subtitle">专业策略</span>
-                <!-- 主标题在下方 -->
                 <h2 class="section-title">房地产投资策略</h2>
                 <p class="section-description">基于15年市场经验的专业投资分析，帮助客户制定个性化的房地产投资策略</p>
             </div>
@@ -2526,9 +3108,7 @@
     <section class="services-section" id="services">
         <div class="section-container">
             <div class="section-header">
-                <!-- 副标题在上方 -->
                 <span class="section-subtitle">全面服务</span>
-                <!-- 主标题在下方 -->
                 <h2 class="section-title">专业房地产服务</h2>
                 <p class="section-description">提供从咨询到交易的全方位房地产服务，满足客户的各种需求</p>
             </div>
@@ -2625,9 +3205,7 @@
     <section class="contact-section" id="contact">
         <div class="section-container">
             <div class="section-header">
-                <!-- 副标题在上方 -->
                 <span class="section-subtitle">专业咨询</span>
-                <!-- 主标题在下方 -->
                 <h2 class="section-title">立即联系我</h2>
                 <p class="section-description">提供免费初步咨询，为您的房地产需求提供专业解决方案</p>
             </div>
@@ -2821,9 +3399,9 @@
                 <div class="footer-col">
                     <h3>热门项目</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="project-link-modal" data-project="ksl-jewel"><i class="fas fa-building"></i> KSL JEWEL</a></li>
-                        <li><a href="#" class="project-link-modal" data-project="sunway-majestic"><i class="fas fa-building"></i> SUNWAY MAJESTIC</a></li>
-                        <li><a href="#" class="project-link-modal" data-project="sunway-lakehills"><i class="fas fa-building"></i> SUNWAY LAKEHILLS</a></li>
+                        <li><a href="#" class="project-link-modal" data-project="ksl-jewel-studio"><i class="fas fa-building"></i> KSL JEWEL Studio</a></li>
+                        <li><a href="#" class="project-link-modal" data-project="sunway-majestic-1room"><i class="fas fa-building"></i> SUNWAY MAJESTIC 1房</a></li>
+                        <li><a href="#" class="project-link-modal" data-project="sunway-lakehills-2room"><i class="fas fa-building"></i> SUNWAY LAKEHILLS 2房</a></li>
                         <li><a href="#contact"><i class="fas fa-search"></i> 其他项目咨询</a></li>
                     </ul>
                 </div>
@@ -2875,250 +3453,656 @@
         </div>
     </div>
     
-    <!-- KSL JEWEL 详情模态框 -->
-    <div class="project-detail-modal" id="ksl-jewel-modal">
+    <!-- ==================== 各个项目的独立详情模态框 ==================== -->
+    
+    <!-- KSL JEWEL Studio 详情 -->
+    <div class="project-detail-modal" id="ksl-jewel-studio-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>KSL JEWEL - Permas Jaya 豪华公寓</h2>
-                <p class="modal-subtitle">新山Permas Jaya地区最值得投资的房产项目</p>
-                <button class="close-modal" data-modal="ksl-jewel-modal">&times;</button>
+                <h2>KSL JEWEL Studio</h2>
+                <p class="modal-subtitle">Permas Jaya 精致Studio户型 - 首购者与投资者的理想选择</p>
+                <button class="close-modal" data-modal="ksl-jewel-studio-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="project-detail-content">
                     <div class="detail-section">
-                        <p><strong>📍 很多人都说新山 Permas Jaya 很塞车🚘</strong></p>
-                        <p><strong>但真正做功课的人都会说: "这里很稳"‼️</strong></p>
+                        <p><strong>📍 Permas Jaya, 新山 · 永久地契 · 成熟社区</strong></p>
+                        <p><strong>首购优选 · 投资入门 · 低门槛高回报</strong></p>
                     </div>
                     
                     <div class="detail-section">
-                        <h3>🌟 为什么选 Permas Jaya？</h3>
+                        <h3>🌟 为什么选择KSL JEWEL Studio？</h3>
                         <div class="highlight-box">
+                            <h4>完美适合：</h4>
                             <ul class="highlight-list">
-                                <li><strong>房价比 Austin 更稳、涨幅更健康</strong></li>
-                                <li><strong>成熟社区</strong>，商店、餐饮、银行、超市一应俱全</li>
-                                <li><strong>靠近海边</strong>，环境舒适、治安口碑好</li>
-                                <li><strong>主要道路通畅</strong>，通往 CIQ / 各大商圈都方便</li>
-                                <li><strong>RM40万以内</strong>，能选的优质项目不多，而 Permas Jaya 是其中表现最稳的区域</li>
+                                <li><strong>首次购房者</strong> - 低门槛进入房地产市场</li>
+                                <li><strong>年轻专业人士</strong> - 单身人士的理想居所</li>
+                                <li><strong>房地产投资者</strong> - 入门级投资，风险低</li>
+                                <li><strong>年轻情侣</strong> - 温馨的二人世界</li>
+                                <li><strong>退休人士</strong> - 简约舒适的养老选择</li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 户型详情</div>
+                                <p><strong>类型：</strong> Studio 开放式设计<br>
+                                <strong>面积：</strong> 506 平方英尺<br>
+                                <strong>布局：</strong> 开放式客厅+卧室+储藏室+厨房+卫生间<br>
+                                <strong>楼层：</strong> 中层至高层可选<br>
+                                <strong>景观：</strong> 城市景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 260,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 1,100+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 1000 - RM 1,300/月</p>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h3>🏡 项目亮点</h3>
-                        <p><strong>每月供期从 RM1,100 – RM1,850</strong></p>
-                        <div class="highlight-box">
-                            <ul class="highlight-list">
-                                <li><strong>新推出单位</strong>，现代设计</li>
-                                <li><strong>适合首购族、年轻夫妻、小家庭</strong></li>
-                                <li><strong>投资者也爱</strong>：租金稳定、空置率低</li>
-                                <li><strong>周边就业机会高</strong>，租客来源多（工厂区、商圈、马新通勤族）</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>🎯 最适合谁？</h3>
+                        <h3>💎 项目优势</h3>
                         <div class="benefits-grid">
                             <div class="benefit-item">
-                                <div class="benefit-icon">👨💼</div>
-                                <div class="benefit-text">马新通勤族 — 生活机能满分</div>
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
                             </div>
                             <div class="benefit-item">
-                                <div class="benefit-icon">👨👩👧</div>
-                                <div class="benefit-text">小家庭 — 安静舒适、学校多、配套完善</div>
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
                             </div>
                             <div class="benefit-item">
-                                <div class="benefit-icon">💼</div>
-                                <div class="benefit-text">投资者 — 区域稳、租金回酬扎实</div>
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
                             </div>
                             <div class="benefit-item">
-                                <div class="benefit-icon">🏠</div>
-                                <div class="benefit-text">首购族 — 房价压力小、生活质量高</div>
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h3>🏡 投资价值</h3>
-                        <p><strong>RM400k 以内，新山最好卖的单位之一</strong></p>
-                        <p>不想冒险、不想踩雷，Permas Jaya 是真正适合自住 & 投资的黄金区域。</p>
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> AEON Mall Permas Jaya (5分钟车程)</li>
+                            <li><strong>超市：</strong> Tesco, Giant, Jaya Grocer</li>
+                            <li><strong>餐饮选择：</strong> 上百家餐厅和咖啡馆</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> KPJ Johor Specialist Hospital</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 15-20分钟到达CIQ海关</li>
+                        </ul>
                     </div>
                     
                     <div class="detail-section">
-                        <h3>📱 立即预约咨询</h3>
-                        <div class="whatsapp-link-box">
-                            <h4>那么好康，还等什么？</h4>
-                            <p>立即点击预约咨询：</p>
-                            <a href="https://wa.me/60167707878?text=pmcelpermasJW" target="_blank" class="whatsapp-link">
-                                <i class="fab fa-whatsapp"></i> WhatsApp 预约看房
-                            </a>
-                            <p style="margin-top: 15px; font-size: 0.9em;">
-                                或复制链接：<br>
-                                https://wa.me/60167707878?text=pmcelpermasJW
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>📸 项目示意图</h3>
+                        <h3>📷 户型图片展示</h3>
                         <div class="image-gallery">
-                            <img src="JEWEL KSL/JW3.jpeg" alt="KSL JEWEL外观" class="gallery-image">
-                            <img src="JEWEL KSL/JW2.jpeg" alt="公寓客厅" class="gallery-image">
-                            <img src="JEWEL KSL/JW4.jpeg" alt="卧室设计" class="gallery-image">
-                            <img src="JEWEL KSL/JW5.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="JEWEL KSL/JW6.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="JEWEL KSL/JW7.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="JEWEL KSL/JW8.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="JEWEL KSL/JW10.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="JEWEL KSL/JW1.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="JEWEL KSL/JW11.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="JEWEL KSL/JW12.jpeg" alt="社区设施" class="gallery-image">
+                            <img src="JEWEL KSL/STUDIO.jpeg" alt="KSL JEWEL Studio 平面图" class="gallery-image">
+                            <img src="JEWEL KSL/JW1.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW3.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW11.jpeg" alt="KSL JEWEL 1+1rooms 厨房" class="gallery-image">
+                            <img src="JEWEL KSL/JW12.jpeg" alt="KSL JEWEL 1+1rooms 卫生间" class="gallery-image">
                         </div>
+                    </div>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="KSL JEWEL VIDEO/VD3.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询KSL JEWEL Studio详情</h4>
+                        <p>想了解更多关于KSL JEWEL Studio的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelpermasJW_studio" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询Studio房详情
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- SUNWAY MAJESTIC 详情模态框 -->
-    <div class="project-detail-modal" id="sunway-majestic-modal">
+    <!-- KSL JEWEL 1+1房 详情 -->
+    <div class="project-detail-modal" id="ksl-jewel-1plus1-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>SUNWAY MAJESTIC - SOHO 公寓</h2>
-                <p class="modal-subtitle">新山靠近RTS最值得居住的环境 | 知名发展商Sunway项目</p>
-                <button class="close-modal" data-modal="sunway-majestic-modal">&times;</button>
+                <h2>KSL JEWEL 1+1房</h2>
+                <p class="modal-subtitle">Permas Jaya 灵活空间设计 - 小家庭与投资者的智慧选择</p>
+                <button class="close-modal" data-modal="ksl-jewel-1plus1-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="project-detail-content">
                     <div class="detail-section">
-                        <h3>🚀🚀 项目亮点</h3>
-                        <p><strong>#新山靠经RTS最值得居住的环境</strong></p>
-                        <p><strong>#知名发展商Sunway项目🚀🚀</strong></p>
-                        
-                        <div class="price-tag">
-                            每月供期从 RM1,700 - RM2,300 🤩
-                        </div>
-                        
-                        <p><strong>pm我，绝对不会后悔🤩</strong></p>
-                        <p><strong>有兴趣了解，马上联系：</strong></p>
-                        <p><strong>https://wa.me/60167707878?text=pmcelSWM</strong></p>
+                        <p><strong>📍 Permas Jaya, 新山 · 永久地契 · 灵活空间</strong></p>
+                        <p><strong>1+1房设计 · 高租金回报 · 多功能使用</strong></p>
                     </div>
-                    
+    
                     <div class="detail-section">
-                        <h3>📣 别滑！我们公寓楼下就有 👇</h3>
+                        <h3>🌟 为什么选择KSL JEWEL 1+1房？</h3>
                         <div class="highlight-box">
+                            <h4>完美适合：</h4>
                             <ul class="highlight-list">
-                                <li><strong>🏢 Shopping Mall</strong> — 早餐、晚餐、买日用品，全走路搞定</li>
-                                <li><strong>🚶 3km 到 CIQ</strong> — 新马通勤分分钟，省下你大把时间</li>
-                                <li><strong>💰 2房，RM400k 起</strong> — 性价比爆表‼️</li>
-                                <li><strong>✅ 合法 AirBnB</strong> — 收租民宿轻松无压力</li>
-                                <li><strong>🎁 送冷气 + Move In Bonus</strong> - 剩下一大笔钱💰</li>
+                                <li><strong>小家庭</strong> - 夫妻+1孩子的理想空间</li>
+                                <li><strong>在家工作者</strong> - 额外房间可作为办公室</li>
+                                <li><strong>投资者</strong> - 高租金回报的优选</li>
+                                <li><strong>年轻专业人士</strong> - 工作与生活的平衡</li>
+                                <li><strong>升级买家</strong> - 从Studio升级的理想选择</li>
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="detail-section">
-                        <h3>✨ 一套房子，三种玩法：</h3>
+                        <h3>📊 详细规格</h3>
                         <div class="play-types">
                             <div class="play-type">
-                                <div class="play-type-number">1️⃣ 当家住</div>
-                                <p>生活便利到爆</p>
+                                <div class="play-type-number">🏠 户型详情</div>
+                                <p><strong>类型：</strong> 1+1房 开放式设计<br>
+                                <strong>面积：</strong> 646 平方英尺<br>
+                                <strong>布局：</strong> 开放式客厅+卧室+储藏室+厨房+卫生间<br>
+                                <strong>楼层：</strong> 中层至高层可选<br>
+                                <strong>景观：</strong> 城市景观或社区景观</p>
                             </div>
                             <div class="play-type">
-                                <div class="play-type-number">2️⃣ 当办公室 / 工作室</div>
-                                <p>通勤零成本</p>
-                            </div>
-                            <div class="play-type">
-                                <div class="play-type-number">3️⃣ 做合法民宿</div>
-                                <p>一边生活一边赚钱</p>
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 380,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 1,500+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 1200 - RM 1,600/月</p>
                             </div>
                         </div>
-                        <p><strong>投资弹性大、可玩性高，这就是我们 Sunway公寓的魅力 ✨</strong></p>
                     </div>
                     
                     <div class="detail-section">
-                        <h3>📍 地点与配套</h3>
+                        <h3>💎 项目优势</h3>
                         <div class="benefits-grid">
                             <div class="benefit-item">
-                                <div class="benefit-icon">📍</div>
-                                <div class="benefit-text">新山市中心（成熟商圈，周边生活配套齐全）</div>
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
                             </div>
                             <div class="benefit-item">
                                 <div class="benefit-icon">💰</div>
-                                <div class="benefit-text">价格：RM4XXK 左右，轻松上车</div>
+                                <div class="benefit-text">首购优惠</div>
                             </div>
                             <div class="benefit-item">
-                                <div class="benefit-icon">🏫</div>
-                                <div class="benefit-text">学校：环绕 2km 内有十间中学和小学（包括：宽柔二小）</div>
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
                             </div>
                             <div class="benefit-item">
-                                <div class="benefit-icon">🏥</div>
-                                <div class="benefit-text">医院：5km 内有四间医院（包括：1km到 KPJ Johor Specialist）</div>
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="detail-section">
-                        <h3>✨ 亮点特色：</h3>
-                        <div class="highlight-box">
-                            <ul class="highlight-list">
-                                <li>✅ 永久地契 / 产权灵活</li>
-                                <li>✅ 可申请商业用途，轻松开展生意</li>
-                                <li>✅ 高租金回报，投资保值</li>
-                                <li>✅ 周边银行、商场、咖啡馆、餐饮一应俱全</li>
-                                <li>✅ 交通便利，主要干道直达</li>
-                            </ul>
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> AEON Mall Permas Jaya (5分钟车程)</li>
+                            <li><strong>超市：</strong> Tesco, Giant, Jaya Grocer</li>
+                            <li><strong>餐饮选择：</strong> 上百家餐厅和咖啡馆</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> KPJ Johor Specialist Hospital</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 15-20分钟到达CIQ海关</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="JEWEL KSL/1+1ROOMS.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW2.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW4.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW5.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW6.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW7.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW8.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW9.jpeg" alt="KSL JEWEL 1+1rooms 客厅" class="gallery-image">
+                            <img src="JEWEL KSL/JW10.jpeg" alt="KSL JEWEL 1+1rooms 卧室区" class="gallery-image">
+                            <img src="JEWEL KSL/JW1.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW3.jpeg" alt="KSL JEWEL 1+1rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW11.jpeg" alt="KSL JEWEL 1+1rooms 厨房" class="gallery-image">
+                            <img src="JEWEL KSL/JW12.jpeg" alt="KSL JEWEL 1+1rooms 卫生间" class="gallery-image">
                         </div>
                     </div>
-                    
-                    <div class="detail-section">
-                        <h3>💡 想象一下——</h3>
-                        <p>早上在家楼下的咖啡馆喝杯拿铁，</p>
-                        <p>中午走几步就能进办公室开会，</p>
-                        <p>晚上回家，转个身就是温暖的家。</p>
-                        <p><strong>一套公寓，搞定生活 + 工作 + 投资三重需求</strong></p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <p><strong>⚠️ 重点是：价位、优惠、户型都很抢手，晚一步就被别人签走了！</strong></p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>📲 赶快找我：</h3>
-                        <p><strong>Celine 016-7707878</strong></p>
-                        <p>或</p>
-                        <p><strong>点击以下链接🔗</strong></p>
-                        <p>https://wa.me/60167707878?text=pmcelSWM</p>
-                        <p>https://wa.me/60167707878?text=pmcelSWM</p>
-                        <p>https://wa.me/60167707878?text=pmcelSWM</p>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="KSL JEWEL VIDEO/VD1+1.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="whatsapp-link-box">
-                        <h4>立即咨询 Sunway Majestic 详情</h4>
-                        <a href="https://wa.me/60167707878?text=pmcelSWM" target="_blank" class="whatsapp-link">
-                            <i class="fab fa-whatsapp"></i> WhatsApp 立即咨询
+                        <h4>📞 立即咨询KSL JEWEL 1+1房详情</h4>
+                        <p>想了解更多关于KSL JEWEL 1+1房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelpermasJW_1+1rooms" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询1+1房详情
                         </a>
                     </div>
-                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- KSL JEWEL 2房 详情 -->
+    <div class="project-detail-modal" id="ksl-jewel-2room-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>KSL JEWEL 2房</h2>
+                <p class="modal-subtitle">Permas Jaya 家庭优选 - 2房2厕舒适生活空间</p>
+                <button class="close-modal" data-modal="ksl-jewel-2room-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
                     <div class="detail-section">
-                        <h3>📸 项目示意图</h3>
-                        <div class="image-gallery">
-                            <img src="SUNWAY MAJESTIC/SWM01.jpeg" alt="SUNWAY MAJESTIC外观" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM01.1.jpeg" alt="SOHO办公空间" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM1.jpeg" alt="现代厨房" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM2.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM3.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM4.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM5.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM6.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM7.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM8.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM9.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY MAJESTIC/SWM10.jpeg" alt="社区设施" class="gallery-image">
+                        <p><strong>📍 Permas Jaya, 新山 · 永久地契 · 灵活空间</strong></p>
+                        <p><strong>2房设计 · 高租金回报 · 多功能使用</strong></p>
+                    </div>
+    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择KSL JEWEL 2房？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>核心小家庭</strong> - 夫妻+1-2个孩子的完美空间</li>
+                                <li><strong>在家办公者</strong> - 主卧+客卧+书房功能兼备</li>
+                                <li><strong>长期投资者</strong> - 中等户型租金回报稳定且高</li>
+                                <li><strong>成长型家庭</strong> - 为孩子提供独立成长空间</li>
+                                <li><strong>升级换房者</strong> - 从1房升级到2房的明智选择</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 户型详情</div>
+                                <p><strong>类型：</strong> 2房 开放式设计<br>
+                                <strong>面积：</strong> 753 平方英尺<br>
+                                <strong>布局：</strong> 开放式客厅+2个卧室+厨房+卫生间<br>
+                                <strong>楼层：</strong> 中层至高层可选<br>
+                                <strong>景观：</strong> 城市景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 450,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 1,700+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 1400 - RM 1,800/月</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- 视频部分 -->
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> AEON Mall Permas Jaya (5分钟车程)</li>
+                            <li><strong>超市：</strong> Tesco, Giant, Jaya Grocer</li>
+                            <li><strong>餐饮选择：</strong> 上百家餐厅和咖啡馆</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> KPJ Johor Specialist Hospital</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 15-20分钟到达CIQ海关</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="JEWEL KSL/JW1.jpeg" alt="KSL JEWEL 2rooms 客厅" class="gallery-image">
+                            <img src="JEWEL KSL/JW3.jpeg" alt="KSL JEWEL 2rooms 卧室区" class="gallery-image">
+                            <img src="JEWEL KSL/JW11.jpeg" alt="KSL JEWEL 2rooms 厨房" class="gallery-image">
+                            <img src="JEWEL KSL/JW12.jpeg" alt="KSL JEWEL 2rooms 卫生间" class="gallery-image">
+                        </div>
+                    </div>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="KSL JEWEL VIDEO/VD1+1.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询KSL JEWEL 2房详情</h4>
+                        <p>想了解更多关于KSL JEWEL 2房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelpermasJW_2rooms" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询2房详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- KSL JEWEL 3房 详情 -->
+    <div class="project-detail-modal" id="ksl-jewel-3room-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>KSL JEWEL 3房</h2>
+                <p class="modal-subtitle">Permas Jaya 豪华户型 - 大家庭的高品质生活</p>
+                <button class="close-modal" data-modal="ksl-jewel-3room-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 Permas Jaya, 新山 · 永久地契 · 灵活空间</strong></p>
+                        <p><strong>3房设计 · 高租金回报 · 多功能使用</strong></p>
+                    </div>
+    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择KSL JEWEL 3房？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>成熟家庭</strong> - 夫妻+2个孩子的舒适生活空间</li>
+                                <li><strong>多代同堂</strong> - 可安排父母房或保姆房</li>
+                                <li><strong>高端投资者</strong> - 租金高且租客素质优良</li>
+                                <li><strong>居家办公专业人士</strong> - 主卧+儿童房+书房/办公室</li>
+                                <li><strong>升级改善型买家</strong> - 从2房升级到3房的品质提升</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 户型详情</div>
+                                <p><strong>类型：</strong> 3房 开放式设计<br>
+                                <strong>面积：</strong> 850 平方英尺<br>
+                                <strong>布局：</strong> 开放式客厅+3个卧室+厨房+卫生间<br>
+                                <strong>楼层：</strong> 中层至高层可选<br>
+                                <strong>景观：</strong> 城市景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 510,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 1,900+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 1,600 - RM 2,000/月</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> AEON Mall Permas Jaya (5分钟车程)</li>
+                            <li><strong>超市：</strong> Tesco, Giant, Jaya Grocer</li>
+                            <li><strong>餐饮选择：</strong> 上百家餐厅和咖啡馆</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> KPJ Johor Specialist Hospital</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 15-20分钟到达CIQ海关</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="JEWEL KSL/JW1.jpeg" alt="KSL JEWEL 3rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW3.jpeg" alt="KSL JEWEL 3rooms 其他" class="gallery-image">
+                            <img src="JEWEL KSL/JW11.jpeg" alt="KSL JEWEL 3rooms 厨房" class="gallery-image">
+                            <img src="JEWEL KSL/JW12.jpeg" alt="KSL JEWEL 3rooms 卫生间" class="gallery-image">
+                        </div>
+                    </div>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="KSL JEWEL VIDEO/VD2.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询KSL JEWEL 3房详情</h4>
+                        <p>想了解更多关于KSL JEWEL 3房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelpermasJW_3rooms" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询3房详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUNWAY MAJESTIC 1房 详情 -->
+    <div class="project-detail-modal" id="sunway-majestic-1rooms-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SUNWAY MAJESTIC 1房SOHO</h2>
+                <p class="modal-subtitle">新山市中心 · RTS步行距离 · 合法AirBnB投资</p>
+                <button class="close-modal" data-modal="sunway-majestic-1rooms-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 新山市中心 · RTS步行距离 · 永久地契</strong></p>
+                        <p><strong>合法AirBnB · 商住两用 · 市中心黄金地段</strong></p>
+                    </div>
+    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择SUNWAY MAJESTIC 1房？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>单身专业人士</strong> - 市中心的便捷生活体验</li>
+                                <li><strong>初创创业者</strong> - 商住两用的灵活空间</li>
+                                <li><strong>AirBnB投资者</strong> - 市中心短租的高回报投资</li>
+                                <li><strong>年轻自由职业者</strong> - 工作与生活一体化的设计</li>
+                                <li><strong>新加坡通勤者</strong> - 靠近RTS站的便利位置</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 SOHO 1房户型详情</div>
+                                <p><strong>类型：</strong> 1房1厕 SOHO设计<br>
+                                <strong>面积：</strong> 467 平方英尺<br>
+                                <strong>布局：</strong> 开放式客厅+卧室+厨房+卫生间<br>
+                                <strong>楼层：</strong> 中层至高层可选<br>
+                                <strong>景观：</strong> 城市景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 390,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 1,700+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 1,400 - RM 1,800/月</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> KSL City Mall (10分钟车程)</li>
+                            <li><strong>超市：</strong> City Square, Mid Valley Southkey, R&F Mall</li>
+                            <li><strong>餐饮选择：</strong> 多家餐厅和咖啡馆</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> KPJ Johor Specialist Hospital</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 距离CIQ/RTS海关只需4km</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY MAJESTIC/SWM1.jpeg" alt="SUNWAY MAJESTIC 1房 客厅" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM2.jpeg" alt="SUNWAY MAJESTIC 1房 卧室" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM01.1.jpeg" alt="SUNWAY MAJESTIC 1房 卫生间" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM7.jpeg" alt="SUNWAY MAJESTIC 1房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM8.jpeg" alt="SUNWAY MAJESTIC 1房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM9.jpeg" alt="SUNWAY MAJESTIC 1房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM10.jpeg" alt="SUNWAY MAJESTIC 1房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM1room.jpeg" alt="SUNWAY MAJESTIC 1房 其他" class="gallery-image">
+                        </div>
+                    </div>
+
                     <div class="video-section">
                         <h4>🎬 视频展示</h4>
                         <div class="videos-grid">
@@ -3129,175 +4113,687 @@
                                 </video>
                                 <p>室内设施展示 1</p>
                             </div>
-                            <div class="video-item">
-                                <video controls class="project-video">
-                                    <source src="SUNWAY MAJESTIC/SWMVIDEO2.mp4" type="video/mp4">
-                                    您的浏览器不支持视频标签
-                                </video>
-                                <p>室内设施展示 2</p>
-                            </div>
-                            <div class="video-item">
-                                <video controls class="project-video">
-                                    <source src="SUNWAY MAJESTIC/SWMVIDEO3.mp4" type="video/mp4">
-                                    您的浏览器不支持视频标签
-                                </video>
-                                <p>室内设施展示 3</p>
-                            </div>
                         </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询SUNWAY MAJESTIC 1房详情</h4>
+                        <p>想了解更多关于SUNWAY MAJESTIC 1房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelSWM_studio" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询1房详情
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     
-    <!-- SUNWAY LAKEHILLS 详情模态框 -->
-    <div class="project-detail-modal" id="sunway-lakehills-modal">
+    <!-- SUNWAY MAJESTIC 2房 详情 -->
+    <div class="project-detail-modal" id="sunway-majestic-2room-modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>SUNWAY LAKEHILLS - 湖景阁楼公寓</h2>
-                <p class="modal-subtitle">富人区的平价梦想屋 | Taman Molek豪华社区</p>
-                <button class="close-modal" data-modal="sunway-lakehills-modal">&times;</button>
+                <h2>SUNWAY MAJESTIC 2房SOHO</h2>
+                <p class="modal-subtitle">商住两用设计 · 市中心黄金地段</p>
+                <button class="close-modal" data-modal="sunway-majestic-2room-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <div class="project-detail-content">
                     <div class="detail-section">
-                        <h3>💡 项目介绍</h3>
-                        <p><strong>#湖景隔楼公寓，</strong></p>
-                        <p><strong>#价格从RM510k起 就能在豪华成熟区 #Taman_Molek 拥有属于你的小窝 🏡</strong></p>
+                        <p><strong>📍 新山市中心 · RTS步行距离 · 永久地契</strong></p>
+                        <p><strong>合法AirBnB · 商住两用 · 市中心黄金地段</strong></p>
                     </div>
-                    
+    
                     <div class="detail-section">
-                        <h3>🚗 选择的重要性</h3>
-                        <p><strong>如果是你，</strong></p>
-                        <p><strong>你会选择住在天天塞车的地段，</strong></p>
-                        <p><strong>还是塞完车回到一个安静又舒服的家？</strong></p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>🏢 社区优势</h3>
+                        <h3>🌟 为什么选择SUNWAY MAJESTIC 2房？</h3>
                         <div class="highlight-box">
-                            <h4>社区非常低密度</h4>
-                            <p>3栋楼一共1200户，</p>
-                            <p>还有多达6重保安系统，</p>
-                            <p>安静、安全、私密感满满！</p>
-                            <p><strong>每天回家都是一种享受 🧘‍♀️</strong></p>
-                        </div>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>💳 Taman Molek 生活便利</h3>
-                        <p>这里聚集了 16间银行，</p>
-                        <p>是新山最集中的金融区！</p>
-                        <p>办事、汇款、见客户都超方便～</p>
-                        <p>加上 Aeon Tebrau、IKEA、Toppen</p>
-                        <p>都在10公里范围内，生活机能满分💯</p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>🏠 户型选择多样</h3>
-                        <div class="benefits-grid">
-                            <div class="benefit-item">
-                                <div class="benefit-icon">2房</div>
-                                <div class="benefit-text">适合单身或情侣</div>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-icon">3房</div>
-                                <div class="benefit-text">适合小家庭</div>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-icon">4房</div>
-                                <div class="benefit-text">适合大家庭</div>
-                            </div>
-                            <div class="benefit-item">
-                                <div class="benefit-icon">Sky Bungalow</div>
-                                <div class="benefit-text">奢华空中别墅</div>
-                            </div>
-                        </div>
-                        <p><strong>不管你是单身、情侣、还是一家大小，都能找到属于自己的空间。</strong></p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>😍 LOFT 复式单位</h3>
-                        <div class="highlight-box">
-                            <p>我自己最心动的是这款 LOFT 复式单位 😍</p>
-                            <p>挑高4.8米的大空间，一进门就超有气势，</p>
-                            <p>楼上楼下动静分离，大落地窗洒进阳光，</p>
-                            <p>不管工作还是休息都特别疗愈☀️</p>
-                        </div>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>🏡 投资与生活</h3>
-                        <p>婚前自住、婚后出租，</p>
-                        <p>这不仅是一间家，更是你稳稳的底气。</p>
-                        <p><strong>🏡 房子不只是空间，</strong></p>
-                        <p><strong>它是你生活的起点，也是生活的方式。</strong></p>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>👀 预约看房</h3>
-                        <p><strong>想亲眼看看什么叫「富人区的平价梦想屋」？</strong></p>
-                        <p><strong>💬 记得私信我，让我带你去看看！</strong></p>
-                        <p>https://wa.me/60167707878?text=pmcelSLH</p>
-                        <p>https://wa.me/60167707878?text=pmcelSLH</p>
-                        <p>https://wa.me/60167707878?text=pmcelSLH</p>
-                    </div>
-                    
-                    <div class="whatsapp-link-box">
-                        <h4>立即预约看房</h4>
-                        <a href="https://wa.me/60167707878?text=pmcelSLH" target="_blank" class="whatsapp-link">
-                            <i class="fab fa-whatsapp"></i> WhatsApp 预约看房
-                        </a>
-                    </div>
-                    
-                    <div class="detail-section">
-                        <h3>📸 项目示意图</h3>
-                        <div class="image-gallery">
-                            <img src="SUNWAY LAKEHILLS/SLH01.jpeg" alt="SUNWAY LAKEHILLS主图" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS/SLH2.jpeg" alt="湖景景观" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS/SLH3.jpeg" alt="LOFT复式设计" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS/SLH4.jpeg" alt="豪华客厅" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS/SLH5.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS/SLH6.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS/SLH7.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS/SLH8.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS/SLH9.jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (1).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (2).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (3).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (4).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (5).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (6).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (7).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (8).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (9).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (10).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (11).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (12).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (13).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (14).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (15).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (16).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (17).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (18).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (19).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (20).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (21).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (22).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (23).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (24).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (25).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (26).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (27).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (28).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (29).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (30).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (31).jpeg" alt="社区设施" class="gallery-image">
-                            <img src="SUNWAY LAKEHILLS2/WSLH (32).jpeg" alt="社区设施" class="gallery-image">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>单身专业人士</strong> - 市中心的便捷生活体验</li>
+                                <li><strong>初创创业者</strong> - 商住两用的灵活空间</li>
+                                <li><strong>AirBnB投资者</strong> - 市中心短租的高回报投资</li>
+                                <li><strong>年轻自由职业者</strong> - 工作与生活一体化的设计</li>
+                                <li><strong>新加坡通勤者</strong> - 靠近RTS站的便利位置</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!-- 视频部分 -->
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 SOHO 2房户型详情</div>
+                                <p><strong>类型：</strong> 2房1厕 SOHO设计<br>
+                                <strong>面积：</strong> 596 平方英尺<br>
+                                <strong>布局：</strong> 开放式客厅+2个卧室+厨房+卫生间<br>
+                                <strong>楼层：</strong> 中层至高层可选<br>
+                                <strong>景观：</strong> 城市景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 470,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 2,100+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 1,800 - RM 2,200/月</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> KSL City Mall (10分钟车程)</li>
+                            <li><strong>超市：</strong> City Square, Mid Valley Southkey, R&F Mall</li>
+                            <li><strong>餐饮选择：</strong> 多家餐厅和咖啡馆</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> KPJ Johor Specialist Hospital</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 距离CIQ/RTS海关只需4km</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY MAJESTIC/SWM3.jpeg" alt="SUNWAY MAJESTIC 2房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM4.jpeg" alt="SUNWAY MAJESTIC 2房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM01.1.jpeg" alt="SUNWAY MAJESTIC 2房 卫生间" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM7.jpeg" alt="SUNWAY MAJESTIC 2房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM8.jpeg" alt="SUNWAY MAJESTIC 2房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM9.jpeg" alt="SUNWAY MAJESTIC 2房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM10.jpeg" alt="SUNWAY MAJESTIC 2房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM2room.jpeg" alt="SUNWAY MAJESTIC 2房 其他" class="gallery-image">
+                        </div>
+                    </div>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO3.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询SUNWAY MAJESTIC 2房详情</h4>
+                        <p>想了解更多关于SUNWAY MAJESTIC 2房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelSWM_2房" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询2房详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUNWAY MAJESTIC 3房 详情 -->
+    <div class="project-detail-modal" id="sunway-majestic-3room-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SUNWAY MAJESTIC 3房SOHO</h2>
+                <p class="modal-subtitle">豪华SOHO设计 · 大家庭与办公空间完美结合</p>
+                <button class="close-modal" data-modal="sunway-majestic-3room-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 新山市中心 · RTS步行距离 · 永久地契</strong></p>
+                        <p><strong>合法AirBnB · 商住两用 · 市中心黄金地段</strong></p>
+                    </div>
+    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择SUNWAY MAJESTIC 3房？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>单身专业人士</strong> - 市中心的便捷生活体验</li>
+                                <li><strong>初创创业者</strong> - 商住两用的灵活空间</li>
+                                <li><strong>AirBnB投资者</strong> - 市中心短租的高回报投资</li>
+                                <li><strong>年轻自由职业者</strong> - 工作与生活一体化的设计</li>
+                                <li><strong>新加坡通勤者</strong> - 靠近RTS站的便利位置</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 SOHO 3房户型详情</div>
+                                <p><strong>类型：</strong> 3房2厕 SOHO设计<br>
+                                <strong>面积：</strong> 681 平方英尺<br>
+                                <strong>布局：</strong> 开放式客厅+3个卧室+厨房+卫生间<br>
+                                <strong>楼层：</strong> 中层至高层可选<br>
+                                <strong>景观：</strong> 城市景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 530,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 2,300+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 2,000 - RM 2,400/月</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> KSL City Mall (10分钟车程)</li>
+                            <li><strong>超市：</strong> City Square, Mid Valley Southkey, R&F Mall</li>
+                            <li><strong>餐饮选择：</strong> 多家餐厅和咖啡馆</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> KPJ Johor Specialist Hospital</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 距离CIQ/RTS海关只需4km</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY MAJESTIC/SWM5.jpeg" alt="SUNWAY MAJESTIC 3房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM6.jpeg" alt="SUNWAY MAJESTIC 3房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM01.1.jpeg" alt="SUNWAY MAJESTIC 3房 卫生间" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM7.jpeg" alt="SUNWAY MAJESTIC 3房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM8.jpeg" alt="SUNWAY MAJESTIC 3房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM9.jpeg" alt="SUNWAY MAJESTIC 3房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM10.jpeg" alt="SUNWAY MAJESTIC 3房 其他" class="gallery-image">
+                            <img src="SUNWAY MAJESTIC/SWM3room.jpeg" alt="SUNWAY MAJESTIC 3房 其他" class="gallery-image">
+                        </div>
+                    </div>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO2.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询SUNWAY MAJESTIC 3房详情</h4>
+                        <p>想了解更多关于SUNWAY MAJESTIC 3房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelSWM_3房" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询3房详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUNWAY LAKEHILLS 2房 详情 -->
+    <div class="project-detail-modal" id="sunway-lakehills-2room-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SUNWAY LAKEHILLS 2房湖景公寓</h2>
+                <p class="modal-subtitle">Taman Molek富人区 · 湖景社区</p>
+                <button class="close-modal" data-modal="sunway-lakehills-2room-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 Taman Molek · 富人区 · 湖景阁楼公寓</strong></p>
+                        <p><strong>Sunway品质保证 · 豪华设施 · 私密性佳 · 永久地契</strong></p>
+                    </div>
+    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择SUNWAY LAKEHILLS 2房？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>年轻成功专业人士</strong> - 2房湖景公寓的现代生活体验</li>
+                                <li><strong>小家庭</strong> - 3-4房户型的舒适家庭空间</li>
+                                <li><strong>投资收藏家</strong> - LOFT复式户型的独特投资价值</li>
+                                <li><strong>退休富裕夫妇</strong> - 湖景社区的宁静养老环境</li>
+                                <li><strong>资产配置者</strong> - 富人区房产的资产保值功能</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 SOHO 2房户型详情</div>
+                                <p><strong>类型：</strong> 2房2厕 SOHO设计<br>
+                                <strong>面积：</strong> 694 平方英尺<br>
+                                <strong>布局：</strong> 空旷开放式客厅+卧室+厨房+卫生间+阳台<br>
+                                <strong>景观：</strong> 湖泊景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 490,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 2,200+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 1,900 - RM 2,300/月</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> AEON Tebrau City (7km车程)</li>
+                            <li><strong>超市：</strong> Toppen Tebrau, Mid Valley Southkey, IKEA</li>
+                            <li><strong>休闲娱乐：</strong> Ponderosa Club, Daiman 18 Golf Club</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> Hospital Sultan Ismail</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 距离RTS海关只需13km</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (6).jpeg" alt="SUNWAY LAKEHILLS 2房 客厅" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (7).jpeg" alt="SUNWAY LAKEHILLS 2房 卧室" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (9).jpeg" alt="SUNWAY LAKEHILLS 2房 厨房" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (27).jpeg" alt="SUNWAY LAKEHILLS 2房 卫生间" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (29).jpeg" alt="SUNWAY LAKEHILLS 2房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (32).jpeg" alt="SUNWAY LAKEHILLS 2房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (30).jpeg" alt="SUNWAY LAKEHILLS 2房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (31).jpeg" alt="SUNWAY LAKEHILLS 2房 其他" class="gallery-image">
+                        </div>
+                    </div>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO3.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询SUNWAY LAKEHILLS 2房详情</h4>
+                        <p>想了解更多关于SUNWAY LAKEHILLS 2房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelSLH_2房" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询2房详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUNWAY LAKEHILLS 3房 详情 -->
+    <div class="project-detail-modal" id="sunway-lakehills-3room-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SUNWAY LAKEHILLS 3房湖景公寓</h2>
+                <p class="modal-subtitle">家庭豪宅 · 湖景景观 · 豪华设施</p>
+                <button class="close-modal" data-modal="sunway-lakehills-3room-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 Taman Molek · 富人区 · 湖景阁楼公寓</strong></p>
+                        <p><strong>Sunway品质保证 · 豪华设施 · 私密性佳 · 永久地契</strong></p>
+                    </div>
+    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择SUNWAY LAKEHILLS 3房？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>精英家庭</strong> - 3房2厕的舒适家庭空间</li>
+                                <li><strong>成功人士</strong> - Taman Molek富人区的居住选择</li>
+                                <li><strong>长期投资者</strong> - 3房户型稳定的租金回报</li>
+                                <li><strong>外派高管家庭</strong> - 国际化的高品质生活环境</li>
+                                <li><strong>退休规划者</strong> - 湖景社区的优质养老环境</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 SOHO 3房户型详情</div>
+                                <p><strong>类型：</strong> 3房2厕 SOHO设计<br>
+                                <strong>面积：</strong> 892 平方英尺<br>
+                                <strong>布局：</strong> 空旷开放式客厅+卧室+厨房+卫生间+阳台<br>
+                                <strong>景观：</strong> 湖泊景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 610,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 2,800+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 2,200 - RM 2,600/月</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> AEON Tebrau City (7km车程)</li>
+                            <li><strong>超市：</strong> Toppen Tebrau, Mid Valley Southkey, IKEA</li>
+                            <li><strong>休闲娱乐：</strong> Ponderosa Club, Daiman 18 Golf Club</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> Hospital Sultan Ismail</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 距离RTS海关只需13km</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (1).jpeg" alt="SUNWAY LAKEHILLS 3房 客厅" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (2).jpeg" alt="SUNWAY LAKEHILLS 3房 卧室" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (3).jpeg" alt="SUNWAY LAKEHILLS 3房 厨房" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (4).jpeg" alt="SUNWAY LAKEHILLS 3房 卫生间" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (5).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (11).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (12).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (14).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (15).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (30).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (31).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO3.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询SUNWAY LAKEHILLS 3房详情</h4>
+                        <p>想了解更多关于SUNWAY LAKEHILLS 3房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelSLH_3房" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询3房详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUNWAY LAKEHILLS 4房 详情 -->
+    <div class="project-detail-modal" id="sunway-lakehills-4room-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SUNWAY LAKEHILLS 4房豪华公寓</h2>
+                <p class="modal-subtitle">奢华享受 · 大家庭适用 · 富人区核心地段</p>
+                <button class="close-modal" data-modal="sunway-lakehills-4room-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 Taman Molek · 富人区 · 湖景阁楼公寓</strong></p>
+                        <p><strong>Sunway品质保证 · 豪华设施 · 私密性佳 · 永久地契</strong></p>
+                    </div>
+    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择SUNWAY LAKEHILLS 4房？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>大家庭</strong> - 4房2厕满足全家居住需求</li>
+                                <li><strong>富裕家庭</strong> - Taman Molek富人区的顶级住宅</li>
+                                <li><strong>外籍家庭</strong> - 国际学校附近的豪华住所</li>
+                                <li><strong>长期投资者</strong> - 富人区大户型稀缺资源</li>
+                                <li><strong>企业主</strong> - 宽敞空间适合家庭聚会和社交</li> 
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 湖景4房户型详情</div>
+                                <p><strong>类型：</strong> 4房2厕 宽式设计<br>
+                                <strong>面积：</strong> 1,182 平方英尺<br>
+                                <strong>布局：</strong> 空旷开放式客厅+卧室+厨房+卫生间+阳台<br>
+                                <strong>景观：</strong> 湖泊景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 790,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 3,500+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 2,800 - RM 3,500/月</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> AEON Tebrau City (7km车程)</li>
+                            <li><strong>超市：</strong> Toppen Tebrau, Mid Valley Southkey, IKEA</li>
+                            <li><strong>休闲娱乐：</strong> Ponderosa Club, Daiman 18 Golf Club</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> Hospital Sultan Ismail</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 距离RTS海关只需13km</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (16).jpeg" alt="SUNWAY LAKEHILLS 4房 客厅" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (17).jpeg" alt="SUNWAY LAKEHILLS 4房 卧室" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (18).jpeg" alt="SUNWAY LAKEHILLS 4房 厨房" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (19).jpeg" alt="SUNWAY LAKEHILLS 4房 卫生间" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (20).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (21).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (22).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (23).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (24).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (25).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (28).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (30).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS2/WSLH (31).jpeg" alt="SUNWAY LAKEHILLS 4房 其他" class="gallery-image">
+                        </div>
+                    </div>
+
                     <div class="video-section">
                         <h4>🎬 视频展示</h4>
                         <div class="videos-grid">
@@ -3311,7 +4807,153 @@
                             <div class="video-item">
                                 <video controls class="project-video">
                                     <source src="SUNWAY LAKEHILLS/SLHVIDEO2.mp4" type="video/mp4">
-                                    您的浏览器不支持视频标签 
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 2</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询SUNWAY LAKEHILLS 4房详情</h4>
+                        <p>想了解更多关于SUNWAY LAKEHILLS 4房的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelSLH_4房" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询4房详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- SUNWAY LAKEHILLS LOFT 详情 -->
+    <div class="project-detail-modal" id="sunway-lakehills-loft-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SUNWAY LAKEHILLS LOFT复式公寓</h2>
+                <p class="modal-subtitle">挑高4.8米 · 动静分离 · 独特生活体验</p>
+                <button class="close-modal" data-modal="sunway-lakehills-loft-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 Taman Molek · 富人区 · 湖景阁楼公寓 · 复式LOFT设计</strong></p>
+                        <p><strong>挑高4.8米 · 动静分离 · 独特生活体验</strong></p>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择SUNWAY LAKEHILLS LOFT？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>年轻创意人士</strong> - LOFT设计的艺术氛围</li>
+                                <li><strong>空间爱好者</strong> - 4.8米挑高的开阔感</li>
+                                <li><strong>设计敏感者</strong> - 动静分离的智能布局</li>
+                                <li><strong>投资收藏家</strong> - 稀缺复式户型的增值潜力</li>
+                                <li><strong>生活品味者</strong> - 与众不同的居住体验</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 LOFT户型详情</div>
+                                <p><strong>类型：</strong> 2房1厕 复式LOFT设计<br>
+                                <strong>面积：</strong> 708 平方英尺<br>
+                                <strong>层高：</strong> 挑高4.8米<br>
+                                <strong>布局：</strong> 动静分离设计，底层为生活区，上层为休息区<br>
+                                <strong>景观：</strong> 湖泊景观或社区景观</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 500,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 2,300+ (35年贷款)<br>
+                                <strong>预估租金：</strong> RM 2,000 - RM 2,500/月</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🔑</div>
+                                <div class="benefit-text">永久地契</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">首购优惠</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📊</div>
+                                <div class="benefit-text">稳定租金</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🛒</div>
+                                <div class="benefit-text">生活配套</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-section">
+                        <h3>📍 周边设施</h3>
+                        <ul class="highlight-list">
+                            <li><strong>购物中心：</strong> AEON Tebrau City (7km车程)</li>
+                            <li><strong>超市：</strong> Toppen Tebrau, Mid Valley Southkey, IKEA</li>
+                            <li><strong>休闲娱乐：</strong> Ponderosa Club, Daiman 18 Golf Club</li>
+                            <li><strong>银行：</strong> Maybank, Public Bank, CIMB 等</li>
+                            <li><strong>医疗设施：</strong> Hospital Sultan Ismail</li>
+                            <li><strong>教育机构：</strong> 多所国际学校和本地学校</li>
+                            <li><strong>交通：</strong> 距离RTS海关只需13km</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📷 户型图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="SUNWAY LAKEHILLS/SLH1.jpeg" alt="SUNWAY LAKEHILLS LOFT 客厅" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH01.jpeg" alt="SUNWAY LAKEHILLS LOFT 卧室" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH2.jpeg" alt="SUNWAY LAKEHILLS LOFT 厨房" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH3.jpeg" alt="SUNWAY LAKEHILLS LOFT 卫生间" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH4.jpeg" alt="SUNWAY LAKEHILLS LOFT 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH5.jpeg" alt="SUNWAY LAKEHILLS LOFT 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH6.jpeg" alt="SUNWAY LAKEHILLS LOFT 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH7.jpeg" alt="SUNWAY LAKEHILLS LOFT 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH8.jpeg" alt="SUNWAY LAKEHILLS LOFT 其他" class="gallery-image">
+                            <img src="SUNWAY LAKEHILLS/SLH9.jpeg" alt="SUNWAY LAKEHILLS LOFT 其他" class="gallery-image">
+                        </div>
+                    </div>
+
+                    <div class="video-section">
+                        <h4>🎬 视频展示</h4>
+                        <div class="videos-grid">
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO1.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
+                                </video>
+                                <p>室内设施展示 1</p>
+                            </div>
+                            <div class="video-item">
+                                <video controls class="project-video">
+                                    <source src="SUNWAY LAKEHILLS/SLHVIDEO2.mp4" type="video/mp4">
+                                    您的浏览器不支持视频标签
                                 </video>
                                 <p>室内设施展示 2</p>
                             </div>
@@ -3337,6 +4979,20 @@
                                 <p>室内设施展示 5</p>
                             </div>
                         </div>
+                    </div>
+                    
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询SUNWAY LAKEHILLS Loft详情</h4>
+                        <p>想了解更多关于SUNWAY LAKEHILLS Loft的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的户型平面图</li>
+                            <li>现场参观预约</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>贷款计算和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelSLH_loft" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询Loft详情
+                        </a>
                     </div>
                 </div>
             </div>
@@ -3434,6 +5090,7 @@
         const closeModalBtns = document.querySelectorAll('.close-modal');
         const modals = document.querySelectorAll('.project-detail-modal');
         
+        // 为每个"查看项目详情"按钮添加点击事件
         learnMoreBtns.forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -3443,10 +5100,16 @@
                 if (modal) {
                     modal.style.display = 'block';
                     document.body.style.overflow = 'hidden';
+                    
+                    // 滚动到模态框顶部
+                    modal.scrollTop = 0;
+                } else {
+                    console.warn(`Modal not found: ${project}-modal`);
                 }
             });
         });
         
+        // 关闭模态框按钮
         closeModalBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const modalId = this.getAttribute('data-modal');
@@ -3459,6 +5122,7 @@
             });
         });
         
+        // 点击模态框背景关闭
         modals.forEach(modal => {
             modal.addEventListener('click', function(e) {
                 if (e.target === this) {
@@ -3539,7 +5203,7 @@
             submitBtn.classList.add('loading');
             submitBtn.disabled = true;
             
-            // 使用 EmailJS 发送邮件 - 更新了你的 Service ID 和 Template ID
+            // 使用 EmailJS 发送邮件
             emailjs.send('service_celinelim81', 'template_37ridpm', {
                 name: formData.name,
                 email: formData.email,
@@ -3609,13 +5273,16 @@
         });
         
         // ==================== 页面加载动画 ====================
-        window.addEventListener('load', () => {
+        window.addEventListener('DOMContentLoaded', () => {
             document.body.style.opacity = '0';
             document.body.style.transition = 'opacity 0.5s ease';
             
             setTimeout(() => {
                 document.body.style.opacity = '1';
             }, 100);
+            
+            // 预加载图片
+            preloadImages();
         });
 
         // ==================== 新闻订阅表单处理 ====================
@@ -3657,22 +5324,35 @@
         });
         
         // ==================== 图片预加载 ====================
-        function preloadImages(imageUrls) {
-            imageUrls.forEach(url => {
+        function preloadImages() {
+            const imagesToPreload = [
+                'JEWEL KSL/JW9.jpeg',
+                'JEWEL KSL/JW3.jpeg',
+                'JEWEL KSL/JW2.jpeg',
+                'JEWEL KSL/JW4.jpeg',
+                'SUNWAY MAJESTIC/SWM001.jpeg',
+                'SUNWAY MAJESTIC/SWM1.jpeg',
+                'SUNWAY MAJESTIC/SWM2.jpeg',
+                'SUNWAY LAKEHILLS/SLH01.jpeg',
+                'SUNWAY LAKEHILLS/SLH2.jpeg',
+                'SUNWAY LAKEHILLS/SLH3.jpeg',
+                'SUNWAY LAKEHILLS/SLH4.jpeg'
+            ];
+            
+            imagesToPreload.forEach(url => {
                 const img = new Image();
                 img.src = url;
             });
         }
         
-        // 预加载关键图片
-        const imagesToPreload = [
-            'JEWEL KSL/JW9.jpeg',
-            'SUNWAY MAJESTIC/SWM001.jpeg',
-            'SUNWAY LAKEHILLS/SLH01.jpeg'
-        ];
-        
-        window.addEventListener('load', () => {
-            preloadImages(imagesToPreload);
+        // ==================== 初始化页面时确保所有模态框隐藏 ====================
+        window.addEventListener('DOMContentLoaded', () => {
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+            
+            const successModal = document.getElementById('successModal');
+            successModal.style.display = 'none';
         });
     </script>
 </body>
