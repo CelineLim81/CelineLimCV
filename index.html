@@ -2240,6 +2240,42 @@
                 padding: 6px 15px;
             }
         }
+
+        /* 确保项目卡片高度一致 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background-color: var(--white-color);
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid var(--accent-color);
+        }
+
+        .project-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-description {
+            color: #5D4037;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
@@ -2420,6 +2456,8 @@
                 <button class="filter-btn" data-filter="ksl-jewel">KSL JEWEL</button>
                 <button class="filter-btn" data-filter="sunway-majestic">SUNWAY MAJESTIC</button>
                 <button class="filter-btn" data-filter="sunway-lakehills">SUNWAY LAKEHILLS</button>
+                <button class="filter-btn" data-filter="galaxy-industrial-park">GALAXY INDUSTRIAL PARK</button>
+                <button class="filter-btn" data-filter="dato-onn-3storey-lot">DATO ONN 3 STOREY SHOP LOT</button>
                 <button class="filter-btn" data-filter="investment">投资型</button>
             </div>
             
@@ -2451,7 +2489,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 260k+</span>
+                                    <span class="spec-value">RM 260,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2507,7 +2545,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 380k+</span>
+                                    <span class="spec-value">RM 380,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2563,7 +2601,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 450k+</span>
+                                    <span class="spec-value">RM 450,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2619,7 +2657,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 510k+</span>
+                                    <span class="spec-value">RM 510,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2675,7 +2713,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 390k+</span>
+                                    <span class="spec-value">RM 390,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2731,7 +2769,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 470k+</span>
+                                    <span class="spec-value">RM 470,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2787,7 +2825,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 530k+</span>
+                                    <span class="spec-value">RM 530,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2843,7 +2881,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 490k+</span>
+                                    <span class="spec-value">RM 490,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2899,7 +2937,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 610k+</span>
+                                    <span class="spec-value">RM 610,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2955,7 +2993,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 790k+</span>
+                                    <span class="spec-value">RM 790,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -2983,7 +3021,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- SUNWAY LAKEHILLS LOFT -->
                 <div class="project-card" data-category="sunway-lakehills penthouse luxury">
                     <div class="project-badge">复式设计</div>
@@ -3011,7 +3049,7 @@
                                 </div>
                                 <div class="spec-item">
                                     <span class="spec-label">价格</span>
-                                    <span class="spec-value">RM 500k+</span>
+                                    <span class="spec-value">RM 500,000+</span>
                                 </div>
                             </div>
                             <div class="monthly-payment">
@@ -3033,6 +3071,111 @@
                                 咨询LOFT详情
                             </a>
                             <button class="learn-more-btn" data-project="sunway-lakehills-loft">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GALAXY INDUSTRIAL PARK -->
+                <div class="project-card" data-category="galaxy-industrial-park industrial">
+                    <div class="project-badge">工业地产</div>
+                    <div class="project-image">
+                        <img src="GLX/GALAXY (1).jpeg" alt="GALAXY INDUSTRIAL PARK">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">GALAXY INDUSTRIAL PARK</span>
+                        <h3 class="project-title">GALAXY INDUSTRIAL PARK</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Taman Molek · 优越工业区位</span>
+                        </div>
+                        <p class="project-description">Taman Molek新山工业区, 物流枢纽和出口导向战略交通位置, 基础设施完善。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">厂房类型</span>
+                                    <span class="spec-value">多种规格可选</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积范围</span>
+                                    <span class="spec-value">12,177 - 21,438 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格范围</span>
+                                    <span class="spec-value">RM 7,100,000 - 11,600,000+</span>
+                                    <span class="spec-value">(RM 7.1m - 11.6m+)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">工业地产</span>
+                            <span class="feature-tag">物流枢纽</span>
+                            <span class="feature-tag">战略位置</span>
+                            <span class="feature-tag">基础设施完善</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelGLX_IndustrialPark" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询工业园详情
+                            </a>
+                            <button class="learn-more-btn" data-project="galaxy-industrial-park">
+                                <i class="fas fa-info-circle"></i>
+                                查看项目详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DATO ONN 3 STOREY SHOP LOT -->
+                <div class="project-card" data-category="dato-onn-3storey-lot">
+                    <div class="project-badge">商业地产</div>
+                    <div class="project-image">
+                        <img src="GLX/MIXUE (6).jpeg" alt="DATO ONN 3 STOREY SHOP LOT">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">DATO ONN 3 STOREY SHOP LOT</span>
+                        <h3 class="project-title">DATO ONN 3 STOREY SHOP LOT</h3>
+                        <div class="project-location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Taman Molek · 优质商业区位</span>
+                        </div>
+                        <p class="project-description">Dato Onn新山商业区, 人流稳定和出转角的交通位置, 基础设施完善。</p>
+                        
+                        <div class="unit-details">
+                            <div class="unit-specs">
+                                <div class="spec-item">
+                                    <span class="spec-label">商业类型</span>
+                                    <span class="spec-value">最后1间可选</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">面积范围</span>
+                                    <span class="spec-value">6,835 sqft</span>
+                                </div>
+                                <div class="spec-item">
+                                    <span class="spec-label">价格范围</span>
+                                    <span class="spec-value">RM 3,600,000+ (NEGO)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-features">
+                            <span class="feature-tag">商业地产</span>
+                            <span class="feature-tag">人流稳定</span>
+                            <span class="feature-tag">转角位置</span>
+                            <span class="feature-tag">基础设施完善</span>
+                        </div>
+                        
+                        <div class="project-actions">
+                            <a href="https://wa.me/60167707878?text=pmcelDO3_storeyshoplot" target="_blank" class="whatsapp-project-btn">
+                                <i class="fab fa-whatsapp"></i>
+                                咨询工业园详情
+                            </a>
+                            <button class="learn-more-btn" data-project="dato-onn-3storey-lot">
                                 <i class="fas fa-info-circle"></i>
                                 查看项目详情
                             </button>
@@ -3333,6 +3476,8 @@
                                 <option value="ksl-jewel">KSL JEWEL 项目咨询</option>
                                 <option value="sunway-majestic">SUNWAY MAJESTIC 项目咨询</option>
                                 <option value="sunway-lakehills">SUNWAY LAKEHILLS 项目咨询</option>
+                                <option value="galaxy-industrial-park">GALAXY INDUSTRIAL PARK 项目咨询</option>
+                                <option value="dato-onn-3storey-lot">DATO ONN 3 STOREY SHOP LOT 项目咨询</option>
                                 <option value="other">其他咨询服务</option>
                             </select>
                         </div>
@@ -4650,7 +4795,6 @@
                             <img src="SUNWAY LAKEHILLS2/WSLH (30).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
                             <img src="SUNWAY LAKEHILLS2/WSLH (31).jpeg" alt="SUNWAY LAKEHILLS 3房 其他" class="gallery-image">
                         </div>
-                        </div>
                     </div>
 
                     <div class="video-section">
@@ -4999,361 +5143,1091 @@
         </div>
     </div>
 
+    <!-- GALAXY INDUSTRIAL PARK 详情 -->
+    <div class="project-detail-modal" id="galaxy-industrial-park-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>GALAXY INDUSTRIAL PARK</h2>
+                <p class="modal-subtitle">Taman Molek · 优越工业区位 - 制造商与物流企业的战略布局</p>
+                <button class="close-modal" data-modal="galaxy-industrial-park-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 Taman Molek 新山工业区 · 战略交通位置 · 完善基础设施</strong></p>
+                        <p><strong>物流枢纽 · 出口导向 · 制造商与物流企业优选</strong></p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择GALAXY INDUSTRIAL PARK？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>制造商/生产商</strong> - 优越的地理位置与交通网络，便于原料输入与成品输出</li>
+                                <li><strong>物流与供应链企业</strong> - 临近高速公路、机场与港口，实现高效货物转运</li>
+                                <li><strong>出口导向型企业</strong> - 靠近国际机场与多个渡轮码头，便捷连接全球市场</li>
+                                <li><strong>区域分销中心</strong> - 地处战略要地，辐射新山、新加坡及周边区域</li>
+                                <li><strong>高附加值工业投资者</strong> - 完善的基础设施支持精密制造与快速物流需求</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 Type A1 户型详情</div>
+                                <p><strong>类型：</strong> Type A1<br>
+                                <strong>建筑面积：</strong> 12,177 平方英尺<br>
+                                <strong>土地面积：</strong> 17,029 平方英尺<br>
+                                <strong>Clear Height：</strong> 9.5米<br>
+                                <strong>层数：</strong> 1层<br>
+                                <strong>办公室面积：</strong> 750 平方英尺</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 7,100,000+ 起<br>
+                                <strong>每月供期：</strong> 约 RM 32,000+ (20年贷款)<br>
+                                <strong>预估租金：</strong> RM 25,000 - RM 35,000/月</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📍 战略位置优势</h3>
+                        <ul class="highlight-list">
+                            <li><strong>高速公路网络：</strong> 连接南北大道（PLUS Highway）、新山-新加坡第二通道（Linkedua）</li>
+                            <li><strong>国际机场：</strong> 25分钟到达士乃国际机场（Senai International Airport）</li>
+                            <li><strong>港口设施：</strong> 40分钟到达丹绒柏勒巴斯港（Port of Tanjung Pelepas）</li>
+                            <li><strong>新加坡连接：</strong> 30分钟到达新加坡海关（CIQ）</li>
+                            <li><strong>工业园区配套：</strong> 完整的水电、通信、消防设施</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📷 园区图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="GLX/GALAXY (1).jpeg" alt="GALAXY INDUSTRIAL PARK 外观" class="gallery-image">
+                            <img src="GLX/GALAXY (2).jpeg" alt="GALAXY INDUSTRIAL PARK 内部空间" class="gallery-image">
+                            <img src="GLX/GALAXY (3).jpeg" alt="GALAXY INDUSTRIAL PARK 办公室" class="gallery-image">
+                            <img src="GLX/GALAXY (4).jpeg" alt="GALAXY INDUSTRIAL PARK 基础设施" class="gallery-image">
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询GALAXY INDUSTRIAL PARK详情</h4>
+                        <p>想了解更多关于GALAXY INDUSTRIAL PARK的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的厂房平面图和技术规格</li>
+                            <li>现场参观预约和投资回报分析</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>工业地产贷款和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelGLX_IndustrialPark" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询工业园详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- DATO ONN 3 STOREY SHOP LOT 详情 -->
+    <div class="project-detail-modal" id="dato-onn-3storey-lot-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>DATO ONN 3 STOREY SHOP LOT</h2>
+                <p class="modal-subtitle">Taman Molek · 优质商业区位 - 转角位置，人流稳定</p>
+                <button class="close-modal" data-modal="dato-onn-3storey-lot-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="project-detail-content">
+                    <div class="detail-section">
+                        <p><strong>📍 Dato Onn新山商业区 · 转角位置 · 优质商业区位</strong></p>
+                        <p><strong>人流稳定 · 出转角位置 · 商业地产投资优选</strong></p>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>🌟 为什么选择DATO ONN 3 STOREY SHOP LOT？</h3>
+                        <div class="highlight-box">
+                            <h4>完美适合：</h4>
+                            <ul class="highlight-list">
+                                <li><strong>零售业主</strong> - 转角位置带来高曝光率和人流量</li>
+                                <li><strong>餐饮业者</strong> - 显眼位置适合各类餐饮业务</li>
+                                <li><strong>专业服务提供者</strong> - 三层楼设计适合诊所、律师事务所等</li>
+                                <li><strong>连锁品牌</strong> - 优质区位适合品牌旗舰店或分店</li>
+                                <li><strong>商业地产投资者</strong> - 稳定租金回报和资产增值潜力</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📊 详细规格</h3>
+                        <div class="play-types">
+                            <div class="play-type">
+                                <div class="play-type-number">🏠 3层商业店铺详情</div>
+                                <p><strong>类型：</strong> 3层商业店铺<br>
+                                <strong>总面积：</strong> 6,835 平方英尺<br>
+                                <strong>层数：</strong> 3层<br>
+                                <strong>位置：</strong> 转角位置<br>
+                                <strong>状态：</strong> 最后1间可选</p>
+                            </div>
+                            <div class="play-type">
+                                <div class="play-type-number">💰 价格详情</div>
+                                <p><strong>售价：</strong> RM 3,600,000+ (可议价)<br>
+                                <strong>每月供期：</strong> 约 RM 16,000+ (20年贷款)<br>
+                                <strong>预估租金：</strong> RM 12,000 - RM 18,000/月</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>💎 项目优势</h3>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📍</div>
+                                <div class="benefit-text">转角位置</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🚗</div>
+                                <div class="benefit-text">交通便利</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏪</div>
+                                <div class="benefit-text">成熟社区</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">💰</div>
+                                <div class="benefit-text">租金稳定</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">📈</div>
+                                <div class="benefit-text">增值潜力</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">🏗️</div>
+                                <div class="benefit-text">三层空间</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📍 周边商业环境</h3>
+                        <ul class="highlight-list">
+                            <li><strong>住宅社区：</strong> 周边环绕多个成熟住宅区，确保稳定人流</li>
+                            <li><strong>办公区域：</strong> 靠近商业办公区，白领消费群体</li>
+                            <li><strong>教育机构：</strong> 附近有多所学校和教育中心</li>
+                            <li><strong>医疗设施：</strong> 医院和诊所周边，医疗相关业务机会</li>
+                            <li><strong>交通枢纽：</strong> 主要道路交汇处，车流量和人流量大</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>📷 店铺图片展示</h3>
+                        <div class="image-gallery">
+                            <img src="GLX/MIXUE (6).jpeg" alt="DATO ONN 3 STOREY SHOP LOT 外观" class="gallery-image">
+                            <img src="GLX/MIXUE (1).jpeg" alt="DATO ONN 3 STOREY SHOP LOT 内部空间" class="gallery-image">
+                            <img src="GLX/MIXUE (2).jpeg" alt="DATO ONN 3 STOREY SHOP LOT 内部结构" class="gallery-image">
+                            <img src="GLX/MIXUE (3).jpeg" alt="DATO ONN 3 STOREY SHOP LOT 转角位置" class="gallery-image">
+                            <img src="GLX/MIXUE (4).jpeg" alt="DATO ONN 3 STOREY SHOP LOT 周边环境" class="gallery-image">
+                            <img src="GLX/MIXUE (5).jpeg" alt="DATO ONN 3 STOREY SHOP LOT 街道视角" class="gallery-image">
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-link-box">
+                        <h4>📞 立即咨询DATO ONN 3 STOREY SHOP LOT详情</h4>
+                        <p>想了解更多关于DATO ONN 3 STOREY SHOP LOT的信息？<br>请通过WhatsApp联系我，我将为您提供：</p>
+                        <ul>
+                            <li>详细的店铺平面图和技术规格</li>
+                            <li>现场参观预约和投资回报分析</li>
+                            <li>价格谈判和优惠详情</li>
+                            <li>商业地产贷款和财务规划</li>
+                        </ul>
+                        <a href="https://wa.me/60167707878?text=pmcelDO3_storeyshoplot" target="_blank" class="whatsapp-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp咨询商业店铺详情
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // ==================== 移动端菜单功能 ====================
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileCloseBtn = document.getElementById('mobileCloseBtn');
-        const mobileNav = document.getElementById('mobileNav');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-        
-        mobileCloseBtn.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
-        
-        // ==================== 导航栏滚动效果 ====================
-        window.addEventListener('scroll', () => {
+        // 使用DOMContentLoaded确保DOM完全加载
+        document.addEventListener('DOMContentLoaded', function() {
+            // ========== 全局变量 ==========
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+            const projectLinkModals = document.querySelectorAll('.project-link-modal');
+            const closeModalBtns = document.querySelectorAll('.close-modal');
+            const projectModals = document.querySelectorAll('.project-detail-modal');
+            const contactForm = document.getElementById('contactForm');
+            const successModal = document.getElementById('successModal');
+            const closeSuccessModal = document.querySelector('.close-success-modal');
+            const floatingBtn = document.querySelector('.floating-contact-btn');
+            
+            // ========== 防抖函数（性能优化） ==========
+            function debounce(func, wait = 100) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
             }
             
-            // 更新导航链接状态
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-        
-        // ==================== 项目筛选功能 ====================
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // 更新按钮状态
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+            // ========== 导航栏滚动效果 ==========
+            function handleNavbarScroll() {
+                if (!navbar) return;
                 
-                const filterValue = btn.getAttribute('data-filter');
-                
-                // 筛选项目
-                projectCards.forEach(card => {
-                    const categories = card.getAttribute('data-category');
-                    if (filterValue === 'all' || categories.includes(filterValue)) {
-                        card.style.display = 'flex';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, 10);
-                    } else {
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(20px)';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300);
-                    }
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+            
+            // 使用防抖优化滚动性能
+            window.addEventListener('scroll', debounce(handleNavbarScroll, 10));
+            
+            // ========== 移动端菜单功能 ==========
+            if (mobileMenuBtn && mobileNav) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileNav.classList.add('active');
+                    document.body.style.overflow = 'hidden';
                 });
-            });
-        });
-        
-        // ==================== 项目模态框功能 ====================
-        const learnMoreBtns = document.querySelectorAll('.learn-more-btn, .project-link-modal');
-        const closeModalBtns = document.querySelectorAll('.close-modal');
-        const modals = document.querySelectorAll('.project-detail-modal');
-        
-        // 为每个"查看项目详情"按钮添加点击事件
-        learnMoreBtns.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const project = this.getAttribute('data-project');
-                const modal = document.getElementById(`${project}-modal`);
+            }
+            
+            if (mobileCloseBtn && mobileNav) {
+                mobileCloseBtn.addEventListener('click', function() {
+                    mobileNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+            
+            if (mobileNavLinks.length > 0) {
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        if (mobileNav) {
+                            mobileNav.classList.remove('active');
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                });
+            }
+            
+            // ========== 项目筛选功能（增强版） ==========
+            if (filterBtns.length > 0 && projectCards.length > 0) {
+                // 初始化项目卡片动画
+                projectCards.forEach((card, index) => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    
+                    // 交错延迟动画
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100 + (index * 50)); // 交错延迟
+                });
                 
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        // 移除所有按钮的active类
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        // 为当前点击的按钮添加active类
+                        this.classList.add('active');
+                        
+                        const filterValue = this.getAttribute('data-filter');
+                        let visibleCount = 0;
+                        
+                        // 显示/隐藏项目卡片
+                        projectCards.forEach((card, index) => {
+                            const categories = card.getAttribute('data-category').split(' ');
+                            
+                            if (filterValue === 'all' || categories.includes(filterValue)) {
+                                // 显示卡片
+                                visibleCount++;
+                                card.style.display = 'block';
+                                
+                                // 延迟动画（交错效果）
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, (visibleCount % 3) * 100);
+                                
+                                // 添加观察者以在视图中时触发动画
+                                if ('IntersectionObserver' in window) {
+                                    const observer = new IntersectionObserver((entries) => {
+                                        entries.forEach(entry => {
+                                            if (entry.isIntersecting) {
+                                                entry.target.classList.add('animated');
+                                                observer.unobserve(entry.target);
+                                            }
+                                        });
+                                    }, { threshold: 0.1 });
+                                    
+                                    observer.observe(card);
+                                }
+                            } else {
+                                // 隐藏卡片
+                                card.style.opacity = '0';
+                                card.style.transform = 'translateY(20px)';
+                                setTimeout(() => {
+                                    card.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                        
+                        // 如果没有匹配的项目，显示提示
+                        if (visibleCount === 0) {
+                            showNoProjectsMessage(filterValue);
+                        }
+                    });
+                });
+                
+                // 如果没有匹配项目的提示函数
+                function showNoProjectsMessage(filterValue) {
+                    // 移除现有提示
+                    const existingMessage = document.querySelector('.no-projects-message');
+                    if (existingMessage) {
+                        existingMessage.remove();
+                    }
+                    
+                    const projectsContainer = document.querySelector('.projects-grid');
+                    if (projectsContainer) {
+                        const message = document.createElement('div');
+                        message.className = 'no-projects-message';
+                        message.innerHTML = `
+                            <div style="text-align: center; padding: 40px; background: var(--light-color); border-radius: var(--border-radius);">
+                                <i class="fas fa-search" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                                <h3 style="color: var(--primary-color); margin-bottom: 10px;">暂时没有 ${getFilterName(filterValue)} 项目</h3>
+                                <p style="color: #5D4037; margin-bottom: 20px;">您可以尝试选择其他筛选条件，或通过WhatsApp直接咨询最新项目信息。</p>
+                                <a href="https://wa.me/60167707878?text=我想咨询${encodeURIComponent(getFilterName(filterValue))}项目" 
+                                target="_blank" 
+                                class="whatsapp-project-btn" 
+                                style="width: auto; display: inline-block;">
+                                    <i class="fab fa-whatsapp"></i> 咨询最新项目信息
+                                </a>
+                            </div>
+                        `;
+                        
+                        projectsContainer.parentNode.insertBefore(message, projectsContainer.nextSibling);
+                    }
+                }
+                
+                function getFilterName(filterValue) {
+                    const filterNames = {
+                        'all': '所有',
+                        'ksl-jewel': 'KSL JEWEL',
+                        'sunway-majestic': 'SUNWAY MAJESTIC',
+                        'sunway-lakehills': 'SUNWAY LAKEHILLS',
+                        'galaxy-industrial-park': 'GALAXY INDUSTRIAL PARK',
+                        'dato-onn-3storey-lot': 'DATO ONN 3 STOREY SHOP LOT',
+                        'investment': '投资型'
+                    };
+                    return filterNames[filterValue] || filterValue;
+                }
+            }
+            
+            // ========== 项目详情模态框功能 ==========
+            // 打开模态框
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
                 if (modal) {
                     modal.style.display = 'block';
                     document.body.style.overflow = 'hidden';
                     
-                    // 滚动到模态框顶部
-                    modal.scrollTop = 0;
-                } else {
-                    console.warn(`Modal not found: ${project}-modal`);
+                    // 添加模态框打开动画
+                    modal.style.opacity = '0';
+                    const modalContent = modal.querySelector('.modal-content');
+                    if (modalContent) {
+                        modalContent.style.transform = 'scale(0.9) translateY(-50px)';
+                    }
+                    
+                    setTimeout(() => {
+                        modal.style.opacity = '1';
+                        if (modalContent) {
+                            modalContent.style.transform = 'scale(1) translateY(0)';
+                        }
+                    }, 10);
+                    
+                    // 阻止背景滚动
+                    document.body.style.paddingRight = `${getScrollbarWidth()}px`;
+                    document.body.style.overflow = 'hidden';
+                    
+                    // 关闭其他打开的模态框
+                    closeAllModalsExcept(modalId);
                 }
-            });
-        });
-        
-        // 关闭模态框按钮
-        closeModalBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                const modalId = this.getAttribute('data-modal');
-                const modal = document.getElementById(modalId);
-                
-                if (modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-        
-        // 点击模态框背景关闭
-        modals.forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        });
-        
-        // ESC 键关闭模态框
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                modals.forEach(modal => {
-                    if (modal.style.display === 'block') {
+            }
+            
+            // 计算滚动条宽度
+            function getScrollbarWidth() {
+                return window.innerWidth - document.documentElement.clientWidth;
+            }
+            
+            // 关闭所有模态框（除了指定的）
+            function closeAllModalsExcept(exceptModalId) {
+                projectModals.forEach(modal => {
+                    if (modal.id !== exceptModalId) {
                         modal.style.display = 'none';
+                    }
+                });
+            }
+            
+            // 关闭模态框
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    // 添加关闭动画
+                    modal.style.opacity = '0';
+                    const modalContent = modal.querySelector('.modal-content');
+                    if (modalContent) {
+                        modalContent.style.transform = 'scale(0.9) translateY(-50px)';
+                    }
+                    
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        document.body.style.paddingRight = '0';
+                        
+                        // 重置动画
+                        modal.style.opacity = '1';
+                        if (modalContent) {
+                            modalContent.style.transform = 'scale(1) translateY(0)';
+                        }
+                    }, 300);
+                }
+            }
+            
+            // 为"查看项目详情"按钮添加事件
+            if (learnMoreBtns.length > 0) {
+                learnMoreBtns.forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const projectId = this.getAttribute('data-project');
+                        if (projectId) {
+                            openModal(`${projectId}-modal`);
+                            
+                            // 跟踪用户行为（可选）
+                            console.log(`用户查看了项目详情: ${projectId}`);
+                        }
+                    });
+                });
+            }
+            
+            // 为页脚项目链接添加事件
+            if (projectLinkModals.length > 0) {
+                projectLinkModals.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const projectId = this.getAttribute('data-project');
+                        if (projectId) {
+                            openModal(`${projectId}-modal`);
+                        }
+                    });
+                });
+            }
+            
+            // 为关闭按钮添加事件
+            if (closeModalBtns.length > 0) {
+                closeModalBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const modalId = this.getAttribute('data-modal');
+                        if (modalId) {
+                            closeModal(modalId);
+                        }
+                    });
+                });
+            }
+            
+            // 点击模态框背景关闭
+            if (projectModals.length > 0) {
+                projectModals.forEach(modal => {
+                    modal.addEventListener('click', function(e) {
+                        if (e.target === this) {
+                            const modalId = this.id;
+                            closeModal(modalId);
+                        }
+                    });
+                    
+                    // ESC键关闭模态框
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape' && modal.style.display === 'block') {
+                            closeModal(modal.id);
+                        }
+                    });
+                });
+            }
+            
+            // ========== 联系表单功能（增强版） ==========
+            if (contactForm) {
+                // 表单验证
+                function validateForm() {
+                    const name = document.getElementById('name');
+                    const email = document.getElementById('email');
+                    const phone = document.getElementById('phone');
+                    const service = document.getElementById('service');
+                    const message = document.getElementById('message');
+                    
+                    let isValid = true;
+                    
+                    // 重置错误状态
+                    resetErrors();
+                    
+                    // 验证姓名
+                    if (!name.value.trim()) {
+                        showError(name, '请输入您的姓名');
+                        isValid = false;
+                    }
+                    
+                    // 验证邮箱
+                    if (!email.value.trim()) {
+                        showError(email, '请输入电子邮件');
+                        isValid = false;
+                    } else if (!isValidEmail(email.value)) {
+                        showError(email, '请输入有效的电子邮件地址');
+                        isValid = false;
+                    }
+                    
+                    // 验证电话
+                    if (!phone.value.trim()) {
+                        showError(phone, '请输入联系电话');
+                        isValid = false;
+                    } else if (!isValidPhone(phone.value)) {
+                        showError(phone, '请输入有效的电话号码');
+                        isValid = false;
+                    }
+                    
+                    // 验证服务类型
+                    if (!service.value || service.value === '') {
+                        showError(service, '请选择咨询类型');
+                        isValid = false;
+                    }
+                    
+                    // 验证消息
+                    if (!message.value.trim()) {
+                        showError(message, '请输入您的需求详情');
+                        isValid = false;
+                    } else if (message.value.trim().length < 10) {
+                        showError(message, '请提供更详细的需求信息（至少10个字符）');
+                        isValid = false;
+                    }
+                    
+                    return isValid;
+                }
+                
+                function isValidEmail(email) {
+                    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    return re.test(email);
+                }
+                
+                function isValidPhone(phone) {
+                    const re = /^[+]?[\d\s\-\(\)]{10,}$/;
+                    return re.test(phone.replace(/\s+/g, ''));
+                }
+                
+                function showError(input, message) {
+                    const formGroup = input.closest('.form-group');
+                    if (formGroup) {
+                        // 移除现有错误
+                        const existingError = formGroup.querySelector('.error-message');
+                        if (existingError) {
+                            existingError.remove();
+                        }
+                        
+                        // 添加错误样式
+                        input.style.borderColor = '#ff4444';
+                        
+                        // 添加错误消息
+                        const errorElement = document.createElement('div');
+                        errorElement.className = 'error-message';
+                        errorElement.style.color = '#ff4444';
+                        errorElement.style.fontSize = '0.8rem';
+                        errorElement.style.marginTop = '5px';
+                        errorElement.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+                        
+                        formGroup.appendChild(errorElement);
+                    }
+                }
+                
+                function resetErrors() {
+                    // 重置所有输入框样式
+                    document.querySelectorAll('.form-control').forEach(input => {
+                        input.style.borderColor = '';
+                    });
+                    
+                    // 移除所有错误消息
+                    document.querySelectorAll('.error-message').forEach(error => {
+                        error.remove();
+                    });
+                }
+                
+                // 实时表单验证
+                document.querySelectorAll('.form-control').forEach(input => {
+                    input.addEventListener('blur', function() {
+                        if (this.value.trim()) {
+                            this.style.borderColor = '#4CAF50';
+                        }
+                    });
+                    
+                    input.addEventListener('input', function() {
+                        if (this.value.trim()) {
+                            this.style.borderColor = '#FF9800';
+                        }
+                    });
+                });
+                
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // 验证表单
+                    if (!validateForm()) {
+                        // 滚动到第一个错误
+                        const firstError = document.querySelector('.error-message');
+                        if (firstError) {
+                            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                        return;
+                    }
+                    
+                    // 收集表单数据
+                    const formData = {
+                        name: document.getElementById('name').value.trim(),
+                        email: document.getElementById('email').value.trim(),
+                        phone: document.getElementById('phone').value.trim(),
+                        service: document.getElementById('service').value,
+                        budget: document.getElementById('budget').value,
+                        message: document.getElementById('message').value.trim(),
+                        timestamp: new Date().toLocaleString('zh-CN'),
+                        pageUrl: window.location.href
+                    };
+                    
+                    // 显示加载状态
+                    const submitBtn = this.querySelector('.submit-btn-contact');
+                    const originalText = submitBtn.innerHTML;
+                    const originalWidth = submitBtn.offsetWidth;
+                    
+                    submitBtn.style.width = `${originalWidth}px`;
+                    submitBtn.innerHTML = '<span>发送中...</span><i class="fas fa-spinner fa-spin"></i>';
+                    submitBtn.classList.add('loading');
+                    submitBtn.disabled = true;
+                    
+                    // 使用EmailJS发送邮件
+                    emailjs.send('service_39vtj3w', 'template_fx4ydof', {
+                        from_name: formData.name,
+                        from_email: formData.email,
+                        phone: formData.phone,
+                        service_type: formData.service,
+                        budget: formData.budget,
+                        message: formData.message,
+                        timestamp: formData.timestamp,
+                        page_url: formData.pageUrl
+                    })
+                    .then(function(response) {
+                        console.log('Email发送成功:', response.status, response.text);
+                        
+                        // 显示成功消息
+                        if (successModal) {
+                            successModal.style.display = 'flex';
+                            document.body.style.overflow = 'hidden';
+                            document.body.style.paddingRight = '0';
+                        }
+                        
+                        // 重置表单
+                        contactForm.reset();
+                        resetErrors();
+                        
+                        // 发送成功事件到Google Analytics（如果使用）
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'form_submit', {
+                                'event_category': 'Contact',
+                                'event_label': '咨询表单提交成功'
+                            });
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error('Email发送失败:', error);
+                        
+                        // 显示备用联系选项
+                        const backupMessage = `
+                            <div style="background: #FFF3E0; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #FF9800;">
+                                <h4 style="color: #E65100; margin-bottom: 10px;">建议直接联系</h4>
+                                <p style="color: #5D4037; margin-bottom: 15px;">抱歉，表单发送遇到问题。建议您直接通过以下方式联系：</p>
+                                <div style="display: flex; gap: 10px;">
+                                    <a href="https://wa.me/60167707878?text=您好，我在提交表单时遇到问题，想咨询房地产信息" 
+                                    target="_blank" 
+                                    class="whatsapp-action-btn" 
+                                    style="flex: 1; text-align: center;">
+                                        <i class="fab fa-whatsapp"></i> WhatsApp
+                                    </a>
+                                    <a href="tel:0167707878" 
+                                    class="whatsapp-action-btn" 
+                                    style="flex: 1; text-align: center; background: var(--primary-color);">
+                                        <i class="fas fa-phone-alt"></i> 电话
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                        
+                        if (successModal) {
+                            const successContent = successModal.querySelector('.success-modal-content');
+                            if (successContent) {
+                                const originalContent = successContent.innerHTML;
+                                successContent.innerHTML = originalContent.replace(
+                                    '</div>',
+                                    `${backupMessage}</div>`
+                                );
+                                successModal.style.display = 'flex';
+                                document.body.style.overflow = 'hidden';
+                            }
+                        }
+                    })
+                    .finally(function() {
+                        // 恢复按钮状态
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.classList.remove('loading');
+                        submitBtn.disabled = false;
+                        submitBtn.style.width = '';
+                    });
+                });
+            }
+            
+            // ========== 成功消息模态框 ==========
+            if (closeSuccessModal && successModal) {
+                closeSuccessModal.addEventListener('click', function() {
+                    successModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+                
+                // 点击背景关闭
+                successModal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.style.display = 'none';
                         document.body.style.overflow = 'auto';
                     }
                 });
                 
-                const successModal = document.getElementById('successModal');
-                if (successModal.style.display === 'flex') {
-                    successModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
+                // ESC键关闭
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && successModal.style.display === 'flex') {
+                        successModal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
             }
-        });
-        
-        // ==================== 平滑滚动 ====================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                if (this.getAttribute('href') === '#') return;
+            
+            // ========== 平滑滚动导航链接 ==========
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#' || targetId === '#!') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        
+                        // 更新导航链接active状态
+                        document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // 计算滚动位置（考虑导航栏高度）
+                        const navbarHeight = navbar ? navbar.offsetHeight : 80;
+                        const targetPosition = targetElement.offsetTop - navbarHeight;
+                        
+                        // 平滑滚动
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // 更新URL（不刷新页面）
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+            
+            // ========== 浮动WhatsApp按钮 ==========
+            if (floatingBtn) {
+                let lastScrollTop = 0;
                 
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+                window.addEventListener('scroll', debounce(function() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // 向下滚动超过500px显示
+                    if (scrollTop > 500) {
+                        floatingBtn.style.display = 'flex';
+                        
+                        // 滚动方向判断：向下隐藏，向上显示
+                        if (scrollTop > lastScrollTop) {
+                            // 向下滚动
+                            floatingBtn.style.transform = 'translateY(100px)';
+                            floatingBtn.style.opacity = '0';
+                        } else {
+                            // 向上滚动
+                            floatingBtn.style.transform = 'translateY(0)';
+                            floatingBtn.style.opacity = '1';
+                        }
+                    } else {
+                        floatingBtn.style.display = 'none';
+                    }
+                    
+                    lastScrollTop = scrollTop;
+                }, 100));
                 
-                if (targetElement) {
+                // 点击浮动按钮添加微交互
+                floatingBtn.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.9)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 200);
+                });
+            }
+            
+            // ========== 页面加载动画 ==========
+            window.addEventListener('load', function() {
+                // 页面淡入
+                document.body.style.opacity = '0';
+                document.body.style.transition = 'opacity 0.5s ease';
+                
+                setTimeout(() => {
+                    document.body.style.opacity = '1';
+                }, 100);
+                
+                // 延迟加载图片优化
+                const lazyImages = document.querySelectorAll('img[data-src]');
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.src = img.getAttribute('data-src');
+                                img.removeAttribute('data-src');
+                                imageObserver.unobserve(img);
+                            }
+                        });
+                    });
+                    
+                    lazyImages.forEach(img => imageObserver.observe(img));
+                }
+                
+                // 预加载重要资源
+                preloadResources();
+            });
+            
+            function preloadResources() {
+                // 预加载关键CSS背景图片
+                const links = [
+                    'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'
+                ];
+                
+                links.forEach(href => {
+                    const link = document.createElement('link');
+                    link.rel = 'preload';
+                    link.as = 'image';
+                    link.href = href;
+                    document.head.appendChild(link);
+                });
+            }
+            
+            // ========== 其他增强功能 ==========
+            
+            // 1. 表单输入自动保存（localStorage）
+            if (contactForm) {
+                const formInputs = contactForm.querySelectorAll('input, select, textarea');
+                
+                // 加载保存的数据
+                formInputs.forEach(input => {
+                    const savedValue = localStorage.getItem(`form_${input.id}`);
+                    if (savedValue !== null && savedValue !== 'undefined') {
+                        input.value = savedValue;
+                    }
+                    
+                    // 实时保存
+                    input.addEventListener('input', debounce(function() {
+                        localStorage.setItem(`form_${this.id}`, this.value);
+                    }, 500));
+                });
+                
+                // 表单提交后清除保存的数据
+                contactForm.addEventListener('submit', function() {
+                    formInputs.forEach(input => {
+                        localStorage.removeItem(`form_${input.id}`);
+                    });
+                });
+            }
+            
+            // 2. 复制电话号码功能
+            const phoneNumbers = document.querySelectorAll('.phone-number, .email-address');
+            phoneNumbers.forEach(element => {
+                element.addEventListener('click', function() {
+                    const text = this.textContent.trim();
+                    navigator.clipboard.writeText(text).then(() => {
+                        // 显示复制成功提示
+                        const originalText = this.innerHTML;
+                        this.innerHTML = `<i class="fas fa-check"></i> 已复制`;
+                        this.style.color = '#4CAF50';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.style.color = '';
+                        }, 2000);
+                    });
+                });
+            });
+            
+            // 3. 回到顶部按钮
+            const scrollToTopBtn = document.createElement('button');
+            scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+            scrollToTopBtn.className = 'scroll-to-top';
+            scrollToTopBtn.style.cssText = `
+                position: fixed;
+                bottom: 100px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                background: var(--primary-color);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                cursor: pointer;
+                display: none;
+                align-items: center;
+                justify-content: center;
+                z-index: 999;
+                box-shadow: 0 4px 15px rgba(230, 81, 0, 0.3);
+                transition: all 0.3s ease;
+            `;
+            document.body.appendChild(scrollToTopBtn);
+            
+            scrollToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            window.addEventListener('scroll', debounce(function() {
+                if (window.scrollY > 300) {
+                    scrollToTopBtn.style.display = 'flex';
+                } else {
+                    scrollToTopBtn.style.display = 'none';
+                }
+            }, 100));
+            
+            // 4. 键盘快捷键
+            document.addEventListener('keydown', function(e) {
+                // Ctrl + / 打开搜索（如果有搜索功能）
+                if (e.ctrlKey && e.key === '/') {
                     e.preventDefault();
-                    
-                    // 更新导航链接状态
-                    document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
-                        link.classList.remove('active');
-                    });
-                    this.classList.add('active');
-                    
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+                    // 可以添加搜索功能
                 }
-            });
-        });
-        
-        // ==================== 联系表单提交 ====================
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // 收集表单数据
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                service: document.getElementById('service').value,
-                budget: document.getElementById('budget').value || '未选择',
-                message: document.getElementById('message').value,
-                date: new Date().toLocaleString('zh-CN')
-            };
-            
-            // 验证表单
-            if (!formData.name || !formData.email || !formData.phone || !formData.service || !formData.message) {
-                alert('请填写所有必填字段');
-                return;
-            }
-            
-            // 显示加载状态
-            const submitBtn = this.querySelector('.submit-btn-contact');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 发送中...';
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
-            
-            // 使用 EmailJS 发送邮件
-            emailjs.send('service_celinelim81', 'template_37ridpm', {
-                name: formData.name,
-                email: formData.email,
-                phone: formData.phone,
-                service: formData.service,
-                budget: formData.budget,
-                message: formData.message,
-                date: formData.date
-            })
-            .then(() => {
-                // 恢复按钮状态
-                submitBtn.innerHTML = originalText;
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
                 
-                // 显示成功消息
-                showSuccessModal();
-                this.reset();
-                
-                console.log('邮件发送成功！');
-            }, (error) => {
-                // 恢复按钮状态
-                submitBtn.innerHTML = originalText;
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
-                
-                console.error('邮件发送失败:', error);
-                alert('发送失败，请稍后重试或直接通过WhatsApp联系：016-7707878\n错误代码：' + error.status + ' ' + error.text);
-            });
-        });
-        
-        // ==================== 显示成功模态框 ====================
-        function showSuccessModal() {
-            const successModal = document.getElementById('successModal');
-            successModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            
-            // 关闭按钮事件
-            const closeBtn = successModal.querySelector('.close-success-modal');
-            closeBtn.onclick = () => {
-                successModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            };
-            
-            // 点击背景关闭
-            successModal.onclick = (e) => {
-                if (e.target === successModal) {
-                    successModal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            };
-        }
-        
-        // ==================== 联系项目点击动画 ====================
-        document.querySelectorAll('.contact-item').forEach(item => {
-            item.addEventListener('click', function() {
-                const type = this.classList.contains('phone-item') ? 'phone' :
-                            this.classList.contains('whatsapp-item') ? 'whatsapp' : 'email';
-                
-                if (type === 'phone') {
-                    // 在移动设备上直接拨打电话
-                    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                        window.location.href = 'tel:0167707878';
+                // ESC键关闭所有模态框
+                if (e.key === 'Escape') {
+                    projectModals.forEach(modal => {
+                        if (modal.style.display === 'block') {
+                            closeModal(modal.id);
+                        }
+                    });
+                    
+                    if (successModal && successModal.style.display === 'flex') {
+                        successModal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
                     }
                 }
             });
-        });
-        
-        // ==================== 页面加载动画 ====================
-        window.addEventListener('DOMContentLoaded', () => {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
             
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
+            // 5. 视差滚动效果增强
+            const parallaxElements = document.querySelectorAll('.hero');
+            window.addEventListener('scroll', function() {
+                parallaxElements.forEach(element => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.5;
+                    element.style.transform = `translate3d(0, ${rate}px, 0)`;
+                });
+            });
             
-            // 预加载图片
-            preloadImages();
-        });
-
-        // ==================== 新闻订阅表单处理 ====================
-        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = this.querySelector('.newsletter-input').value;
-            
-            if (!email || !email.includes('@')) {
-                alert('请输入有效的电子邮件地址');
-                return;
-            }
-            
-            // 显示加载状态
-            const submitBtn = this.querySelector('.submit-btn-contact');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 订阅中...';
-            submitBtn.disabled = true;
-            
-            // 模拟订阅处理
-            setTimeout(() => {
-                // 恢复按钮状态
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
+            // 6. 性能监控和错误报告（开发阶段）
+            if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+                window.addEventListener('error', function(e) {
+                    console.error('页面错误:', e.error);
+                });
                 
-                alert('感谢订阅！您将收到我们的最新资讯。');
-                this.reset();
-            }, 1000);
-        });
-
-        // ==================== 浮动联系按钮显示控制 ====================
-        window.addEventListener('scroll', function() {
-            const floatingBtn = document.querySelector('.floating-contact-btn');
-            if (window.innerWidth <= 992 && window.scrollY > 500) {
-                floatingBtn.style.display = 'flex';
-            } else {
-                floatingBtn.style.display = 'none';
+                // 记录页面性能
+                window.addEventListener('load', function() {
+                    setTimeout(() => {
+                        const timing = performance.timing;
+                        const loadTime = timing.loadEventEnd - timing.navigationStart;
+                        console.log(`页面加载时间: ${loadTime}ms`);
+                    }, 0);
+                });
             }
         });
-        
-        // ==================== 图片预加载 ====================
-        function preloadImages() {
-            const imagesToPreload = [
-                'JEWEL KSL/JW9.jpeg',
-                'JEWEL KSL/JW3.jpeg',
-                'JEWEL KSL/JW2.jpeg',
-                'JEWEL KSL/JW4.jpeg',
-                'SUNWAY MAJESTIC/SWM001.jpeg',
-                'SUNWAY MAJESTIC/SWM1.jpeg',
-                'SUNWAY MAJESTIC/SWM2.jpeg',
-                'SUNWAY LAKEHILLS/SLH01.jpeg',
-                'SUNWAY LAKEHILLS/SLH2.jpeg',
-                'SUNWAY LAKEHILLS/SLH3.jpeg',
-                'SUNWAY LAKEHILLS/SLH4.jpeg'
-            ];
+
+        // 添加CSS样式（通过JS注入）
+        const style = document.createElement('style');
+        style.textContent = `
+            .error-message {
+                animation: shake 0.5s ease-in-out;
+            }
             
-            imagesToPreload.forEach(url => {
-                const img = new Image();
-                img.src = url;
-            });
-        }
-        
-        // ==================== 初始化页面时确保所有模态框隐藏 ====================
-        window.addEventListener('DOMContentLoaded', () => {
-            modals.forEach(modal => {
-                modal.style.display = 'none';
-            });
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
             
-            const successModal = document.getElementById('successModal');
-            successModal.style.display = 'none';
-        });
+            .scroll-to-top:hover {
+                background: var(--secondary-color) !important;
+                transform: translateY(-3px) !important;
+                box-shadow: 0 6px 20px rgba(230, 81, 0, 0.4) !important;
+            }
+            
+            .no-projects-message {
+                margin-top: 30px;
+                animation: fadeIn 0.5s ease;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // 添加打印样式
+        const printStyle = document.createElement('style');
+        printStyle.media = 'print';
+        printStyle.textContent = `
+            .navbar, .floating-contact-btn, .scroll-to-top, .mobile-menu-btn {
+                display: none !important;
+            }
+            
+            .project-detail-modal {
+                display: block !important;
+                position: static !important;
+                background: white !important;
+            }
+            
+            .modal-content {
+                box-shadow: none !important;
+                margin: 0 !important;
+            }
+        `;
+        document.head.appendChild(printStyle);
     </script>
 </body>
 </html>
